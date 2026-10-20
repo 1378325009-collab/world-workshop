@@ -1,0 +1,4335 @@
+{
+  "schemaVersion": 4,
+  "project": {
+    "id": "gu-zhen-ren-world",
+    "name": "蛊界 ·《蛊真人》设定库",
+    "genre": "蛊道修行 · 仙侠权谋 · 重生求道",
+    "era": "人祖传说至五域乱战（含全书剧透）",
+    "tone": "冷峻残酷、智谋交锋、利益驱动；个人意志与天道秩序持续冲突。",
+    "premise": "蛊界以蛊虫和修行者构成独特秩序：蛊师以元窍、真元与蛊虫修炼，蛊仙经营仙窍并争夺资源。方源借春秋蝉重返过去，卷入五域格局、尊者传承、天庭与天意的冲突，追求永生。本档案整理世界机制、主要人物势力、关键历史转折、关系网络与篇章级剧情大纲，含重大剧透；原作未给出的绝对纪年以时代或篇章阶段标注，剧情大纲为归纳，不含原文对白。"
+  },
+  "typeGroups": [
+    {
+      "id": "geography",
+      "label": "五域与天域",
+      "fields": [
+        {
+          "id": "geo-setting",
+          "label": "地理概况",
+          "type": "text"
+        },
+        {
+          "id": "map-reference",
+          "label": "地图/地貌参考图",
+          "type": "image"
+        },
+        {
+          "id": "spirit-veins",
+          "label": "资源点、蛊材与道痕",
+          "type": "text"
+        },
+        {
+          "id": "environment-profile",
+          "label": "环境概况",
+          "type": "polygon",
+          "sides": 5,
+          "axes": [
+            "资源丰度",
+            "通行难度",
+            "环境危险",
+            "蛊兽威胁",
+            "空间稳定"
+          ]
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:geography:geo-setting",
+        "group:geography:map-reference",
+        "group:geography:spirit-veins",
+        "group:geography:environment-profile",
+        "core:body"
+      ]
+    },
+    {
+      "id": "factions",
+      "label": "势力与组织",
+      "fields": [
+        {
+          "id": "power-level",
+          "label": "势力层级",
+          "type": "text"
+        },
+        {
+          "id": "resources",
+          "label": "资源与产业",
+          "type": "text"
+        },
+        {
+          "id": "external-relations",
+          "label": "对外关系与立场",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:factions:power-level",
+        "group:factions:resources",
+        "group:factions:external-relations",
+        "core:body"
+      ]
+    },
+    {
+      "id": "characters",
+      "label": "蛊师与尊者",
+      "fields": [
+        {
+          "id": "background",
+          "label": "出身与经历",
+          "type": "text"
+        },
+        {
+          "id": "cultivation-realm",
+          "label": "转数与境界",
+          "type": "text"
+        },
+        {
+          "id": "motivation",
+          "label": "目标与执念",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:characters:background",
+        "group:characters:cultivation-realm",
+        "group:characters:motivation",
+        "core:body"
+      ]
+    },
+    {
+      "id": "races",
+      "label": "人族与异人",
+      "fields": [
+        {
+          "id": "appearance",
+          "label": "外形与体征",
+          "type": "text"
+        },
+        {
+          "id": "life-cycle",
+          "label": "寿命与繁衍",
+          "type": "text"
+        },
+        {
+          "id": "customs",
+          "label": "族群风俗",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:races:appearance",
+        "group:races:life-cycle",
+        "group:races:customs",
+        "core:body"
+      ]
+    },
+    {
+      "id": "creatures",
+      "label": "蛊兽与荒兽",
+      "fields": [
+        {
+          "id": "habitat",
+          "label": "栖息地",
+          "type": "text"
+        },
+        {
+          "id": "temperament",
+          "label": "习性与威胁",
+          "type": "text"
+        },
+        {
+          "id": "ecology",
+          "label": "生态与资源价值",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:creatures:habitat",
+        "group:creatures:temperament",
+        "group:creatures:ecology",
+        "core:body"
+      ]
+    },
+    {
+      "id": "deities",
+      "label": "尊者与历史大能",
+      "fields": [
+        {
+          "id": "authority",
+          "label": "代表流派与时代",
+          "type": "text"
+        },
+        {
+          "id": "worship",
+          "label": "传承与历史影响",
+          "type": "text"
+        },
+        {
+          "id": "manifestation",
+          "label": "尊者遗产",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:deities:authority",
+        "group:deities:worship",
+        "group:deities:manifestation",
+        "core:body"
+      ]
+    },
+    {
+      "id": "cultures",
+      "label": "蛊界社会与文化",
+      "fields": [
+        {
+          "id": "rites",
+          "label": "礼俗与仪式",
+          "type": "text"
+        },
+        {
+          "id": "taboos",
+          "label": "戒律与禁忌",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:cultures:rites",
+        "group:cultures:taboos",
+        "core:body"
+      ]
+    },
+    {
+      "id": "rules",
+      "label": "蛊道、天道与修行规则",
+      "fields": [
+        {
+          "id": "scope",
+          "label": "适用范围",
+          "type": "text"
+        },
+        {
+          "id": "trigger",
+          "label": "触发条件",
+          "type": "text"
+        },
+        {
+          "id": "cost",
+          "label": "代价与限制",
+          "type": "text"
+        },
+        {
+          "id": "exceptions",
+          "label": "例外情况",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:rules:scope",
+        "group:rules:trigger",
+        "group:rules:cost",
+        "group:rules:exceptions",
+        "core:body"
+      ]
+    },
+    {
+      "id": "items",
+      "label": "蛊虫、杀招与资源",
+      "fields": [
+        {
+          "id": "source",
+          "label": "来历与来源",
+          "type": "text"
+        },
+        {
+          "id": "reference-image",
+          "label": "外观参考图",
+          "type": "image"
+        },
+        {
+          "id": "function",
+          "label": "用途与效果",
+          "type": "text"
+        },
+        {
+          "id": "limits",
+          "label": "限制与副作用",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:items:source",
+        "group:items:reference-image",
+        "group:items:function",
+        "group:items:limits",
+        "core:body"
+      ]
+    },
+    {
+      "id": "quests",
+      "label": "关键历史事件",
+      "fields": [
+        {
+          "id": "quest-trigger",
+          "label": "触发条件",
+          "type": "text"
+        },
+        {
+          "id": "stakes",
+          "label": "目标与代价",
+          "type": "text"
+        },
+        {
+          "id": "outcome",
+          "label": "结果与影响",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:quests:quest-trigger",
+        "group:quests:stakes",
+        "group:quests:outcome",
+        "core:body"
+      ]
+    },
+    {
+      "id": "notes",
+      "label": "原作线索与剧透",
+      "fields": [
+        {
+          "id": "source",
+          "label": "线索来源",
+          "type": "text"
+        },
+        {
+          "id": "open-questions",
+          "label": "待确认问题",
+          "type": "text"
+        },
+        {
+          "id": "reveal-stage",
+          "label": "揭示阶段",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:notes:source",
+        "group:notes:open-questions",
+        "group:notes:reveal-stage",
+        "core:body"
+      ]
+    },
+    {
+      "id": "miscellaneous",
+      "label": "待归类",
+      "fields": [],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "core:body"
+      ]
+    }
+  ],
+  "typeDefinitions": [
+    {
+      "id": "world",
+      "label": "蛊界",
+      "groupId": "geography",
+      "fields": [
+        {
+          "id": "cosmology",
+          "label": "世界结构",
+          "type": "text"
+        },
+        {
+          "id": "celestial-order",
+          "label": "天意与宿命秩序",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:geography:geo-setting",
+        "group:geography:map-reference",
+        "group:geography:spirit-veins",
+        "group:geography:environment-profile",
+        "type:world:cosmology",
+        "type:world:celestial-order",
+        "core:body"
+      ]
+    },
+    {
+      "id": "region",
+      "label": "大域与天域",
+      "groupId": "geography",
+      "fields": [
+        {
+          "id": "regional-features",
+          "label": "地域生态与势力",
+          "type": "text"
+        },
+        {
+          "id": "key-routes",
+          "label": "主要通道与迁徙",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:geography:geo-setting",
+        "group:geography:map-reference",
+        "group:geography:spirit-veins",
+        "group:geography:environment-profile",
+        "type:region:regional-features",
+        "type:region:key-routes",
+        "core:body"
+      ]
+    },
+    {
+      "id": "location",
+      "label": "地点与资源点",
+      "groupId": "geography",
+      "fields": [
+        {
+          "id": "access-condition",
+          "label": "进入与通行条件",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:geography:geo-setting",
+        "group:geography:map-reference",
+        "group:geography:spirit-veins",
+        "group:geography:environment-profile",
+        "type:location:access-condition",
+        "core:body"
+      ]
+    },
+    {
+      "id": "secret-realm",
+      "label": "真传与秘境",
+      "groupId": "geography",
+      "fields": [
+        {
+          "id": "opening-cycle",
+          "label": "开启周期",
+          "type": "text"
+        },
+        {
+          "id": "trial-mechanism",
+          "label": "秘境试炼",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:geography:geo-setting",
+        "group:geography:map-reference",
+        "group:geography:spirit-veins",
+        "group:geography:environment-profile",
+        "type:secret-realm:opening-cycle",
+        "type:secret-realm:trial-mechanism",
+        "core:body"
+      ]
+    },
+    {
+      "id": "cave-heaven",
+      "label": "仙窍、福地与洞天",
+      "groupId": "geography",
+      "fields": [
+        {
+          "id": "time-flow",
+          "label": "仙窍时空",
+          "type": "text"
+        },
+        {
+          "id": "stewardship",
+          "label": "经营方式与灾劫",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:geography:geo-setting",
+        "group:geography:map-reference",
+        "group:geography:spirit-veins",
+        "group:geography:environment-profile",
+        "type:cave-heaven:time-flow",
+        "type:cave-heaven:stewardship",
+        "core:body"
+      ]
+    },
+    {
+      "id": "faction",
+      "label": "超级势力",
+      "groupId": "factions",
+      "fields": [
+        {
+          "id": "emblem",
+          "label": "专属图标",
+          "type": "icon"
+        },
+        {
+          "id": "dao-lineage",
+          "label": "流派与传承",
+          "type": "text"
+        },
+        {
+          "id": "discipline",
+          "label": "统治与用人规则",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:factions:power-level",
+        "group:factions:resources",
+        "group:factions:external-relations",
+        "type:faction:emblem",
+        "type:faction:dao-lineage",
+        "type:faction:discipline",
+        "core:body"
+      ]
+    },
+    {
+      "id": "organization",
+      "label": "组织与联盟",
+      "groupId": "factions",
+      "fields": [
+        {
+          "id": "charter",
+          "label": "组织目标与规章",
+          "type": "text"
+        },
+        {
+          "id": "membership",
+          "label": "成员与准入",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:factions:power-level",
+        "group:factions:resources",
+        "group:factions:external-relations",
+        "type:organization:charter",
+        "type:organization:membership",
+        "core:body"
+      ]
+    },
+    {
+      "id": "family",
+      "label": "家族与部族",
+      "groupId": "factions",
+      "fields": [
+        {
+          "id": "lineage",
+          "label": "血脉传承",
+          "type": "text"
+        },
+        {
+          "id": "succession",
+          "label": "继承规则",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:factions:power-level",
+        "group:factions:resources",
+        "group:factions:external-relations",
+        "type:family:lineage",
+        "type:family:succession",
+        "core:body"
+      ]
+    },
+    {
+      "id": "dynasty",
+      "label": "凡俗政权",
+      "groupId": "factions",
+      "fields": [
+        {
+          "id": "political-order",
+          "label": "凡俗政制",
+          "type": "text"
+        },
+        {
+          "id": "cultivator-policy",
+          "label": "修士与朝廷关系",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:factions:power-level",
+        "group:factions:resources",
+        "group:factions:external-relations",
+        "type:dynasty:political-order",
+        "type:dynasty:cultivator-policy",
+        "core:body"
+      ]
+    },
+    {
+      "id": "character",
+      "label": "蛊师人物",
+      "groupId": "characters",
+      "fields": [
+        {
+          "id": "portrait",
+          "label": "专属图标",
+          "type": "icon"
+        },
+        {
+          "id": "character-profile",
+          "label": "人物特质",
+          "type": "polygon",
+          "sides": 5,
+          "axes": [
+            "谋略",
+            "心性",
+            "战力",
+            "资源经营",
+            "运道"
+          ]
+        },
+        {
+          "id": "cause-thread",
+          "label": "因果与机缘",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:characters:background",
+        "group:characters:cultivation-realm",
+        "group:characters:motivation",
+        "type:character:portrait",
+        "type:character:character-profile",
+        "type:character:cause-thread",
+        "core:body"
+      ]
+    },
+    {
+      "id": "mortal",
+      "label": "凡人",
+      "groupId": "characters",
+      "fields": [
+        {
+          "id": "livelihood",
+          "label": "生计与技艺",
+          "type": "text"
+        },
+        {
+          "id": "view-of-cultivation",
+          "label": "对修行者的看法",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:characters:background",
+        "group:characters:cultivation-realm",
+        "group:characters:motivation",
+        "type:mortal:livelihood",
+        "type:mortal:view-of-cultivation",
+        "core:body"
+      ]
+    },
+    {
+      "id": "immortal",
+      "label": "蛊仙",
+      "groupId": "characters",
+      "fields": [
+        {
+          "id": "dao-title",
+          "label": "道号与称谓",
+          "type": "text"
+        },
+        {
+          "id": "domain",
+          "label": "道场与领域",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:characters:background",
+        "group:characters:cultivation-realm",
+        "group:characters:motivation",
+        "type:immortal:dao-title",
+        "type:immortal:domain",
+        "core:body"
+      ]
+    },
+    {
+      "id": "race",
+      "label": "族群",
+      "groupId": "races",
+      "fields": [
+        {
+          "id": "origin",
+          "label": "族源与迁徙",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:races:appearance",
+        "group:races:life-cycle",
+        "group:races:customs",
+        "type:race:origin",
+        "core:body"
+      ]
+    },
+    {
+      "id": "human",
+      "label": "人族",
+      "groupId": "races",
+      "fields": [
+        {
+          "id": "cultivation-path",
+          "label": "修行传统",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:races:appearance",
+        "group:races:life-cycle",
+        "group:races:customs",
+        "type:human:cultivation-path",
+        "core:body"
+      ]
+    },
+    {
+      "id": "yao",
+      "label": "异人族群",
+      "groupId": "races",
+      "fields": [
+        {
+          "id": "transformation",
+          "label": "化形规则",
+          "type": "text"
+        },
+        {
+          "id": "tribe-structure",
+          "label": "族群结构",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:races:appearance",
+        "group:races:life-cycle",
+        "group:races:customs",
+        "type:yao:transformation",
+        "type:yao:tribe-structure",
+        "core:body"
+      ]
+    },
+    {
+      "id": "spirit",
+      "label": "特殊生命",
+      "groupId": "races",
+      "fields": [
+        {
+          "id": "birth-method",
+          "label": "诞生方式",
+          "type": "text"
+        },
+        {
+          "id": "survival-condition",
+          "label": "依存条件",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:races:appearance",
+        "group:races:life-cycle",
+        "group:races:customs",
+        "type:spirit:birth-method",
+        "type:spirit:survival-condition",
+        "core:body"
+      ]
+    },
+    {
+      "id": "creature",
+      "label": "蛊兽与荒兽",
+      "groupId": "creatures",
+      "fields": [
+        {
+          "id": "bestiary-icon",
+          "label": "专属图标",
+          "type": "icon"
+        },
+        {
+          "id": "beast-rank",
+          "label": "品阶与成长",
+          "type": "text"
+        },
+        {
+          "id": "bonding",
+          "label": "驯养与契约",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:creatures:habitat",
+        "group:creatures:temperament",
+        "group:creatures:ecology",
+        "type:creature:bestiary-icon",
+        "type:creature:beast-rank",
+        "type:creature:bonding",
+        "core:body"
+      ]
+    },
+    {
+      "id": "deity",
+      "label": "蛊界尊者",
+      "groupId": "deities",
+      "fields": [
+        {
+          "id": "divine-icon",
+          "label": "专属图标",
+          "type": "icon"
+        },
+        {
+          "id": "incarnation",
+          "label": "降世方式",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:deities:authority",
+        "group:deities:worship",
+        "group:deities:manifestation",
+        "type:deity:divine-icon",
+        "type:deity:incarnation",
+        "core:body"
+      ]
+    },
+    {
+      "id": "culture",
+      "label": "蛊界社会规则",
+      "groupId": "cultures",
+      "fields": [
+        {
+          "id": "sect-etiquette",
+          "label": "宗门礼法",
+          "type": "text"
+        },
+        {
+          "id": "mortal-practice",
+          "label": "凡俗习俗",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:cultures:rites",
+        "group:cultures:taboos",
+        "type:culture:sect-etiquette",
+        "type:culture:mortal-practice",
+        "core:body"
+      ]
+    },
+    {
+      "id": "rule",
+      "label": "天道与世界法则",
+      "groupId": "rules",
+      "fields": [
+        {
+          "id": "rule-consequence",
+          "label": "违背规则的后果",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:rules:scope",
+        "group:rules:trigger",
+        "group:rules:cost",
+        "group:rules:exceptions",
+        "type:rule:rule-consequence",
+        "core:body"
+      ]
+    },
+    {
+      "id": "cultivation-system",
+      "label": "蛊师修行体系",
+      "groupId": "rules",
+      "fields": [
+        {
+          "id": "cultivation-paths",
+          "label": "主要蛊道流派",
+          "type": "text"
+        },
+        {
+          "id": "system-profile",
+          "label": "体系特征",
+          "type": "polygon",
+          "sides": 5,
+          "axes": [
+            "元窍资质",
+            "蛊虫适配",
+            "资源需求",
+            "修行风险",
+            "成长上限"
+          ]
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:rules:scope",
+        "group:rules:trigger",
+        "group:rules:cost",
+        "group:rules:exceptions",
+        "type:cultivation-system:cultivation-paths",
+        "type:cultivation-system:system-profile",
+        "core:body"
+      ]
+    },
+    {
+      "id": "realm-system",
+      "label": "九转修为等级",
+      "groupId": "rules",
+      "fields": [
+        {
+          "id": "realm-sequence",
+          "label": "转数阶位",
+          "type": "text"
+        },
+        {
+          "id": "breakthrough-rule",
+          "label": "晋阶与升仙条件",
+          "type": "text"
+        },
+        {
+          "id": "failure-cost",
+          "label": "晋阶失败代价",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:rules:scope",
+        "group:rules:trigger",
+        "group:rules:cost",
+        "group:rules:exceptions",
+        "type:realm-system:realm-sequence",
+        "type:realm-system:breakthrough-rule",
+        "type:realm-system:failure-cost",
+        "core:body"
+      ]
+    },
+    {
+      "id": "tribulation",
+      "label": "天灾地劫",
+      "groupId": "rules",
+      "fields": [
+        {
+          "id": "tribulation-form",
+          "label": "灾劫类型与周期",
+          "type": "text"
+        },
+        {
+          "id": "mitigation",
+          "label": "应劫与化解方式",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:rules:scope",
+        "group:rules:trigger",
+        "group:rules:cost",
+        "group:rules:exceptions",
+        "type:tribulation:tribulation-form",
+        "type:tribulation:mitigation",
+        "core:body"
+      ]
+    },
+    {
+      "id": "item",
+      "label": "蛊材与关键物件",
+      "groupId": "items",
+      "fields": [
+        {
+          "id": "item-icon",
+          "label": "专属图标",
+          "type": "icon"
+        },
+        {
+          "id": "grade",
+          "label": "转数与品阶",
+          "type": "text"
+        },
+        {
+          "id": "attunement",
+          "label": "炼化与归属",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:items:source",
+        "group:items:reference-image",
+        "group:items:function",
+        "group:items:limits",
+        "type:item:item-icon",
+        "type:item:grade",
+        "type:item:attunement",
+        "core:body"
+      ]
+    },
+    {
+      "id": "technique",
+      "label": "杀招与流派传承",
+      "groupId": "items",
+      "fields": [
+        {
+          "id": "cultivation-limit",
+          "label": "施展条件",
+          "type": "text"
+        },
+        {
+          "id": "counter-method",
+          "label": "克制与反制",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:items:source",
+        "group:items:reference-image",
+        "group:items:function",
+        "group:items:limits",
+        "type:technique:cultivation-limit",
+        "type:technique:counter-method",
+        "core:body"
+      ]
+    },
+    {
+      "id": "pill",
+      "label": "蛊方与炼制方法",
+      "groupId": "items",
+      "fields": [
+        {
+          "id": "ingredients",
+          "label": "主材与辅料",
+          "type": "text"
+        },
+        {
+          "id": "side-effects",
+          "label": "药性与副作用",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:items:source",
+        "group:items:reference-image",
+        "group:items:function",
+        "group:items:limits",
+        "type:pill:ingredients",
+        "type:pill:side-effects",
+        "core:body"
+      ]
+    },
+    {
+      "id": "material",
+      "label": "蛊材与资源",
+      "groupId": "items",
+      "fields": [
+        {
+          "id": "harvest-method",
+          "label": "获取方式",
+          "type": "text"
+        },
+        {
+          "id": "refining-use",
+          "label": "炼蛊用途",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:items:source",
+        "group:items:reference-image",
+        "group:items:function",
+        "group:items:limits",
+        "type:material:harvest-method",
+        "type:material:refining-use",
+        "core:body"
+      ]
+    },
+    {
+      "id": "quest",
+      "label": "历史事件与争夺",
+      "groupId": "quests",
+      "fields": [
+        {
+          "id": "key-choice",
+          "label": "关键抉择",
+          "type": "text"
+        },
+        {
+          "id": "long-term-impact",
+          "label": "长远影响",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:quests:quest-trigger",
+        "group:quests:stakes",
+        "group:quests:outcome",
+        "type:quest:key-choice",
+        "type:quest:long-term-impact",
+        "core:body"
+      ]
+    },
+    {
+      "id": "note",
+      "label": "原作线索与剧透",
+      "groupId": "notes",
+      "fields": [
+        {
+          "id": "reveal-condition",
+          "label": "揭示条件",
+          "type": "text"
+        },
+        {
+          "id": "related-clues",
+          "label": "关联线索",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:notes:source",
+        "group:notes:open-questions",
+        "group:notes:reveal-stage",
+        "type:note:reveal-condition",
+        "type:note:related-clues",
+        "core:body"
+      ]
+    },
+    {
+      "id": "other",
+      "label": "待归类",
+      "groupId": "miscellaneous",
+      "fields": [],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "core:body"
+      ]
+    },
+    {
+      "id": "gu-worm",
+      "label": "蛊虫",
+      "groupId": "items",
+      "fields": [
+        {
+          "id": "path",
+          "label": "所属流派",
+          "type": "text"
+        },
+        {
+          "id": "rank",
+          "label": "转数与品阶",
+          "type": "text"
+        },
+        {
+          "id": "feeding",
+          "label": "食料与维护",
+          "type": "text"
+        },
+        {
+          "id": "refining",
+          "label": "炼化与催动",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:items:source",
+        "group:items:reference-image",
+        "group:items:function",
+        "group:items:limits",
+        "type:gu-worm:path",
+        "type:gu-worm:rank",
+        "type:gu-worm:feeding",
+        "type:gu-worm:refining",
+        "core:body"
+      ]
+    },
+    {
+      "id": "immortal-gu",
+      "label": "仙蛊",
+      "groupId": "items",
+      "fields": [
+        {
+          "id": "path",
+          "label": "所属流派",
+          "type": "text"
+        },
+        {
+          "id": "rank",
+          "label": "转数与品阶",
+          "type": "text"
+        },
+        {
+          "id": "feeding",
+          "label": "食料与维护",
+          "type": "text"
+        },
+        {
+          "id": "uniqueness",
+          "label": "唯一性与炼化",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:items:source",
+        "group:items:reference-image",
+        "group:items:function",
+        "group:items:limits",
+        "type:immortal-gu:path",
+        "type:immortal-gu:rank",
+        "type:immortal-gu:feeding",
+        "type:immortal-gu:uniqueness",
+        "core:body"
+      ]
+    },
+    {
+      "id": "gu-house",
+      "label": "仙蛊屋",
+      "groupId": "items",
+      "fields": [
+        {
+          "id": "composition",
+          "label": "蛊虫构成",
+          "type": "text"
+        },
+        {
+          "id": "operation",
+          "label": "操控与消耗",
+          "type": "text"
+        },
+        {
+          "id": "battle-role",
+          "label": "战斗与用途",
+          "type": "text"
+        },
+        {
+          "id": "weakness",
+          "label": "弱点与限制",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:items:source",
+        "group:items:reference-image",
+        "group:items:function",
+        "group:items:limits",
+        "type:gu-house:composition",
+        "type:gu-house:operation",
+        "type:gu-house:battle-role",
+        "type:gu-house:weakness",
+        "core:body"
+      ]
+    }
+  ],
+  "entries": [
+    {
+      "id": "entry-gu-world",
+      "name": "蛊界",
+      "type": "world",
+      "parentId": "",
+      "status": "canon",
+      "summary": "蛊师以元窍、真元和蛊虫修行；蛊仙经营仙窍，诸方势力在五域争夺资源与天道主动权。",
+      "body": "世界结构：五域（中洲、北原、南疆、西漠、东海）与上方的黑天、白天构成主要活动空间。各地地貌、资源、势力组织与生存方式不同。\n\n修行核心：蛊师以元窍承载真元，通过炼化、喂养和催动蛊虫获得能力；成为蛊仙后，修行还涉及仙窍经营、道痕和天灾地劫。\n\n权力格局：家族、宗门、部族、超级势力与蛊仙共同构成资源网络。正道、魔道和散修是组织立场，结盟常受利益影响。\n\n主线冲突：个人追求、尊者布局、天意与宿命秩序相互牵制。此档案覆盖全书核心机制及后期重大变化。",
+      "customFields": {
+        "group:geography:geo-setting": "五域与黑天、白天构成主要地理空间；地貌、资源、道痕和势力结构存在地域差异。",
+        "type:world:cosmology": "蛊虫承载天地规则的不同表现；蛊师以元窍、真元和蛊虫修行，蛊仙经营仙窍并累积道痕。",
+        "type:world:celestial-order": "天意与宿命蛊曾共同维持世界秩序；宿命蛊被毁后，既定命运的约束发生根本变化，但天意仍参与影响世界。"
+      },
+      "tags": [
+        "原作设定归纳",
+        "含剧透",
+        "世界基底"
+      ],
+      "aliases": [
+        "蛊界",
+        "《蛊真人》世界",
+        "大爱仙尊世界"
+      ]
+    },
+    {
+      "id": "entry-central-continent",
+      "name": "中洲",
+      "type": "region",
+      "parentId": "entry-gu-world",
+      "status": "canon",
+      "summary": "宗门体系发达、天庭影响深的中心区域；修行秩序集中，也是各方布局交汇之地。",
+      "body": "中洲以宗门传承和跨地域组织见长，天庭及其关联势力长期影响此地秩序。门派、资源点和人口分布相对密集，善于以组织体系动员蛊仙与凡人。五域冲突升级后，中洲的政治与军事布局会牵动全局。",
+      "customFields": {
+        "group:geography:geo-setting": "宗门、城镇和资源点密集，组织化程度高。",
+        "type:region:regional-features": "天庭与古老宗门影响深，传承完整，正道秩序集中。",
+        "type:region:key-routes": "以宗门辖地、城池和跨域通道连接资源与势力。"
+      },
+      "tags": [
+        "原作设定归纳",
+        "含剧透"
+      ],
+      "aliases": [
+        "中央大陆"
+      ]
+    },
+    {
+      "id": "entry-northern-plains",
+      "name": "北原",
+      "type": "region",
+      "parentId": "entry-gu-world",
+      "status": "canon",
+      "summary": "广阔草原与部族竞争构成鲜明格局，黄金家族和长生天是重要力量。",
+      "body": "北原地域辽阔、环境严酷，部族与家族联盟是重要社会组织。竞争往往围绕血脉传承、草原资源和强者地位展开，战争与联盟变化频繁。长生天及巨阳传承对北原局势具有深远影响。",
+      "customFields": {
+        "group:geography:geo-setting": "广阔草原为主，环境严酷，迁徙距离长。",
+        "type:region:regional-features": "部族、黄金家族与长生天共同塑造北原权力格局。",
+        "type:region:key-routes": "以草原迁徙路线、部族领地和资源点为主。"
+      },
+      "tags": [
+        "原作设定归纳",
+        "含剧透"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "entry-southern-border",
+      "name": "南疆",
+      "type": "region",
+      "parentId": "entry-gu-world",
+      "status": "canon",
+      "summary": "群山纵横、家族林立，险地与资源点分布复杂。",
+      "body": "南疆地形以山脉、峡谷和险地为主，大小家族长期盘踞各地，地域势力关系错综。自然环境限制交通，也让隐秘资源、传承和蛊材的争夺格外重要。方源早期经历与南疆的山地家族环境密切相关。",
+      "customFields": {
+        "group:geography:geo-setting": "山地、峡谷与险地众多，地域之间隔绝明显。",
+        "type:region:regional-features": "家族势力扎根各地，资源争夺常与地缘关系交织。",
+        "type:region:key-routes": "山道、峡谷和险地通路决定跨区往来。"
+      },
+      "tags": [
+        "原作设定归纳",
+        "含剧透"
+      ],
+      "aliases": [
+        "南方山域"
+      ]
+    },
+    {
+      "id": "entry-western-desert",
+      "name": "西漠",
+      "type": "region",
+      "parentId": "entry-gu-world",
+      "status": "canon",
+      "summary": "沙漠与绿洲构成主要生存环境，水源、商路和家族资源决定势力兴衰。",
+      "body": "西漠以干旱沙地和分散绿洲为主，生存与发展依赖水源、绿洲资源和商贸通道。家族、商队及地方强者围绕绿洲和蛊材往来，环境本身会放大远行与补给的代价。",
+      "customFields": {
+        "group:geography:geo-setting": "大面积沙漠包围绿洲，水源是重要生存资源。",
+        "type:region:regional-features": "绿洲、商队和家族网络支撑人口与资源流动。",
+        "type:region:key-routes": "商道沿绿洲串联，远行必须考虑补给与安全。"
+      },
+      "tags": [
+        "原作设定归纳",
+        "含剧透"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "entry-eastern-sea",
+      "name": "东海",
+      "type": "region",
+      "parentId": "entry-gu-world",
+      "status": "canon",
+      "summary": "海域与岛屿广阔，海兽、海产和岛链资源构成区域特色。",
+      "body": "东海由广阔海域、岛屿与海底环境组成，资源类型和交通方式与陆上四域不同。势力沿岛链、海域和资源点分布，航行、海兽威胁及对海上资源的控制会影响区域力量对比。",
+      "customFields": {
+        "group:geography:geo-setting": "岛屿、海域和海底环境构成主要地理单元。",
+        "type:region:regional-features": "海产、海兽与海域资源丰富，势力沿岛链分布。",
+        "type:region:key-routes": "航道连接岛屿和势力据点，受海况与海兽影响。"
+      },
+      "tags": [
+        "原作设定归纳",
+        "含剧透"
+      ],
+      "aliases": [
+        "东方海域"
+      ]
+    },
+    {
+      "id": "entry-two-heavens",
+      "name": "黑天与白天",
+      "type": "region",
+      "parentId": "entry-gu-world",
+      "status": "canon",
+      "summary": "位于五域上方的天域，环境危险并蕴含独特资源与古老生物。",
+      "body": "黑天与白天是五域上方的广阔天域，生态和环境规则不同于地面。蛊仙会为探索、避险或争夺资源进入其中，但强大生物、极端环境与复杂空间使长期活动代价很高。具体地貌和势力应按小说阶段继续细分。",
+      "customFields": {
+        "group:geography:geo-setting": "五域上方的两片天域，内部环境与地面差异显著。",
+        "type:region:regional-features": "存在危险生物、稀有资源与不稳定探索区域。",
+        "type:region:key-routes": "主要依赖蛊仙飞行、仙蛊和临时探索路线。"
+      },
+      "tags": [
+        "原作设定归纳",
+        "含剧透"
+      ],
+      "aliases": [
+        "两天",
+        "白天",
+        "黑天"
+      ]
+    },
+    {
+      "id": "entry-gu-cultivation",
+      "name": "蛊师修行根基",
+      "type": "cultivation-system",
+      "parentId": "",
+      "status": "canon",
+      "summary": "开窍后以元窍储存真元，借炼化与催动蛊虫获得能力，修行受资质、资源和流派影响。",
+      "body": "蛊师通过元窍承载真元，并把蛊虫作为攻防、侦察、移动、治疗和炼化等手段。蛊虫需要炼化、喂养与配合，单一蛊虫的能力和适用情境有限，蛊师需依据目标组合蛊虫与杀招。资质影响元海与成长起点，资源、传承、情报和实战判断同样重要。",
+      "customFields": {
+        "group:rules:scope": "适用于拥有元窍并修炼蛊道的生灵。",
+        "group:rules:trigger": "开窍后积累真元，炼化蛊虫并按条件催动。",
+        "group:rules:cost": "真元、蛊虫食料、蛊材、时间和传承均构成成本；炼蛊与战斗存在风险。",
+        "group:rules:exceptions": "蛊虫、流派与个体资质差异会改变具体修行路径。",
+        "type:cultivation-system:cultivation-paths": "常见流派包括时光、空间、智道、炼道、魂道、力道、运道、变化等。"
+      },
+      "tags": [
+        "原作设定归纳",
+        "含剧透"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "entry-rank-system",
+      "name": "九转修为等级",
+      "type": "realm-system",
+      "parentId": "",
+      "status": "canon",
+      "summary": "修行以一转至九转递进：一至五转为凡人蛊师，六至八转为蛊仙，九转对应尊者层级。",
+      "body": "每一转通常分初阶、中阶、高阶和巅峰。凡人蛊师以真元催动凡蛊，五转巅峰是升仙前的顶点；升仙后形成仙窍并使用仙元，修行规模与灾劫风险同步提高。六至八转蛊仙之间存在显著力量差距，九转尊者则掌握足以改变世界格局的力量。晋阶涉及资质、积累、天时、资源与灾劫，不能只靠单一条件完成。",
+      "customFields": {
+        "group:rules:scope": "用于描述蛊师与蛊仙的转数层级。",
+        "group:rules:trigger": "依靠资质、修行积累、资源及升仙条件实现晋阶。",
+        "group:rules:cost": "转数提高会扩大资源、仙元和灾劫压力。",
+        "group:rules:exceptions": "特殊传承、仙蛊和历史布局可能改变常规战力判断。",
+        "type:realm-system:realm-sequence": "一转至五转：凡人蛊师；六转至八转：蛊仙；九转：尊者。各转通常分初、中、高、巅峰。",
+        "type:realm-system:breakthrough-rule": "五转巅峰需完成升仙过程，形成仙窍；更高转数需要相应积累与突破条件。",
+        "type:realm-system:failure-cost": "失败可能造成元窍、仙窍、蛊虫、寿命或生命损失。"
+      },
+      "tags": [
+        "原作设定归纳",
+        "含剧透"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "entry-gu-worm",
+      "name": "蛊虫与炼蛊",
+      "type": "gu-worm",
+      "parentId": "",
+      "status": "canon",
+      "summary": "蛊虫是蛊师运用天地规则的主要媒介，须炼化、喂养并以真元催动。",
+      "body": "蛊虫具有特定能力、转数、食性和流派属性。蛊师通常先炼化蛊虫，再以真元催动；维持和使用蛊虫需要食料与资源，炼蛊则要求蛊材、蛊方、火候和运气。蛊虫可相互配合形成杀招，组合效果取决于流派、真元和使用者判断。本命蛊与蛊师联系紧密，损毁会带来严重后果。",
+      "customFields": {
+        "group:items:source": "自然生成、炼蛊所得、传承赠予或交易获得。",
+        "group:items:function": "承载特定能力，供蛊师炼化和催动；多蛊配合可形成杀招。",
+        "group:items:limits": "需满足转数、真元、喂养和炼化条件，使用与炼制均有代价。",
+        "type:gu-worm:path": "每只蛊虫对应特定能力与流派。",
+        "type:gu-worm:rank": "分转数与品阶，转数影响强度和使用要求。",
+        "type:gu-worm:feeding": "不同蛊虫需要特定食料与周期性维护。",
+        "type:gu-worm:refining": "需炼化认主后才能稳定催动；炼蛊通常依赖蛊方和蛊材。"
+      },
+      "tags": [
+        "原作设定归纳",
+        "含剧透"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "entry-immortal-gu",
+      "name": "仙蛊",
+      "type": "immortal-gu",
+      "parentId": "",
+      "status": "canon",
+      "summary": "仙蛊具有独特而强大的能力，通常唯一且极难炼化，是蛊仙争夺的核心资源。",
+      "body": "仙蛊位于蛊虫体系的高阶，往往对应清晰的天地规则和专属效用。每只仙蛊具有唯一性，争夺者不仅要获得蛊虫，还需处理已有意志、炼化条件、仙元消耗与喂养要求。仙蛊可以升转、组合或作为杀招核心，但其力量不能脱离使用者的修为、道痕和资源条件。",
+      "customFields": {
+        "group:items:source": "天地生成、传承遗留或蛊仙炼制。",
+        "group:items:function": "提供独特的高阶能力，常决定蛊仙的核心战术与经营方向。",
+        "group:items:limits": "炼化困难、喂养昂贵，催动需仙元并受流派与道痕影响。",
+        "type:immortal-gu:path": "每只仙蛊对应特定流派与天地规则。",
+        "type:immortal-gu:rank": "有转数差别，升转和催动均需付出相应代价。",
+        "type:immortal-gu:feeding": "需长期满足特定食料和维护条件。",
+        "type:immortal-gu:uniqueness": "同一只仙蛊在天地间唯一；争夺和炼化往往涉及原主意志。"
+      },
+      "tags": [
+        "原作设定归纳",
+        "含剧透"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "entry-paths-daomarks",
+      "name": "流派与道痕",
+      "type": "rule",
+      "parentId": "",
+      "status": "canon",
+      "summary": "流派代表对天地规则的不同运用，道痕会强化同类力量，也可能造成流派冲突。",
+      "body": "时光、空间、智道、炼道、魂道、力道、运道、变化等流派形成各自的蛊虫、杀招和传承体系。道痕是力量与天地规则相连的表现，蛊仙积累或利用道痕会影响招式威力、仙窍经营及跨流派配合。不同流派并非简单的战力排名，具体优势取决于环境、信息、资源与克制关系。",
+      "customFields": {
+        "group:rules:scope": "适用于蛊虫、杀招、蛊仙和天地资源的流派关联。",
+        "group:rules:trigger": "使用相关蛊虫、杀招或道痕时显现。",
+        "group:rules:cost": "修炼与配合需要对应传承、资源及道痕积累。",
+        "group:rules:exceptions": "复合杀招、特殊体质和仙蛊组合可能跨越常见克制。",
+        "type:rule:rule-consequence": "同流派道痕可增强效果；异流派力量可能冲突或互相抵消。"
+      },
+      "tags": [
+        "原作设定归纳",
+        "含剧透"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "entry-immortal-aperture",
+      "name": "仙窍、福地与洞天",
+      "type": "cave-heaven",
+      "parentId": "",
+      "status": "canon",
+      "summary": "蛊仙拥有体内仙窍，可经营资源、培育生灵并承受周期性的天灾地劫。",
+      "body": "升仙后形成的仙窍是蛊仙的内部世界，也是资源生产、道场经营和修为积累的重要基础。仙窍可发展为福地或洞天，内部时间流速、地貌、资源和生灵各有差异。仙窍成长会带来灾劫，蛊仙需经营资源、调整环境并准备应劫手段；仙窍与外界天地的关系也会影响其稳定和发展。",
+      "customFields": {
+        "group:geography:geo-setting": "蛊仙体内的独立空间，可发展出地貌、资源点与生态。",
+        "group:geography:spirit-veins": "仙材、资源点、生灵和道痕构成经营基础。",
+        "type:cave-heaven:time-flow": "内部时间流速因仙窍而异，并影响资源生长与灾劫节奏。",
+        "type:cave-heaven:stewardship": "需要持续经营资源与生态，并处理地灾、天劫和外界影响。"
+      },
+      "tags": [
+        "原作设定归纳",
+        "含剧透"
+      ],
+      "aliases": [
+        "福地",
+        "洞天"
+      ]
+    },
+    {
+      "id": "entry-heaven-will-fate",
+      "name": "天意与宿命蛊",
+      "type": "rule",
+      "parentId": "",
+      "status": "canon",
+      "summary": "天意影响世界运行，宿命蛊曾将众生纳入既定轨迹；两者是主线博弈的核心。",
+      "body": "宿命蛊是天庭维护既定命运秩序的重要依托，天意则作为世界秩序的一部分影响生灵、机缘与事件走向。两者相关但不能简单等同：宿命蛊有具体载体与控制者，天意则以更广泛的方式参与世界变化。围绕宿命蛊的争夺牵动多位尊者与五域势力，后期宿命蛊被毁，既定命运秩序发生根本变化，天意仍未消失。",
+      "customFields": {
+        "group:rules:scope": "影响蛊界生灵、历史事件与命运秩序。",
+        "group:rules:trigger": "通过宿命蛊、天意安排、机缘与势力布局显现。",
+        "group:rules:cost": "干涉天道和命运通常需要长期布局与巨大资源。",
+        "group:rules:exceptions": "历史尊者、重生者和特殊蛊虫能够改变部分既定轨迹。",
+        "type:rule:rule-consequence": "宿命蛊被毁后，旧有命运约束断裂，五域进入新的权力阶段。"
+      },
+      "tags": [
+        "原作设定归纳",
+        "含剧透",
+        "终局剧透"
+      ],
+      "aliases": [
+        "天意",
+        "宿命蛊"
+      ]
+    },
+    {
+      "id": "entry-heavenly-court",
+      "name": "天庭",
+      "type": "faction",
+      "parentId": "",
+      "status": "canon",
+      "summary": "以中洲为核心的人族古老正道势力，长期维护自身秩序与宿命体系。",
+      "body": "天庭拥有跨越多个时代的传承和蛊仙力量，是中洲及全世界格局中的核心超级势力之一。其理念强调秩序与人族正道，长期守护宿命蛊并影响各域政治。天庭的底蕴来自历史尊者、仙蛊屋、蛊仙成员与长期经营；其维护秩序的目标也会与个人自由和其他势力利益冲突。",
+      "customFields": {
+        "group:factions:power-level": "跨时代的顶级超级势力，影响中洲并参与五域大局。",
+        "group:factions:resources": "积累深厚的蛊仙、仙蛊屋、历史传承与组织网络。",
+        "group:factions:external-relations": "以正道秩序自居，与其他四域势力和命运反抗者长期博弈。",
+        "type:faction:dao-lineage": "以人族正道秩序与天庭传承为核心。",
+        "type:faction:discipline": "通过天庭体系、盟约和历史责任维系成员与势力。"
+      },
+      "tags": [
+        "原作设定归纳",
+        "含剧透"
+      ],
+      "aliases": [
+        "中洲天庭"
+      ]
+    },
+    {
+      "id": "entry-changsheng-tian",
+      "name": "长生天",
+      "type": "faction",
+      "parentId": "",
+      "status": "canon",
+      "summary": "与巨阳仙尊传承相关的北原顶级力量，联结黄金家族并争夺北原主导权。",
+      "body": "长生天是北原最重要的超凡势力之一，与巨阳仙尊的洞天及传承相连。其影响力深入黄金家族与各部族，能够通过大会、盟约和力量展示推动北原局势。长生天既继承巨阳的历史资源，也会按照自身利益介入五域纷争。",
+      "customFields": {
+        "group:factions:power-level": "北原顶级势力，能够影响部族与黄金家族格局。",
+        "group:factions:resources": "巨阳传承、洞天底蕴、蛊仙力量和北原部族网络。",
+        "group:factions:external-relations": "以北原利益与自身传承为重，参与五域势力竞逐。",
+        "type:faction:dao-lineage": "承接巨阳仙尊相关的运道传承与势力遗产。",
+        "type:faction:discipline": "以大会、盟约和部族关系组织北原力量。"
+      },
+      "tags": [
+        "原作设定归纳",
+        "含剧透"
+      ],
+      "aliases": [
+        "长生天庭"
+      ]
+    },
+    {
+      "id": "entry-path-society",
+      "name": "正道、魔道与散修",
+      "type": "culture",
+      "parentId": "",
+      "status": "canon",
+      "summary": "正道、魔道和散修是蛊界常见的组织身份与利益阵营，立场并不等同于绝对善恶。",
+      "body": "蛊师社会由家族、宗门、部族和超级势力构成，资源、传承和安全决定个人归属。正道以秩序、组织与规则自我描述，魔道常以个人力量和非传统组织生存，散修则缺乏稳定势力保护。阵营标签与实际行为并非一一对应，盟友关系会随利益、威胁和信息变化。",
+      "customFields": {
+        "group:cultures:rites": "入门、拜师、盟约、交易和继承依各势力规矩而异。",
+        "group:cultures:taboos": "背叛盟约、泄露传承或掠夺资源常带来追杀与报复。",
+        "type:culture:sect-etiquette": "组织身份决定资源分配、责任和可调用的力量。",
+        "type:culture:mortal-practice": "凡人受家族与蛊师秩序影响，修行资源多由强者控制。"
+      },
+      "tags": [
+        "原作设定归纳",
+        "含剧透"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "entry-human-variant",
+      "name": "人族与异人",
+      "type": "race",
+      "parentId": "",
+      "status": "canon",
+      "summary": "人族与多种异人族群并存，不同族群拥有各自的生态、能力传统与生存压力。",
+      "body": "蛊界以人族为主要政治力量，同时存在毛民、石人、雪民、墨人、羽民等异人族群。各族适应的环境、繁衍方式和文化传统不同，也发展出自身传承与势力。异人常受到人族强权压迫或利用，但并非单一阵营，其内部同样存在利益冲突和不同政治选择。",
+      "customFields": {
+        "group:races:appearance": "人族与各类异人在体貌和生理特征上不同。",
+        "group:races:life-cycle": "寿命、繁衍与生长规律因族群而异。",
+        "group:races:customs": "各族依据栖息地和传承形成独有社会组织。",
+        "type:race:origin": "族群历史与人祖传说、远古迁徙及世界变迁相互关联。"
+      },
+      "tags": [
+        "原作设定归纳",
+        "含剧透"
+      ],
+      "aliases": [
+        "异人",
+        "变异人族"
+      ]
+    },
+    {
+      "id": "entry-ten-venerables",
+      "name": "蛊界十尊",
+      "type": "deity",
+      "parentId": "",
+      "status": "canon",
+      "summary": "十位九转尊者分别塑造了不同历史时代、修行流派与世界秩序。",
+      "body": "蛊界历史以尊者时代为重要分期。十尊包括元始仙尊、星宿仙尊、元莲仙尊、巨阳仙尊、乐土仙尊，以及狂蛮魔尊、红莲魔尊、盗天魔尊、幽魂魔尊和后期的大爱仙尊方源。每位尊者的流派、传承、道场与长远布局都会影响后世。尊者名单便于定位人物关系；具体年代顺序及传承细节可按原作章节继续校订。",
+      "customFields": {
+        "group:deities:authority": "九转层级的最高强者，代表不同流派与时代。",
+        "group:deities:worship": "其传承、真传与势力遗产被后世持续争夺。",
+        "group:deities:manifestation": "影响通过传承、仙蛊、洞天、布局和历史记载延续。"
+      },
+      "tags": [
+        "原作设定归纳",
+        "含剧透",
+        "全书剧透"
+      ],
+      "aliases": [
+        "十位尊者",
+        "十尊"
+      ]
+    },
+    {
+      "id": "entry-fang-yuan",
+      "name": "方源",
+      "type": "character",
+      "parentId": "",
+      "status": "canon",
+      "summary": "借春秋蝉重返过去的蛊师，以追求永生为目标，擅长长期布局、伪装与利用规则。",
+      "body": "方源拥有前世经历与重生带来的信息优势，行动以目标和收益为核心，善于在不同阵营间隐藏意图、交换利益并承担短期代价换取长期机会。他不以传统善恶为决策尺度，而持续评估资源、风险和目标距离。后期方源登上九转尊者层级，并以大爱仙尊之名参与五域格局。",
+      "customFields": {
+        "group:characters:background": "前世经历漫长修行，借春秋蝉回到早期时间点。",
+        "group:characters:cultivation-realm": "主线后期达到九转尊者层级。",
+        "group:characters:motivation": "以追求永生和摆脱命运束缚为长期目标。",
+        "type:character:cause-thread": "重生信息、尊者布局、仙蛊与天意共同塑造其选择。"
+      },
+      "tags": [
+        "原作设定归纳",
+        "含剧透",
+        "终局剧透"
+      ],
+      "aliases": [
+        "古月方源",
+        "大爱仙尊"
+      ]
+    },
+    {
+      "id": "entry-spring-autumn-cicada",
+      "name": "春秋蝉",
+      "type": "immortal-gu",
+      "parentId": "",
+      "status": "canon",
+      "summary": "时光道仙蛊，是方源重返过去、开启主线的关键蛊虫。",
+      "body": "春秋蝉与时间长河相关，能够让使用者逆流回到过去，是极其罕见而危险的时间道仙蛊。方源以它改变自身时间起点，获得重新布局的机会；重启并非无代价，使用风险、修为状态和外部追杀都会影响后续生存。该蛊也使时间线、记忆与命运成为故事的重要机制。",
+      "customFields": {
+        "group:items:source": "时光道仙蛊。",
+        "group:items:function": "令使用者沿时间长河返回过去。",
+        "group:items:limits": "使用代价与风险极高，回归后仍需面对修为、资源和追杀问题。",
+        "type:immortal-gu:path": "时光道。",
+        "type:immortal-gu:rank": "仙蛊；方源早期使用时为六转。",
+        "type:immortal-gu:feeding": "具体喂养要求可按原作阶段补充。",
+        "type:immortal-gu:uniqueness": "稀有时光道仙蛊，炼化与催动条件特殊。"
+      },
+      "tags": [
+        "原作设定归纳",
+        "含剧透",
+        "主线剧透"
+      ],
+      "aliases": [
+        "重生蛊"
+      ]
+    },
+    {
+      "id": "entry-gu-house",
+      "name": "仙蛊屋",
+      "type": "gu-house",
+      "parentId": "",
+      "status": "canon",
+      "summary": "由多只蛊虫和杀招构成的组合型建筑或战斗工具，可承载防御、移动、攻击与组织力量。",
+      "body": "仙蛊屋把多种蛊虫、蛊方和杀招组织成可整体运作的系统，兼具据点、移动载具、战斗阵地和势力象征等用途。构建与维护需要仙蛊、蛊材、操控者及持续资源；结构设计和核心蛊虫决定其战术特点。不同仙蛊屋之间的较量还涉及信息、阵法和使用者修为。",
+      "customFields": {
+        "group:items:source": "由蛊仙运用蛊虫、蛊方和杀招构建。",
+        "group:items:function": "集结防御、攻击、移动和指挥等能力。",
+        "group:items:limits": "构建维护昂贵，核心蛊虫受损会削弱整体功能。",
+        "type:gu-house:composition": "多只蛊虫、仙蛊、蛊方和杀招构成系统。",
+        "type:gu-house:operation": "依操控者、真元或仙元及核心蛊虫维持运作。",
+        "type:gu-house:battle-role": "可作为据点、载具、战斗平台和势力象征。",
+        "type:gu-house:weakness": "资源成本高，结构与核心蛊虫可能被针对。"
+      },
+      "tags": [
+        "原作设定归纳",
+        "含剧透"
+      ],
+      "aliases": [
+        "蛊屋"
+      ]
+    },
+    {
+      "id": "entry-resource-economy",
+      "name": "资源、交易与传承",
+      "type": "material",
+      "parentId": "",
+      "status": "canon",
+      "summary": "原石、仙元石、蛊材、资源点与真传共同构成蛊师社会的经济基础。",
+      "body": "凡人蛊师依赖元石、蛊虫和蛊材，蛊仙则要积累仙元、仙材及仙窍资源。资源可通过经营、采集、交易、争夺和继承获得；拍卖、盟约、真传与洞天福地会改变资源流向。情报本身具有价值，知道资源位置或蛊方条件往往能改变势力间的力量平衡。",
+      "customFields": {
+        "group:items:source": "自然资源、仙窍产出、交易、传承或战利品。",
+        "group:items:function": "支持修炼、炼蛊、喂养蛊虫、经营仙窍和结盟交易。",
+        "group:items:limits": "资源稀缺且分布不均，获取成本受地理、势力和信息控制。",
+        "type:material:harvest-method": "经营仙窍、采集资源点、交易或争夺。",
+        "type:material:refining-use": "用于炼蛊、喂养、催动与仙窍经营。"
+      },
+      "tags": [
+        "原作设定归纳",
+        "含剧透"
+      ],
+      "aliases": [
+        "元石",
+        "仙元石",
+        "仙材"
+      ]
+    },
+    {
+      "id": "entry-fate-war",
+      "name": "宿命之战",
+      "type": "quest",
+      "parentId": "",
+      "status": "canon",
+      "summary": "围绕宿命蛊的决定性大战导致其被毁，旧有命运秩序随之崩解。",
+      "body": "宿命蛊长期支撑天庭维护既定秩序，多位尊者与五域势力为其展开跨时代布局。宿命之战将天庭、方源及其他势力推至正面冲突，最终宿命蛊被毁，蛊界进入无法再由旧有命运轨迹完全约束的新阶段。此事件影响后续势力重组、尊者行动和天意博弈，具体战斗过程属于重大剧透。",
+      "customFields": {
+        "group:quests:quest-trigger": "各方围绕宿命蛊的控制权和命运秩序展开最终争夺。",
+        "group:quests:stakes": "宿命蛊关系旧秩序能否维持及众生命运是否受既定轨迹约束。",
+        "group:quests:outcome": "宿命蛊被毁，天庭秩序受挫，五域格局与个体命运发生变化。",
+        "type:quest:key-choice": "个人自由、世界秩序和势力利益之间的取舍。",
+        "type:quest:long-term-impact": "开启尊者重现和五域乱战的新历史阶段。"
+      },
+      "tags": [
+        "原作设定归纳",
+        "含剧透",
+        "终局剧透"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "entry-ren-zu-legend",
+      "name": "人祖传说",
+      "type": "note",
+      "parentId": "",
+      "status": "canon",
+      "summary": "人祖传说是蛊界重要神话文本，以寓言呈现人性、困境与规则线索。",
+      "body": "人祖传说围绕人祖及其经历展开，反复出现欲望、恐惧、希望、智慧、力量和生存选择等母题。它既构成蛊界的文化记忆，也以寓言方式关联某些蛊虫、天地规则和历史谜题。阅读时应区分象征叙述与可直接验证的世界事实，避免把每则寓言当作逐字纪实。",
+      "customFields": {
+        "group:notes:source": "小说中的古老传说与重要文化文本。",
+        "group:notes:open-questions": "寓言中的人物、蛊虫与天地规则分别对应哪些真实历史？",
+        "group:notes:reveal-stage": "贯穿全书，多处含有后期才揭示的隐喻线索。"
+      },
+      "tags": [
+        "原作设定归纳",
+        "含剧透"
+      ],
+      "aliases": [
+        "人祖传",
+        "人祖故事"
+      ]
+    },
+    {
+      "id": "entry-tribulations",
+      "name": "天灾地劫",
+      "type": "tribulation",
+      "parentId": "",
+      "status": "canon",
+      "summary": "蛊仙仙窍成长伴随周期性灾劫，既是威胁，也是资源与修为变化的关口。",
+      "body": "蛊仙升仙后需面对仙窍灾劫，灾劫强度与仙窍、修为和天地变化相关。应劫需要战力、蛊虫、资源、情报与准备；失败可能损伤仙窍、资源甚至性命。不同流派和仙窍经营方式会影响应劫策略，灾劫也可能改变周边地貌和势力关系。",
+      "customFields": {
+        "group:rules:scope": "主要影响拥有仙窍的蛊仙及其仙窍生态。",
+        "group:rules:trigger": "仙窍成长与周期性天地变化引发灾劫。",
+        "group:rules:cost": "需要资源、战力、蛊虫与准备，失败会造成重大损失。",
+        "group:rules:exceptions": "特殊仙窍、流派和外力干预会改变灾劫形式与结果。",
+        "type:tribulation:tribulation-form": "天灾、地劫及更高层级的劫数。",
+        "type:tribulation:mitigation": "经营仙窍、备战、借助蛊虫杀招和外部盟友应劫。"
+      },
+      "tags": [
+        "原作设定归纳",
+        "含剧透"
+      ],
+      "aliases": [
+        "仙窍灾劫",
+        "天劫地灾"
+      ]
+    },
+    {
+      "id": "fang-zheng",
+      "name": "方正",
+      "type": "character",
+      "parentId": "",
+      "status": "draft",
+      "iconId": "",
+      "iconSvg": "",
+      "customFields": {},
+      "summary": "方源的双胞胎弟弟，与兄长走向相反的修行道路。",
+      "body": "两人因资质、家族选择和旧怨逐渐分道扬镳；重生后的方源与方正仍被亲缘和阵营选择推向对立。",
+      "tags": [
+        "人物",
+        "主线剧透"
+      ]
+    },
+    {
+      "id": "bai-ning-bing",
+      "name": "白凝冰",
+      "type": "character",
+      "parentId": "",
+      "status": "draft",
+      "iconId": "",
+      "iconSvg": "",
+      "customFields": {},
+      "summary": "北冥冰魄体出身，从方源的同行者发展为立场复杂的竞争者。",
+      "body": "早期与方源结伴，以利益和实力为基础合作；随目标与身份改变，双方关系多次转向。",
+      "tags": [
+        "人物",
+        "主线剧透"
+      ]
+    },
+    {
+      "id": "hei-lou-lan",
+      "name": "黑楼兰",
+      "type": "immortal",
+      "parentId": "",
+      "status": "draft",
+      "iconId": "",
+      "iconSvg": "",
+      "customFields": {},
+      "summary": "北原黑家相关人物，性格强硬、目标鲜明，曾与方源结成利益合作。",
+      "body": "她与方源彼此借力而各有盘算，之后卷入仙窍、影宗和梦境相关局势。",
+      "tags": [
+        "人物",
+        "北原线"
+      ]
+    },
+    {
+      "id": "tai-bai-yun-sheng",
+      "name": "太白云生",
+      "type": "immortal",
+      "parentId": "",
+      "status": "draft",
+      "iconId": "",
+      "iconSvg": "",
+      "customFields": {},
+      "summary": "心性仁厚的蛊仙，掌握时光道手段，与方源形成互惠合作。",
+      "body": "方源促成双方合作；太白云生在仙窍经营与北原局势中发挥作用，两人关系受方源真实目的影响。",
+      "tags": [
+        "人物",
+        "北原线"
+      ]
+    },
+    {
+      "id": "shang-xin-ci",
+      "name": "商心慈",
+      "type": "character",
+      "parentId": "",
+      "status": "draft",
+      "iconId": "",
+      "iconSvg": "",
+      "customFields": {},
+      "summary": "商家城结识的商家重要人物，以识人、经营和仁厚立场形成领导风格。",
+      "body": "方源早期曾帮助商心慈；她凭判断和用人能力成长，逐步进入南疆权力格局。",
+      "tags": [
+        "人物",
+        "商家城线"
+      ]
+    },
+    {
+      "id": "tie-ruo-nan",
+      "name": "铁若男",
+      "type": "character",
+      "parentId": "",
+      "status": "draft",
+      "iconId": "",
+      "iconSvg": "",
+      "customFields": {},
+      "summary": "铁家执法力量中的年轻蛊师，代表调查、追责与秩序视角。",
+      "body": "她以查明事实为原则，与方源的隐匿和利益计算形成对照；青茅山旧案使两人道路交错。",
+      "tags": [
+        "人物",
+        "早期主线"
+      ]
+    },
+    {
+      "id": "ma-hong-yun",
+      "name": "马鸿运",
+      "type": "character",
+      "parentId": "",
+      "status": "draft",
+      "iconId": "",
+      "iconSvg": "",
+      "customFields": {},
+      "summary": "北原运道争夺中心人物之一，因强运和相关仙蛊引发多方争夺。",
+      "body": "他的运势变化牵动黑家、长生天及多名蛊仙，影响北原权力更替。",
+      "tags": [
+        "人物",
+        "北原线"
+      ]
+    },
+    {
+      "id": "zhao-lian-yun",
+      "name": "赵怜云",
+      "type": "immortal",
+      "parentId": "",
+      "status": "draft",
+      "iconId": "",
+      "iconSvg": "",
+      "customFields": {},
+      "summary": "与马鸿运命运相连的中洲人物，后与爱情蛊及天庭阵营发生关联。",
+      "body": "她因与马鸿运的关系卷入跨域争夺；爱情蛊具有自主性与特殊代价，使私人情感和天庭目标交织。",
+      "tags": [
+        "人物",
+        "中洲线"
+      ]
+    },
+    {
+      "id": "ying-wu-xie",
+      "name": "影无邪",
+      "type": "immortal",
+      "parentId": "",
+      "status": "draft",
+      "iconId": "",
+      "iconSvg": "",
+      "customFields": {},
+      "summary": "影宗重要分魂与行动者，掌握梦境手段，是方源在影宗线中的关键对手。",
+      "body": "他承接幽魂魔尊及影宗部分计划，在身份、魂魄和梦境力量交错的局势中行动。",
+      "tags": [
+        "人物",
+        "影宗线"
+      ]
+    },
+    {
+      "id": "feng-jiu-ge",
+      "name": "凤九歌",
+      "type": "immortal",
+      "parentId": "",
+      "status": "draft",
+      "iconId": "",
+      "iconSvg": "",
+      "customFields": {},
+      "summary": "中洲正道强者，音道造诣卓越，其命运歌与宿命之战转折相关。",
+      "body": "凤九歌受天庭和灵缘斋体系影响，同时保留个人判断；后期选择改变战局。",
+      "tags": [
+        "人物",
+        "中洲线"
+      ]
+    },
+    {
+      "id": "feng-jin-huang",
+      "name": "凤金煌",
+      "type": "character",
+      "parentId": "",
+      "status": "draft",
+      "iconId": "",
+      "iconSvg": "",
+      "customFields": {},
+      "summary": "凤九歌之女，梦道天赋突出，被视为大梦仙尊预言的重要候选者。",
+      "body": "她的资质影响中洲对梦道的培养布局；预言身份并不意味着她必然决定所有后续走向。",
+      "tags": [
+        "人物",
+        "梦境线"
+      ]
+    },
+    {
+      "id": "fairy-zi-wei",
+      "name": "紫薇仙子",
+      "type": "immortal",
+      "parentId": "",
+      "status": "draft",
+      "iconId": "",
+      "iconSvg": "",
+      "customFields": {},
+      "summary": "智道蛊仙与天庭核心谋划者，长期负责推演和追踪方源。",
+      "body": "她统筹天庭情报、传承和对敌计划，与星宿布局及方源的反追踪形成智谋较量。",
+      "tags": [
+        "人物",
+        "天庭线"
+      ]
+    },
+    {
+      "id": "duke-long",
+      "name": "龙公",
+      "type": "immortal",
+      "parentId": "",
+      "status": "draft",
+      "iconId": "",
+      "iconSvg": "",
+      "customFields": {},
+      "summary": "天庭古老强者与龙人先祖之一，与红莲魔尊的师徒关系牵连宿命之战。",
+      "body": "龙公守护天庭秩序，在红莲成长和反抗命运的过程中既是师长也是对手。",
+      "tags": [
+        "人物",
+        "历史剧透"
+      ]
+    },
+    {
+      "id": "wu-yong",
+      "name": "武庸",
+      "type": "immortal",
+      "parentId": "",
+      "status": "draft",
+      "iconId": "",
+      "iconSvg": "",
+      "customFields": {},
+      "summary": "南疆武家领袖，善于权衡、隐忍和组织力量。",
+      "body": "武庸以家族利益和南疆局势为核心布局；他与方源既对抗，也可能因利益短暂交易。",
+      "tags": [
+        "人物",
+        "南疆线"
+      ]
+    },
+    {
+      "id": "purple-mountain-true-monarch",
+      "name": "紫山真君",
+      "type": "immortal",
+      "parentId": "",
+      "status": "draft",
+      "iconId": "",
+      "iconSvg": "",
+      "customFields": {},
+      "summary": "影宗智道领袖之一，推动影宗在南疆与五域的长期行动。",
+      "body": "他以推演、传承和组织手段维系影宗残部，是理解义天山与主宰仙胎计划的重要人物。",
+      "tags": [
+        "人物",
+        "影宗线"
+      ]
+    },
+    {
+      "id": "lang-ya-land-spirit",
+      "name": "琅琊地灵",
+      "type": "spirit",
+      "parentId": "",
+      "status": "draft",
+      "iconId": "",
+      "iconSvg": "",
+      "customFields": {},
+      "summary": "琅琊福地地灵，承接长毛老祖留下的炼道资源与毛民势力。",
+      "body": "方源加入琅琊派后与地灵长期交易合作，双方围绕门派资源、福地安全和外部威胁调整关系。",
+      "tags": [
+        "人物",
+        "琅琊线"
+      ]
+    },
+    {
+      "id": "venerable-primordial-origin",
+      "name": "元始仙尊",
+      "type": "deity",
+      "parentId": "",
+      "status": "draft",
+      "iconId": "",
+      "iconSvg": "",
+      "customFields": {},
+      "summary": "远古人族尊者与天庭奠基者之一，传承与中洲秩序相连。",
+      "body": "元始仙尊的遗产成为天庭建立和人族秩序的重要基础。",
+      "tags": [
+        "十尊",
+        "人族历史"
+      ]
+    },
+    {
+      "id": "venerable-star-constellation",
+      "name": "星宿仙尊",
+      "type": "deity",
+      "parentId": "",
+      "status": "draft",
+      "iconId": "",
+      "iconSvg": "",
+      "customFields": {},
+      "summary": "智道尊者与天庭历史核心人物，长期布局维护天庭和人族秩序。",
+      "body": "其意志与传承延续到后世天庭决策，并与宿命蛊的守护策略相连。",
+      "tags": [
+        "十尊",
+        "天庭"
+      ]
+    },
+    {
+      "id": "venerable-genesis-lotus",
+      "name": "元莲仙尊",
+      "type": "deity",
+      "parentId": "",
+      "status": "draft",
+      "iconId": "",
+      "iconSvg": "",
+      "customFields": {},
+      "summary": "十尊之一，木道传承及遗留布置影响中洲与后世蛊仙。",
+      "body": "其遗产以仙蛊、洞天、道场和历史布局等形式延续。",
+      "tags": [
+        "十尊",
+        "中洲历史"
+      ]
+    },
+    {
+      "id": "venerable-reckless-savage",
+      "name": "狂蛮魔尊",
+      "type": "deity",
+      "parentId": "",
+      "status": "draft",
+      "iconId": "",
+      "iconSvg": "",
+      "customFields": {},
+      "summary": "十尊中的魔尊，以强悍体魄、变化和不拘常规的风格留下传承。",
+      "body": "其传承与遗迹以考验、资源和独特生存方式影响后世。",
+      "tags": [
+        "十尊",
+        "魔尊传承"
+      ]
+    },
+    {
+      "id": "venerable-thieving-heaven",
+      "name": "盗天魔尊",
+      "type": "deity",
+      "parentId": "",
+      "status": "draft",
+      "iconId": "",
+      "iconSvg": "",
+      "customFields": {},
+      "summary": "出身异界的尊者，以空间道与盗道手段著称，寻找离开蛊界的途径。",
+      "body": "他的经历将异界来客、空间能力和故乡执念带入蛊界历史。",
+      "tags": [
+        "十尊",
+        "异界来客"
+      ]
+    },
+    {
+      "id": "venerable-giant-sun",
+      "name": "巨阳仙尊",
+      "type": "deity",
+      "parentId": "",
+      "status": "draft",
+      "iconId": "",
+      "iconSvg": "",
+      "customFields": {},
+      "summary": "运道尊者，北原黄金家族及长生天历史的重要源头。",
+      "body": "巨阳的血脉、传承和气运布局影响北原权力格局，运道争夺贯穿王庭时期与后期对局。",
+      "tags": [
+        "十尊",
+        "北原历史"
+      ]
+    },
+    {
+      "id": "venerable-red-lotus",
+      "name": "红莲魔尊",
+      "type": "deity",
+      "parentId": "",
+      "status": "draft",
+      "iconId": "",
+      "iconSvg": "",
+      "customFields": {},
+      "summary": "时光道尊者，试图改变亲友命运并干预宿命蛊秩序。",
+      "body": "与龙公的师徒关系、亲友命运和时间道布局构成其反抗命运的动机；传承是宿命之战幕后力量。",
+      "tags": [
+        "十尊",
+        "时光道"
+      ]
+    },
+    {
+      "id": "venerable-spectral-soul",
+      "name": "幽魂魔尊",
+      "type": "deity",
+      "parentId": "",
+      "status": "draft",
+      "iconId": "",
+      "iconSvg": "",
+      "customFields": {},
+      "summary": "魂道尊者与影宗计划源头之一，长线布局牵涉主宰仙胎蛊。",
+      "body": "其分魂、影宗及义天山计划跨越多个时代，帮助方源取得新躯体，也成为之后争夺的威胁源头。",
+      "tags": [
+        "十尊",
+        "影宗线"
+      ]
+    },
+    {
+      "id": "venerable-paradise-earth",
+      "name": "乐土仙尊",
+      "type": "deity",
+      "parentId": "",
+      "status": "draft",
+      "iconId": "",
+      "iconSvg": "",
+      "customFields": {},
+      "summary": "十尊之一，留下影响异人、人族关系与后期五域格局的传承。",
+      "body": "其遗产与洞天、地道及族群关系有关，后世围绕传承和意图展开争夺。",
+      "tags": [
+        "十尊",
+        "后期剧透"
+      ]
+    },
+    {
+      "id": "shadow-sect",
+      "name": "影宗",
+      "type": "organization",
+      "parentId": "",
+      "status": "draft",
+      "iconId": "",
+      "iconSvg": "",
+      "customFields": {},
+      "summary": "幽魂魔尊长期布局形成的隐秘组织，主宰仙胎与义天山计划的核心势力。",
+      "body": "影宗以分魂和追随者跨时代积累力量，涉及真传、梦境和秘密据点；残部仍持续影响五域。",
+      "tags": [
+        "组织",
+        "魔道"
+      ]
+    },
+    {
+      "id": "lang-ya-sect",
+      "name": "琅琊派",
+      "type": "organization",
+      "parentId": "",
+      "status": "draft",
+      "iconId": "",
+      "iconSvg": "",
+      "customFields": {},
+      "summary": "以琅琊福地毛民势力为基础的门派，炼道传承和方源合作关系重要。",
+      "body": "门派继承长毛老祖积累；方源加入后利用资源情报，也为其带来外部冲突。",
+      "tags": [
+        "组织",
+        "毛民"
+      ]
+    },
+    {
+      "id": "zombie-alliance",
+      "name": "僵盟",
+      "type": "organization",
+      "parentId": "",
+      "status": "draft",
+      "iconId": "",
+      "iconSvg": "",
+      "customFields": {},
+      "summary": "各域僵尸蛊仙为资源、身份和自保结成的联盟，方源曾利用其网络。",
+      "body": "僵盟依地域分部运作，拥有资源与情报渠道，内部利益并不统一，影宗也曾利用其体系。",
+      "tags": [
+        "组织",
+        "蛊仙势力"
+      ]
+    },
+    {
+      "id": "great-love-alliance",
+      "name": "大爱联盟",
+      "type": "organization",
+      "parentId": "",
+      "status": "draft",
+      "iconId": "",
+      "iconSvg": "",
+      "customFields": {},
+      "summary": "宿命蛊毁灭后方源以大爱仙尊名义建立的跨域交易与势力网络。",
+      "body": "联盟以交易和合作扩大方源影响力，将五域势力纳入变化的利益关系，也成为其他尊者的战略竞争者。",
+      "tags": [
+        "组织",
+        "后期剧透"
+      ]
+    },
+    {
+      "id": "immortal-crane-sect",
+      "name": "仙鹤门",
+      "type": "faction",
+      "parentId": "",
+      "status": "draft",
+      "iconId": "",
+      "iconSvg": "",
+      "customFields": {},
+      "summary": "中洲古派之一，曾围绕狐仙福地和荡魂山与方源发生利益冲突。",
+      "body": "仙鹤门拥有宗门资源与蛊仙力量；福地争夺使其与方源长期对立。",
+      "tags": [
+        "势力",
+        "中洲"
+      ]
+    },
+    {
+      "id": "fate-gu",
+      "name": "宿命蛊",
+      "type": "immortal-gu",
+      "parentId": "",
+      "status": "draft",
+      "iconId": "",
+      "iconSvg": "",
+      "customFields": {},
+      "summary": "天庭守护的九转仙蛊，曾支撑既定命运秩序，最终在宿命之战中被毁。",
+      "body": "宿命蛊是天庭维护固定命运轨迹的重要载体，与天意并非同一概念；被毁后旧约束断裂，天意仍存在。",
+      "tags": [
+        "仙蛊",
+        "终局剧透"
+      ]
+    },
+    {
+      "id": "wisdom-gu",
+      "name": "智慧蛊",
+      "type": "immortal-gu",
+      "parentId": "",
+      "status": "draft",
+      "iconId": "",
+      "iconSvg": "",
+      "customFields": {},
+      "summary": "九转智道仙蛊，可引发强大智慧灵感；方源曾借其力量修行和谋划。",
+      "body": "使用条件特殊且需付出代价，并非全知工具；持有者仍须理解信息、执行计划并承担风险。",
+      "tags": [
+        "仙蛊",
+        "智道"
+      ]
+    },
+    {
+      "id": "fixed-immortal-travel-gu",
+      "name": "定仙游",
+      "type": "immortal-gu",
+      "parentId": "",
+      "status": "draft",
+      "iconId": "",
+      "iconSvg": "",
+      "customFields": {},
+      "summary": "空间道仙蛊，可在满足条件时远距离移动，是跨域行动的重要手段。",
+      "body": "定仙游改变移动方式，但受炼化、催动成本、坐标情报与战斗环境限制，并非无条件脱身。",
+      "tags": [
+        "仙蛊",
+        "空间道"
+      ]
+    },
+    {
+      "id": "sovereign-immortal-fetus-gu",
+      "name": "主宰仙胎蛊",
+      "type": "immortal-gu",
+      "parentId": "",
+      "status": "draft",
+      "iconId": "",
+      "iconSvg": "",
+      "customFields": {},
+      "summary": "影宗长期炼制的特殊仙蛊，可塑造兼容多流派道痕的主宰仙窍。",
+      "body": "方源在义天山局势中取得并使用后获得新躯体；高潜力也令其成为各方争夺目标。",
+      "tags": [
+        "仙蛊",
+        "重大剧透"
+      ]
+    },
+    {
+      "id": "fortune-rivaling-heaven-gu",
+      "name": "运气胜天蛊",
+      "type": "immortal-gu",
+      "parentId": "",
+      "status": "draft",
+      "iconId": "",
+      "iconSvg": "",
+      "customFields": {},
+      "summary": "运道仙蛊，曾与马鸿运及北原气运争夺相连。",
+      "body": "此蛊显著影响气运格局，因持有者命运变化成为争夺对象，但不能消除其他修行限制。",
+      "tags": [
+        "仙蛊",
+        "运道"
+      ]
+    },
+    {
+      "id": "love-gu",
+      "name": "爱情蛊",
+      "type": "immortal-gu",
+      "parentId": "",
+      "status": "draft",
+      "iconId": "",
+      "iconSvg": "",
+      "customFields": {},
+      "summary": "具有自主性与特殊代价的九转仙蛊，与赵怜云和中洲局势相关。",
+      "body": "爱情蛊不能当作普通可控工具；其力量使私人情感进入天庭争夺。",
+      "tags": [
+        "仙蛊",
+        "中洲线"
+      ]
+    },
+    {
+      "id": "qing-mao-mountain",
+      "name": "青茅山",
+      "type": "location",
+      "parentId": "",
+      "status": "draft",
+      "iconId": "",
+      "iconSvg": "",
+      "customFields": {},
+      "summary": "方源重生后早期成长与家族冲突的地点，危机改变多名角色道路。",
+      "body": "古月一族、继承竞争、兄弟关系与白凝冰异变在此交织；危机推动方源离开原有环境。",
+      "tags": [
+        "地点",
+        "早期主线"
+      ]
+    },
+    {
+      "id": "shang-clan-city",
+      "name": "商家城",
+      "type": "location",
+      "parentId": "",
+      "status": "draft",
+      "iconId": "",
+      "iconSvg": "",
+      "customFields": {},
+      "summary": "南疆大型家族城池与交易中心，方源结识商心慈并经历拍卖、斗蛊。",
+      "body": "商家规则提供资源、情报和临时盟友；方源在此扩充蛊虫与资源，商心慈成长线也由此展开。",
+      "tags": [
+        "地点",
+        "南疆"
+      ]
+    },
+    {
+      "id": "three-kings-inheritance",
+      "name": "三王传承",
+      "type": "secret-realm",
+      "parentId": "",
+      "status": "draft",
+      "iconId": "",
+      "iconSvg": "",
+      "customFields": {},
+      "summary": "南疆三王山上的传承争夺，参与者争夺蛊虫、蛊方与晋升机会。",
+      "body": "不同传承路径考验参与者的风险判断、资源和时间；方源与白凝冰的选择改变修行进度。",
+      "tags": [
+        "传承",
+        "南疆线"
+      ]
+    },
+    {
+      "id": "hu-immortal-blessed-land",
+      "name": "狐仙福地",
+      "type": "cave-heaven",
+      "parentId": "",
+      "status": "draft",
+      "iconId": "",
+      "iconSvg": "",
+      "customFields": {},
+      "summary": "以荡魂山为重要资源的福地，方源取得后成为长期基地和争夺焦点。",
+      "body": "福地具有地灵、仙窍生态和稀缺资源；方源经营并防守，将其作为修行与后续行动的根基。",
+      "tags": [
+        "福地",
+        "核心地点"
+      ]
+    },
+    {
+      "id": "imperial-court-blessed-land",
+      "name": "王庭福地",
+      "type": "cave-heaven",
+      "parentId": "",
+      "status": "draft",
+      "iconId": "",
+      "iconSvg": "",
+      "customFields": {},
+      "summary": "北原王庭之争的终点与真阳楼所在处，承载巨阳仙尊遗产。",
+      "body": "王庭福地与部族竞争、黄金血脉及巨阳布局相连，进入资格决定多名蛊师的命运。",
+      "tags": [
+        "福地",
+        "北原线"
+      ]
+    },
+    {
+      "id": "true-yang-building",
+      "name": "八十八角真阳楼",
+      "type": "location",
+      "parentId": "",
+      "status": "draft",
+      "iconId": "",
+      "iconSvg": "",
+      "customFields": {},
+      "summary": "巨阳仙尊留在王庭福地的传承与防御体系，最终被方源介入并摧毁。",
+      "body": "真阳楼以多层挑战筛选北原强者并维系王庭格局；其崩塌震动蛊界，使传承和天意布局暴露。",
+      "tags": [
+        "地点",
+        "重大剧透"
+      ]
+    },
+    {
+      "id": "lang-ya-blessed-land",
+      "name": "琅琊福地",
+      "type": "cave-heaven",
+      "parentId": "",
+      "status": "draft",
+      "iconId": "",
+      "iconSvg": "",
+      "customFields": {},
+      "summary": "长毛老祖留下的炼道福地与毛民家园，琅琊派以此为根基。",
+      "body": "福地储存蛊方、炼道资源和毛民人口；其资源吸引方源与其他势力。",
+      "tags": [
+        "福地",
+        "毛民"
+      ]
+    },
+    {
+      "id": "yi-tian-mountain",
+      "name": "义天山",
+      "type": "location",
+      "parentId": "",
+      "status": "draft",
+      "iconId": "",
+      "iconSvg": "",
+      "customFields": {},
+      "summary": "南疆大战与影宗计划发生之地，关系主宰仙胎蛊与方源新躯体。",
+      "body": "表层大战之下隐藏影宗长期布置，相关局势造成重大伤亡和身份变化。",
+      "tags": [
+        "地点",
+        "影宗线"
+      ]
+    },
+    {
+      "id": "crazed-demon-cave",
+      "name": "疯魔窟",
+      "type": "location",
+      "parentId": "",
+      "status": "draft",
+      "iconId": "",
+      "iconSvg": "",
+      "customFields": {},
+      "summary": "关联无极魔尊、乐土传承和后期尊者角力的远古险地。",
+      "body": "深层环境风险极高；后期多位尊者围绕此地交锋，已知连载情节未给出最终结局。",
+      "tags": [
+        "地点",
+        "后期主线"
+      ]
+    },
+    {
+      "id": "reverse-flow-river",
+      "name": "逆流河",
+      "type": "location",
+      "parentId": "",
+      "status": "draft",
+      "iconId": "",
+      "iconSvg": "",
+      "customFields": {},
+      "summary": "特殊天地险地，方源曾在此处依靠意志和行动获得关键声名。",
+      "body": "河流规则限制行进者并压制常规蛊虫优势；相关竞争使方源获得逆流河主之名。",
+      "tags": [
+        "险地",
+        "北原线"
+      ]
+    },
+    {
+      "id": "dang-hun-mountain",
+      "name": "荡魂山",
+      "type": "location",
+      "parentId": "",
+      "status": "draft",
+      "iconId": "",
+      "iconSvg": "",
+      "customFields": {},
+      "summary": "狐仙福地的重要资源地，可产出胆识蛊并支持魂魄修行。",
+      "body": "其资源价值使狐仙福地具有经营和防守意义，也牵连方源修行及中洲势力争夺。",
+      "tags": [
+        "资源点",
+        "魂道"
+      ]
+    },
+    {
+      "id": "dream-realms",
+      "name": "梦境",
+      "type": "secret-realm",
+      "parentId": "",
+      "status": "draft",
+      "iconId": "",
+      "iconSvg": "",
+      "customFields": {},
+      "summary": "呈现历史人物经历、流派真意与危险意识的区域，梦道成为后期争夺焦点。",
+      "body": "探索可带来真意和突破，也可能困住或伤害探索者；梦道资源改变五域力量平衡。",
+      "tags": [
+        "秘境",
+        "梦道",
+        "后期剧透"
+      ]
+    }
+  ],
+  "maps": [],
+  "relationGraphs": [
+    {
+      "id": "main-characters",
+      "name": "主线人物关系",
+      "entryIds": [
+        "entry-gu-world",
+        "entry-central-continent",
+        "entry-northern-plains",
+        "entry-southern-border",
+        "entry-western-desert",
+        "entry-eastern-sea",
+        "entry-two-heavens",
+        "entry-gu-cultivation",
+        "entry-rank-system",
+        "entry-gu-worm",
+        "entry-immortal-gu",
+        "entry-paths-daomarks",
+        "entry-immortal-aperture",
+        "entry-heaven-will-fate",
+        "entry-heavenly-court",
+        "entry-changsheng-tian",
+        "entry-path-society",
+        "entry-human-variant",
+        "entry-ten-venerables",
+        "entry-fang-yuan",
+        "entry-spring-autumn-cicada",
+        "entry-gu-house",
+        "entry-resource-economy",
+        "entry-fate-war",
+        "entry-ren-zu-legend",
+        "entry-tribulations",
+        "fang-zheng",
+        "bai-ning-bing",
+        "hei-lou-lan",
+        "tai-bai-yun-sheng",
+        "shang-xin-ci",
+        "tie-ruo-nan",
+        "ma-hong-yun",
+        "zhao-lian-yun",
+        "ying-wu-xie",
+        "feng-jiu-ge",
+        "feng-jin-huang",
+        "fairy-zi-wei",
+        "duke-long",
+        "wu-yong",
+        "purple-mountain-true-monarch",
+        "lang-ya-land-spirit",
+        "venerable-primordial-origin",
+        "venerable-star-constellation",
+        "venerable-genesis-lotus",
+        "venerable-reckless-savage",
+        "venerable-thieving-heaven",
+        "venerable-giant-sun",
+        "venerable-red-lotus",
+        "venerable-spectral-soul",
+        "venerable-paradise-earth",
+        "shadow-sect",
+        "lang-ya-sect",
+        "zombie-alliance",
+        "great-love-alliance",
+        "immortal-crane-sect",
+        "fate-gu",
+        "wisdom-gu",
+        "fixed-immortal-travel-gu",
+        "sovereign-immortal-fetus-gu",
+        "fortune-rivaling-heaven-gu",
+        "love-gu",
+        "qing-mao-mountain",
+        "shang-clan-city",
+        "three-kings-inheritance",
+        "hu-immortal-blessed-land",
+        "imperial-court-blessed-land",
+        "true-yang-building",
+        "lang-ya-blessed-land",
+        "yi-tian-mountain",
+        "crazed-demon-cave",
+        "reverse-flow-river",
+        "dang-hun-mountain",
+        "dream-realms"
+      ],
+      "visibleEntryIds": [
+        "entry-fang-yuan",
+        "bai-ning-bing",
+        "fang-zheng",
+        "hei-lou-lan",
+        "tai-bai-yun-sheng",
+        "shang-xin-ci",
+        "tie-ruo-nan",
+        "ma-hong-yun",
+        "zhao-lian-yun",
+        "ying-wu-xie",
+        "feng-jiu-ge",
+        "feng-jin-huang",
+        "fairy-zi-wei",
+        "duke-long",
+        "wu-yong",
+        "purple-mountain-true-monarch"
+      ],
+      "zoom": 100,
+      "nodePositions": {}
+    },
+    {
+      "id": "fate-and-court",
+      "name": "宿命与天庭",
+      "entryIds": [
+        "entry-gu-world",
+        "entry-central-continent",
+        "entry-northern-plains",
+        "entry-southern-border",
+        "entry-western-desert",
+        "entry-eastern-sea",
+        "entry-two-heavens",
+        "entry-gu-cultivation",
+        "entry-rank-system",
+        "entry-gu-worm",
+        "entry-immortal-gu",
+        "entry-paths-daomarks",
+        "entry-immortal-aperture",
+        "entry-heaven-will-fate",
+        "entry-heavenly-court",
+        "entry-changsheng-tian",
+        "entry-path-society",
+        "entry-human-variant",
+        "entry-ten-venerables",
+        "entry-fang-yuan",
+        "entry-spring-autumn-cicada",
+        "entry-gu-house",
+        "entry-resource-economy",
+        "entry-fate-war",
+        "entry-ren-zu-legend",
+        "entry-tribulations",
+        "fang-zheng",
+        "bai-ning-bing",
+        "hei-lou-lan",
+        "tai-bai-yun-sheng",
+        "shang-xin-ci",
+        "tie-ruo-nan",
+        "ma-hong-yun",
+        "zhao-lian-yun",
+        "ying-wu-xie",
+        "feng-jiu-ge",
+        "feng-jin-huang",
+        "fairy-zi-wei",
+        "duke-long",
+        "wu-yong",
+        "purple-mountain-true-monarch",
+        "lang-ya-land-spirit",
+        "venerable-primordial-origin",
+        "venerable-star-constellation",
+        "venerable-genesis-lotus",
+        "venerable-reckless-savage",
+        "venerable-thieving-heaven",
+        "venerable-giant-sun",
+        "venerable-red-lotus",
+        "venerable-spectral-soul",
+        "venerable-paradise-earth",
+        "shadow-sect",
+        "lang-ya-sect",
+        "zombie-alliance",
+        "great-love-alliance",
+        "immortal-crane-sect",
+        "fate-gu",
+        "wisdom-gu",
+        "fixed-immortal-travel-gu",
+        "sovereign-immortal-fetus-gu",
+        "fortune-rivaling-heaven-gu",
+        "love-gu",
+        "qing-mao-mountain",
+        "shang-clan-city",
+        "three-kings-inheritance",
+        "hu-immortal-blessed-land",
+        "imperial-court-blessed-land",
+        "true-yang-building",
+        "lang-ya-blessed-land",
+        "yi-tian-mountain",
+        "crazed-demon-cave",
+        "reverse-flow-river",
+        "dang-hun-mountain",
+        "dream-realms"
+      ],
+      "visibleEntryIds": [
+        "entry-heavenly-court",
+        "entry-heaven-will-fate",
+        "fate-gu",
+        "entry-fate-war",
+        "entry-fang-yuan",
+        "venerable-red-lotus",
+        "duke-long",
+        "fairy-zi-wei",
+        "feng-jiu-ge",
+        "venerable-star-constellation"
+      ],
+      "zoom": 100,
+      "nodePositions": {}
+    },
+    {
+      "id": "venerables",
+      "name": "十尊与传承",
+      "entryIds": [
+        "entry-gu-world",
+        "entry-central-continent",
+        "entry-northern-plains",
+        "entry-southern-border",
+        "entry-western-desert",
+        "entry-eastern-sea",
+        "entry-two-heavens",
+        "entry-gu-cultivation",
+        "entry-rank-system",
+        "entry-gu-worm",
+        "entry-immortal-gu",
+        "entry-paths-daomarks",
+        "entry-immortal-aperture",
+        "entry-heaven-will-fate",
+        "entry-heavenly-court",
+        "entry-changsheng-tian",
+        "entry-path-society",
+        "entry-human-variant",
+        "entry-ten-venerables",
+        "entry-fang-yuan",
+        "entry-spring-autumn-cicada",
+        "entry-gu-house",
+        "entry-resource-economy",
+        "entry-fate-war",
+        "entry-ren-zu-legend",
+        "entry-tribulations",
+        "fang-zheng",
+        "bai-ning-bing",
+        "hei-lou-lan",
+        "tai-bai-yun-sheng",
+        "shang-xin-ci",
+        "tie-ruo-nan",
+        "ma-hong-yun",
+        "zhao-lian-yun",
+        "ying-wu-xie",
+        "feng-jiu-ge",
+        "feng-jin-huang",
+        "fairy-zi-wei",
+        "duke-long",
+        "wu-yong",
+        "purple-mountain-true-monarch",
+        "lang-ya-land-spirit",
+        "venerable-primordial-origin",
+        "venerable-star-constellation",
+        "venerable-genesis-lotus",
+        "venerable-reckless-savage",
+        "venerable-thieving-heaven",
+        "venerable-giant-sun",
+        "venerable-red-lotus",
+        "venerable-spectral-soul",
+        "venerable-paradise-earth",
+        "shadow-sect",
+        "lang-ya-sect",
+        "zombie-alliance",
+        "great-love-alliance",
+        "immortal-crane-sect",
+        "fate-gu",
+        "wisdom-gu",
+        "fixed-immortal-travel-gu",
+        "sovereign-immortal-fetus-gu",
+        "fortune-rivaling-heaven-gu",
+        "love-gu",
+        "qing-mao-mountain",
+        "shang-clan-city",
+        "three-kings-inheritance",
+        "hu-immortal-blessed-land",
+        "imperial-court-blessed-land",
+        "true-yang-building",
+        "lang-ya-blessed-land",
+        "yi-tian-mountain",
+        "crazed-demon-cave",
+        "reverse-flow-river",
+        "dang-hun-mountain",
+        "dream-realms"
+      ],
+      "visibleEntryIds": [
+        "entry-ten-venerables",
+        "venerable-primordial-origin",
+        "venerable-star-constellation",
+        "venerable-genesis-lotus",
+        "venerable-reckless-savage",
+        "venerable-thieving-heaven",
+        "venerable-giant-sun",
+        "venerable-red-lotus",
+        "venerable-spectral-soul",
+        "venerable-paradise-earth",
+        "entry-spring-autumn-cicada",
+        "fate-gu",
+        "sovereign-immortal-fetus-gu",
+        "entry-heavenly-court",
+        "entry-changsheng-tian"
+      ],
+      "zoom": 100,
+      "nodePositions": {}
+    },
+    {
+      "id": "factions",
+      "name": "五域势力与联盟",
+      "entryIds": [
+        "entry-gu-world",
+        "entry-central-continent",
+        "entry-northern-plains",
+        "entry-southern-border",
+        "entry-western-desert",
+        "entry-eastern-sea",
+        "entry-two-heavens",
+        "entry-gu-cultivation",
+        "entry-rank-system",
+        "entry-gu-worm",
+        "entry-immortal-gu",
+        "entry-paths-daomarks",
+        "entry-immortal-aperture",
+        "entry-heaven-will-fate",
+        "entry-heavenly-court",
+        "entry-changsheng-tian",
+        "entry-path-society",
+        "entry-human-variant",
+        "entry-ten-venerables",
+        "entry-fang-yuan",
+        "entry-spring-autumn-cicada",
+        "entry-gu-house",
+        "entry-resource-economy",
+        "entry-fate-war",
+        "entry-ren-zu-legend",
+        "entry-tribulations",
+        "fang-zheng",
+        "bai-ning-bing",
+        "hei-lou-lan",
+        "tai-bai-yun-sheng",
+        "shang-xin-ci",
+        "tie-ruo-nan",
+        "ma-hong-yun",
+        "zhao-lian-yun",
+        "ying-wu-xie",
+        "feng-jiu-ge",
+        "feng-jin-huang",
+        "fairy-zi-wei",
+        "duke-long",
+        "wu-yong",
+        "purple-mountain-true-monarch",
+        "lang-ya-land-spirit",
+        "venerable-primordial-origin",
+        "venerable-star-constellation",
+        "venerable-genesis-lotus",
+        "venerable-reckless-savage",
+        "venerable-thieving-heaven",
+        "venerable-giant-sun",
+        "venerable-red-lotus",
+        "venerable-spectral-soul",
+        "venerable-paradise-earth",
+        "shadow-sect",
+        "lang-ya-sect",
+        "zombie-alliance",
+        "great-love-alliance",
+        "immortal-crane-sect",
+        "fate-gu",
+        "wisdom-gu",
+        "fixed-immortal-travel-gu",
+        "sovereign-immortal-fetus-gu",
+        "fortune-rivaling-heaven-gu",
+        "love-gu",
+        "qing-mao-mountain",
+        "shang-clan-city",
+        "three-kings-inheritance",
+        "hu-immortal-blessed-land",
+        "imperial-court-blessed-land",
+        "true-yang-building",
+        "lang-ya-blessed-land",
+        "yi-tian-mountain",
+        "crazed-demon-cave",
+        "reverse-flow-river",
+        "dang-hun-mountain",
+        "dream-realms"
+      ],
+      "visibleEntryIds": [
+        "entry-gu-world",
+        "entry-fang-yuan",
+        "entry-central-continent",
+        "entry-northern-plains",
+        "entry-southern-border",
+        "entry-western-desert",
+        "entry-eastern-sea",
+        "entry-heavenly-court",
+        "entry-changsheng-tian",
+        "shadow-sect",
+        "lang-ya-sect",
+        "zombie-alliance",
+        "great-love-alliance",
+        "immortal-crane-sect",
+        "lang-ya-land-spirit"
+      ],
+      "zoom": 100,
+      "nodePositions": {}
+    },
+    {
+      "id": "gu-and-places",
+      "name": "关键仙蛊与地点",
+      "entryIds": [
+        "entry-gu-world",
+        "entry-central-continent",
+        "entry-northern-plains",
+        "entry-southern-border",
+        "entry-western-desert",
+        "entry-eastern-sea",
+        "entry-two-heavens",
+        "entry-gu-cultivation",
+        "entry-rank-system",
+        "entry-gu-worm",
+        "entry-immortal-gu",
+        "entry-paths-daomarks",
+        "entry-immortal-aperture",
+        "entry-heaven-will-fate",
+        "entry-heavenly-court",
+        "entry-changsheng-tian",
+        "entry-path-society",
+        "entry-human-variant",
+        "entry-ten-venerables",
+        "entry-fang-yuan",
+        "entry-spring-autumn-cicada",
+        "entry-gu-house",
+        "entry-resource-economy",
+        "entry-fate-war",
+        "entry-ren-zu-legend",
+        "entry-tribulations",
+        "fang-zheng",
+        "bai-ning-bing",
+        "hei-lou-lan",
+        "tai-bai-yun-sheng",
+        "shang-xin-ci",
+        "tie-ruo-nan",
+        "ma-hong-yun",
+        "zhao-lian-yun",
+        "ying-wu-xie",
+        "feng-jiu-ge",
+        "feng-jin-huang",
+        "fairy-zi-wei",
+        "duke-long",
+        "wu-yong",
+        "purple-mountain-true-monarch",
+        "lang-ya-land-spirit",
+        "venerable-primordial-origin",
+        "venerable-star-constellation",
+        "venerable-genesis-lotus",
+        "venerable-reckless-savage",
+        "venerable-thieving-heaven",
+        "venerable-giant-sun",
+        "venerable-red-lotus",
+        "venerable-spectral-soul",
+        "venerable-paradise-earth",
+        "shadow-sect",
+        "lang-ya-sect",
+        "zombie-alliance",
+        "great-love-alliance",
+        "immortal-crane-sect",
+        "fate-gu",
+        "wisdom-gu",
+        "fixed-immortal-travel-gu",
+        "sovereign-immortal-fetus-gu",
+        "fortune-rivaling-heaven-gu",
+        "love-gu",
+        "qing-mao-mountain",
+        "shang-clan-city",
+        "three-kings-inheritance",
+        "hu-immortal-blessed-land",
+        "imperial-court-blessed-land",
+        "true-yang-building",
+        "lang-ya-blessed-land",
+        "yi-tian-mountain",
+        "crazed-demon-cave",
+        "reverse-flow-river",
+        "dang-hun-mountain",
+        "dream-realms"
+      ],
+      "visibleEntryIds": [
+        "entry-fang-yuan",
+        "entry-spring-autumn-cicada",
+        "fate-gu",
+        "wisdom-gu",
+        "fixed-immortal-travel-gu",
+        "sovereign-immortal-fetus-gu",
+        "fortune-rivaling-heaven-gu",
+        "love-gu",
+        "qing-mao-mountain",
+        "shang-clan-city",
+        "three-kings-inheritance",
+        "hu-immortal-blessed-land",
+        "imperial-court-blessed-land",
+        "true-yang-building",
+        "yi-tian-mountain",
+        "reverse-flow-river",
+        "crazed-demon-cave"
+      ],
+      "zoom": 100,
+      "nodePositions": {}
+    }
+  ],
+  "scripts": [
+    {
+      "id": "script-rebirth",
+      "title": "重生与青茅山：优势伴随代价",
+      "summary": "梳理记忆优势如何受资源、身份和新变量限制。",
+      "body": "起：方源以春秋蝉回到过去，面对修为、身份和资源不足。\n承：家族竞争、兄弟关系和白凝冰的资质形成多线冲突。\n转：青茅山危机打破旧秩序，两人离开原有环境。\n合：利益合作开启更广阔的蛊师世界；前世知识产生收益，也因变化逐渐失准。\n\n编排重点：重生不等于全知，先知会受到信息过期、资源不匹配和身份暴露的限制。",
+      "boundTypeIds": [
+        "character",
+        "immortal",
+        "cultivation-system",
+        "gu-worm",
+        "region",
+        "location"
+      ]
+    },
+    {
+      "id": "script-shang-city",
+      "title": "商家城与三王传承：交易中的同行者",
+      "summary": "用城池经营和秘境争夺推进关系，让短期合作与长期目标保持张力。",
+      "body": "起：方源与白凝冰进入商家城，以斗蛊和交易寻找资源。\n承：商家规则带来暂时秩序，商心慈的成长与方源的利益计算并行。\n转：三王传承开启，各路蛊师必须选择路线和代价。\n合：传承改变方源资源与身份，也使同行者意识到目标不同。\n\n关系重点：角色可以互相救助、交换利益并保留防备。",
+      "boundTypeIds": [
+        "character",
+        "secret-realm",
+        "location",
+        "gu-worm",
+        "material"
+      ]
+    },
+    {
+      "id": "script-northern-plains",
+      "title": "北原王庭：真阳楼与运道争夺",
+      "summary": "围绕部族联盟、王庭资格和巨阳遗产组织北原主线。",
+      "body": "起：方源以伪装身份进入北原权力网络。\n承：黑楼兰、马鸿运、太白云生和长生天各有目标，联盟随局势变化。\n转：王庭福地与真阳楼揭示更深层传承和天意布局。\n合：真阳楼崩塌改变北原格局，方源获得机会，也成为追查对象。\n\n主题：个人算计能撬动历史遗产，却无法控制全部后果。",
+      "boundTypeIds": [
+        "character",
+        "deity",
+        "faction",
+        "organization",
+        "cave-heaven",
+        "location",
+        "immortal-gu"
+      ]
+    },
+    {
+      "id": "script-shadow-sect",
+      "title": "影宗与主宰仙胎：借来的新生",
+      "summary": "以幽魂魔尊的长线计划为暗线，呈现新躯体的收益与风险。",
+      "body": "起：方源以僵尸状态追查仙窍、仙蛊和影宗资源。\n承：影宗残部、分魂和义天山局势汇聚多条支线。\n转：主宰仙胎计划显露，方源取得新躯体并成为各方目标。\n合：他借新仙窍扩展修行空间，并加入琅琊派寻求资源。\n\n新躯体提高潜力，但不消除仙元、灾劫、经营和情报不足等限制。",
+      "boundTypeIds": [
+        "immortal",
+        "deity",
+        "organization",
+        "immortal-gu",
+        "cave-heaven",
+        "secret-realm"
+      ]
+    },
+    {
+      "id": "script-dreams-river",
+      "title": "梦境与逆流河：规则改变战场",
+      "summary": "并置梦道真意争夺与逆流河考验，展现规则理解和承受力的重要性。",
+      "body": "起：梦境成为战略资源，各域争夺梦道突破和真意。\n承：方源与影宗、天庭围绕攻略、身份和情报周旋。\n转：逆流河以特殊限制压制常规战术，参战者重新判断意志和路线。\n合：方源获得声名，五域势力更加警惕；能力仍须服从环境规则。\n\n秘境应有明确进入条件、限制、收益和退出代价。",
+      "boundTypeIds": [
+        "immortal",
+        "organization",
+        "secret-realm",
+        "location",
+        "rule",
+        "immortal-gu"
+      ]
+    },
+    {
+      "id": "script-fate-war",
+      "title": "宿命之战：旧秩序的断裂",
+      "summary": "以宿命蛊为中心，汇合天庭、方源、红莲传承与凤九歌的选择。",
+      "body": "起：天庭巩固宿命蛊防线，方源及盟友寻找破局条件。\n承：紫薇统筹天庭谋划，红莲留下的时间道线索发挥作用。\n转：凤九歌的行动改变战局，多方力量在中洲汇合。\n合：宿命蛊被毁，天庭失去秩序核心，各域势力重新排列。\n\n主题：摧毁旧规则并不会自动建立公平的新世界。",
+      "boundTypeIds": [
+        "character",
+        "immortal",
+        "deity",
+        "faction",
+        "immortal-gu",
+        "quest",
+        "rule"
+      ]
+    },
+    {
+      "id": "script-great-love",
+      "title": "大爱联盟与疯魔窟：未完的尊者对局",
+      "summary": "概述宿命蛊毁灭后的交易网络、尊者回归和连载后期未决冲突。",
+      "body": "起：方源以大爱仙尊名义布局，借跨域交易扩大影响。\n承：天庭、长生天等势力在合作与竞争间重新计算代价。\n转：疯魔窟布局把多位尊者引向高风险对局，旧传承仍有未解部分。\n合：原作连载尚未给出最终结局；不将推测写成正典。\n\n本篇只提供篇章级梗概，不补写原作对白或逐场景复述。",
+      "boundTypeIds": [
+        "character",
+        "deity",
+        "organization",
+        "location",
+        "cave-heaven",
+        "rule"
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "id": "gu-ren-relation-001",
+      "from": "entry-fang-yuan",
+      "to": "entry-spring-autumn-cicada",
+      "type": "持有与催动",
+      "note": "方源凭春秋蝉重返过去，使用伴随高风险。"
+    },
+    {
+      "id": "gu-ren-relation-002",
+      "from": "entry-fang-yuan",
+      "to": "bai-ning-bing",
+      "type": "合作后竞争",
+      "note": "早期互相借力，之后因目标变化调整立场。"
+    },
+    {
+      "id": "gu-ren-relation-003",
+      "from": "entry-fang-yuan",
+      "to": "fang-zheng",
+      "type": "兄弟与对立",
+      "note": "血缘和阵营选择将二人推向不同道路。"
+    },
+    {
+      "id": "gu-ren-relation-004",
+      "from": "entry-fang-yuan",
+      "to": "hei-lou-lan",
+      "type": "利益联盟",
+      "note": "双方相互借力，各有独立目标。"
+    },
+    {
+      "id": "gu-ren-relation-005",
+      "from": "entry-fang-yuan",
+      "to": "tai-bai-yun-sheng",
+      "type": "盟友与利用",
+      "note": "方源促成合作，太白提供经验与时光道能力。"
+    },
+    {
+      "id": "gu-ren-relation-006",
+      "from": "entry-fang-yuan",
+      "to": "shang-xin-ci",
+      "type": "早年恩义",
+      "note": "商家城时期的帮助影响双方关系。"
+    },
+    {
+      "id": "gu-ren-relation-007",
+      "from": "entry-fang-yuan",
+      "to": "tie-ruo-nan",
+      "type": "调查与追踪",
+      "note": "铁若男的调查立场与方源隐匿行动冲突。"
+    },
+    {
+      "id": "gu-ren-relation-008",
+      "from": "entry-fang-yuan",
+      "to": "entry-heavenly-court",
+      "type": "长期对抗",
+      "note": "双方围绕宿命蛊、资源和世界秩序交锋。"
+    },
+    {
+      "id": "gu-ren-relation-009",
+      "from": "entry-fang-yuan",
+      "to": "fairy-zi-wei",
+      "type": "智谋对抗",
+      "note": "紫薇推演追踪方源，方源隐藏并反制。"
+    },
+    {
+      "id": "gu-ren-relation-010",
+      "from": "entry-fang-yuan",
+      "to": "feng-jiu-ge",
+      "type": "多次交手",
+      "note": "双方在天庭追捕和宿命之战中处于复杂对局。"
+    },
+    {
+      "id": "gu-ren-relation-011",
+      "from": "entry-fang-yuan",
+      "to": "wu-yong",
+      "type": "竞争与交易",
+      "note": "围绕南疆利益、身份和五域局势博弈。"
+    },
+    {
+      "id": "gu-ren-relation-012",
+      "from": "entry-fang-yuan",
+      "to": "shadow-sect",
+      "type": "夺取遗产与对抗",
+      "note": "影宗计划改变方源躯体，也持续威胁其利益。"
+    },
+    {
+      "id": "gu-ren-relation-013",
+      "from": "entry-fang-yuan",
+      "to": "lang-ya-sect",
+      "type": "成员与合作方",
+      "note": "方源加入门派并使用炼道传承和资源。"
+    },
+    {
+      "id": "gu-ren-relation-014",
+      "from": "entry-fang-yuan",
+      "to": "zombie-alliance",
+      "type": "潜入与利用",
+      "note": "方源借僵盟网络获取资源和身份渠道。"
+    },
+    {
+      "id": "gu-ren-relation-015",
+      "from": "entry-fang-yuan",
+      "to": "immortal-crane-sect",
+      "type": "福地争夺",
+      "note": "双方围绕狐仙福地及中洲资源冲突。"
+    },
+    {
+      "id": "gu-ren-relation-016",
+      "from": "entry-fang-yuan",
+      "to": "great-love-alliance",
+      "type": "发起与经营",
+      "note": "方源以大爱仙尊名义组织交易网络。"
+    },
+    {
+      "id": "gu-ren-relation-017",
+      "from": "bai-ning-bing",
+      "to": "qing-mao-mountain",
+      "type": "早期经历",
+      "note": "青茅山危机开启双方关系变化。"
+    },
+    {
+      "id": "gu-ren-relation-018",
+      "from": "fang-zheng",
+      "to": "qing-mao-mountain",
+      "type": "出身地",
+      "note": "方氏兄弟早期在此家族秩序中成长。"
+    },
+    {
+      "id": "gu-ren-relation-019",
+      "from": "tie-ruo-nan",
+      "to": "qing-mao-mountain",
+      "type": "调查旧案",
+      "note": "青茅山事件与铁若男调查道路相关。"
+    },
+    {
+      "id": "gu-ren-relation-020",
+      "from": "shang-xin-ci",
+      "to": "shang-clan-city",
+      "type": "家族与领地",
+      "note": "商家城是商心慈成长和经营的重要环境。"
+    },
+    {
+      "id": "gu-ren-relation-021",
+      "from": "entry-fang-yuan",
+      "to": "shang-clan-city",
+      "type": "交易与结识",
+      "note": "方源借城内规则扩充资源并结识商心慈。"
+    },
+    {
+      "id": "gu-ren-relation-022",
+      "from": "entry-fang-yuan",
+      "to": "three-kings-inheritance",
+      "type": "参与传承",
+      "note": "方源在争夺中获取修行机会并推进计划。"
+    },
+    {
+      "id": "gu-ren-relation-023",
+      "from": "bai-ning-bing",
+      "to": "three-kings-inheritance",
+      "type": "共同参与",
+      "note": "两人阶段性合作进入传承争夺。"
+    },
+    {
+      "id": "gu-ren-relation-024",
+      "from": "entry-fang-yuan",
+      "to": "hu-immortal-blessed-land",
+      "type": "持有与经营",
+      "note": "狐仙福地成为长期基地和资源支点。"
+    },
+    {
+      "id": "gu-ren-relation-025",
+      "from": "hu-immortal-blessed-land",
+      "to": "dang-hun-mountain",
+      "type": "包含资源地",
+      "note": "荡魂山是福地的重要资源。"
+    },
+    {
+      "id": "gu-ren-relation-026",
+      "from": "immortal-crane-sect",
+      "to": "hu-immortal-blessed-land",
+      "type": "争夺与威胁",
+      "note": "仙鹤门觊觎福地及其资源。"
+    },
+    {
+      "id": "gu-ren-relation-027",
+      "from": "entry-fang-yuan",
+      "to": "imperial-court-blessed-land",
+      "type": "进入与布局",
+      "note": "方源参与王庭争夺并进入福地局势。"
+    },
+    {
+      "id": "gu-ren-relation-028",
+      "from": "hei-lou-lan",
+      "to": "imperial-court-blessed-land",
+      "type": "王庭竞争",
+      "note": "黑楼兰围绕王庭之争与个人目标行动。"
+    },
+    {
+      "id": "gu-ren-relation-029",
+      "from": "ma-hong-yun",
+      "to": "fortune-rivaling-heaven-gu",
+      "type": "运道关联",
+      "note": "马鸿运和运道仙蛊令其成为争夺中心。"
+    },
+    {
+      "id": "gu-ren-relation-030",
+      "from": "ma-hong-yun",
+      "to": "zhao-lian-yun",
+      "type": "情感关联",
+      "note": "两人关系牵动运道和中洲势力行动。"
+    },
+    {
+      "id": "gu-ren-relation-031",
+      "from": "zhao-lian-yun",
+      "to": "love-gu",
+      "type": "持有与承受",
+      "note": "爱情蛊及特殊代价与赵怜云相连。"
+    },
+    {
+      "id": "gu-ren-relation-032",
+      "from": "venerable-giant-sun",
+      "to": "entry-changsheng-tian",
+      "type": "传承源头",
+      "note": "巨阳的洞天、运道与血脉影响长生天。"
+    },
+    {
+      "id": "gu-ren-relation-033",
+      "from": "entry-changsheng-tian",
+      "to": "imperial-court-blessed-land",
+      "type": "北原传统",
+      "note": "长生天与王庭及部族秩序相连。"
+    },
+    {
+      "id": "gu-ren-relation-034",
+      "from": "true-yang-building",
+      "to": "venerable-giant-sun",
+      "type": "尊者遗产",
+      "note": "真阳楼是巨阳在王庭福地的重要布置。"
+    },
+    {
+      "id": "gu-ren-relation-035",
+      "from": "entry-fang-yuan",
+      "to": "true-yang-building",
+      "type": "介入并摧毁",
+      "note": "方源利用信息与时机介入真阳楼崩塌。"
+    },
+    {
+      "id": "gu-ren-relation-036",
+      "from": "venerable-red-lotus",
+      "to": "fate-gu",
+      "type": "长期干预",
+      "note": "红莲的时间道布局影响宿命蛊防线。"
+    },
+    {
+      "id": "gu-ren-relation-037",
+      "from": "venerable-red-lotus",
+      "to": "duke-long",
+      "type": "师徒与对立",
+      "note": "师徒因红莲反抗宿命转为对立。"
+    },
+    {
+      "id": "gu-ren-relation-038",
+      "from": "venerable-red-lotus",
+      "to": "entry-spring-autumn-cicada",
+      "type": "时光道传承",
+      "note": "春秋蝉与红莲传承及历史干预相关。"
+    },
+    {
+      "id": "gu-ren-relation-039",
+      "from": "entry-heavenly-court",
+      "to": "fate-gu",
+      "type": "守护与修复",
+      "note": "天庭长期守护宿命蛊并维护秩序。"
+    },
+    {
+      "id": "gu-ren-relation-040",
+      "from": "entry-heaven-will-fate",
+      "to": "fate-gu",
+      "type": "规则与载体",
+      "note": "天意与宿命蛊相关但并非同一概念。"
+    },
+    {
+      "id": "gu-ren-relation-041",
+      "from": "fate-gu",
+      "to": "entry-fate-war",
+      "type": "争夺对象",
+      "note": "宿命蛊的去留决定战役目标。"
+    },
+    {
+      "id": "gu-ren-relation-042",
+      "from": "fate-gu",
+      "to": "entry-fang-yuan",
+      "type": "毁灭目标",
+      "note": "方源参与摧毁宿命蛊。"
+    },
+    {
+      "id": "gu-ren-relation-043",
+      "from": "venerable-primordial-origin",
+      "to": "entry-heavenly-court",
+      "type": "创建与奠基",
+      "note": "元始仙尊的历史与天庭建立相连。"
+    },
+    {
+      "id": "gu-ren-relation-044",
+      "from": "venerable-star-constellation",
+      "to": "entry-heavenly-court",
+      "type": "意志与布局",
+      "note": "星宿传承塑造天庭长期战略。"
+    },
+    {
+      "id": "gu-ren-relation-045",
+      "from": "venerable-star-constellation",
+      "to": "fairy-zi-wei",
+      "type": "智道传承",
+      "note": "星宿布局与紫薇的天庭谋划相连。"
+    },
+    {
+      "id": "gu-ren-relation-046",
+      "from": "venerable-genesis-lotus",
+      "to": "entry-heavenly-court",
+      "type": "历史传承",
+      "note": "元莲遗产进入天庭历史脉络。"
+    },
+    {
+      "id": "gu-ren-relation-047",
+      "from": "venerable-spectral-soul",
+      "to": "shadow-sect",
+      "type": "组织源头",
+      "note": "幽魂分魂和计划构成影宗核心。"
+    },
+    {
+      "id": "gu-ren-relation-048",
+      "from": "venerable-spectral-soul",
+      "to": "sovereign-immortal-fetus-gu",
+      "type": "计划源头",
+      "note": "仙胎蛊来自影宗长期炼制计划。"
+    },
+    {
+      "id": "gu-ren-relation-049",
+      "from": "shadow-sect",
+      "to": "yi-tian-mountain",
+      "type": "实施计划",
+      "note": "影宗在义天山布局关键行动。"
+    },
+    {
+      "id": "gu-ren-relation-050",
+      "from": "shadow-sect",
+      "to": "ying-wu-xie",
+      "type": "组织成员",
+      "note": "影无邪承接影宗部分行动。"
+    },
+    {
+      "id": "gu-ren-relation-051",
+      "from": "shadow-sect",
+      "to": "purple-mountain-true-monarch",
+      "type": "组织领导",
+      "note": "紫山真君推动影宗五域行动。"
+    },
+    {
+      "id": "gu-ren-relation-052",
+      "from": "sovereign-immortal-fetus-gu",
+      "to": "entry-fang-yuan",
+      "type": "使用与换体",
+      "note": "方源使用仙胎蛊获得主宰仙窍和新躯体。"
+    },
+    {
+      "id": "gu-ren-relation-053",
+      "from": "wisdom-gu",
+      "to": "entry-fang-yuan",
+      "type": "使用与谋划",
+      "note": "方源借智慧蛊思考并承担催动代价。"
+    },
+    {
+      "id": "gu-ren-relation-054",
+      "from": "fixed-immortal-travel-gu",
+      "to": "entry-fang-yuan",
+      "type": "移动手段",
+      "note": "定仙游为方源跨域行动提供能力。"
+    },
+    {
+      "id": "gu-ren-relation-055",
+      "from": "entry-fang-yuan",
+      "to": "reverse-flow-river",
+      "type": "渡河与成名",
+      "note": "方源在逆流河险境中取得声名。"
+    },
+    {
+      "id": "gu-ren-relation-056",
+      "from": "lang-ya-land-spirit",
+      "to": "lang-ya-blessed-land",
+      "type": "治理福地",
+      "note": "琅琊地灵管理琅琊福地。"
+    },
+    {
+      "id": "gu-ren-relation-057",
+      "from": "lang-ya-sect",
+      "to": "lang-ya-blessed-land",
+      "type": "组织根基",
+      "note": "琅琊派以福地为基地和资源来源。"
+    },
+    {
+      "id": "gu-ren-relation-058",
+      "from": "lang-ya-sect",
+      "to": "lang-ya-land-spirit",
+      "type": "领导关系",
+      "note": "地灵主导门派发展。"
+    },
+    {
+      "id": "gu-ren-relation-059",
+      "from": "entry-fang-yuan",
+      "to": "lang-ya-land-spirit",
+      "type": "合作与博弈",
+      "note": "双方围绕资源、门派和安全建立合作。"
+    },
+    {
+      "id": "gu-ren-relation-060",
+      "from": "entry-fang-yuan",
+      "to": "dream-realms",
+      "type": "探索与争夺",
+      "note": "方源利用梦境获取真意与突破。"
+    },
+    {
+      "id": "gu-ren-relation-061",
+      "from": "feng-jin-huang",
+      "to": "dream-realms",
+      "type": "天赋与预言",
+      "note": "凤金煌梦道资质使其与梦境时代相关。"
+    },
+    {
+      "id": "gu-ren-relation-062",
+      "from": "fairy-zi-wei",
+      "to": "dream-realms",
+      "type": "天庭争夺",
+      "note": "天庭试图控制梦境资源和真意。"
+    },
+    {
+      "id": "gu-ren-relation-063",
+      "from": "feng-jiu-ge",
+      "to": "fate-gu",
+      "type": "关键行动",
+      "note": "凤九歌后期选择改变宿命之战走势。"
+    },
+    {
+      "id": "gu-ren-relation-064",
+      "from": "duke-long",
+      "to": "entry-heavenly-court",
+      "type": "守护者",
+      "note": "龙公长期代表并守护天庭秩序。"
+    },
+    {
+      "id": "gu-ren-relation-065",
+      "from": "venerable-paradise-earth",
+      "to": "crazed-demon-cave",
+      "type": "后期布局",
+      "note": "乐土传承进入疯魔窟相关尊者对局。"
+    },
+    {
+      "id": "gu-ren-relation-066",
+      "from": "great-love-alliance",
+      "to": "entry-heavenly-court",
+      "type": "战略竞争",
+      "note": "交易网络改变天庭和各域资源选择。"
+    },
+    {
+      "id": "gu-ren-relation-067",
+      "from": "great-love-alliance",
+      "to": "entry-changsheng-tian",
+      "type": "交易与竞争",
+      "note": "联盟与长生天在交易和尊者格局中交错。"
+    },
+    {
+      "id": "gu-ren-relation-068",
+      "from": "entry-fang-yuan",
+      "to": "crazed-demon-cave",
+      "type": "后期争夺",
+      "note": "方源在疯魔窟布局中与尊者竞争。"
+    },
+    {
+      "id": "gu-ren-core-link-001",
+      "from": "venerable-primordial-origin",
+      "to": "entry-ten-venerables",
+      "type": "尊者成员",
+      "note": "蛊界十尊之一。"
+    },
+    {
+      "id": "gu-ren-core-link-002",
+      "from": "venerable-star-constellation",
+      "to": "entry-ten-venerables",
+      "type": "尊者成员",
+      "note": "蛊界十尊之一。"
+    },
+    {
+      "id": "gu-ren-core-link-003",
+      "from": "venerable-genesis-lotus",
+      "to": "entry-ten-venerables",
+      "type": "尊者成员",
+      "note": "蛊界十尊之一。"
+    },
+    {
+      "id": "gu-ren-core-link-004",
+      "from": "venerable-reckless-savage",
+      "to": "entry-ten-venerables",
+      "type": "尊者成员",
+      "note": "蛊界十尊之一。"
+    },
+    {
+      "id": "gu-ren-core-link-005",
+      "from": "venerable-thieving-heaven",
+      "to": "entry-ten-venerables",
+      "type": "尊者成员",
+      "note": "蛊界十尊之一。"
+    },
+    {
+      "id": "gu-ren-core-link-006",
+      "from": "venerable-giant-sun",
+      "to": "entry-ten-venerables",
+      "type": "尊者成员",
+      "note": "蛊界十尊之一。"
+    },
+    {
+      "id": "gu-ren-core-link-007",
+      "from": "venerable-red-lotus",
+      "to": "entry-ten-venerables",
+      "type": "尊者成员",
+      "note": "蛊界十尊之一。"
+    },
+    {
+      "id": "gu-ren-core-link-008",
+      "from": "venerable-spectral-soul",
+      "to": "entry-ten-venerables",
+      "type": "尊者成员",
+      "note": "蛊界十尊之一。"
+    },
+    {
+      "id": "gu-ren-core-link-009",
+      "from": "venerable-paradise-earth",
+      "to": "entry-ten-venerables",
+      "type": "尊者成员",
+      "note": "蛊界十尊之一。"
+    },
+    {
+      "id": "gu-ren-core-link-010",
+      "from": "entry-gu-world",
+      "to": "entry-central-continent",
+      "type": "地理组成",
+      "note": "中洲是蛊界五域之一。"
+    },
+    {
+      "id": "gu-ren-core-link-011",
+      "from": "entry-gu-world",
+      "to": "entry-northern-plains",
+      "type": "地理组成",
+      "note": "北原是蛊界五域之一。"
+    },
+    {
+      "id": "gu-ren-core-link-012",
+      "from": "entry-gu-world",
+      "to": "entry-southern-border",
+      "type": "地理组成",
+      "note": "南疆是蛊界五域之一。"
+    },
+    {
+      "id": "gu-ren-core-link-013",
+      "from": "entry-gu-world",
+      "to": "entry-western-desert",
+      "type": "地理组成",
+      "note": "西漠是蛊界五域之一。"
+    },
+    {
+      "id": "gu-ren-core-link-014",
+      "from": "entry-gu-world",
+      "to": "entry-eastern-sea",
+      "type": "地理组成",
+      "note": "东海是蛊界五域之一。"
+    },
+    {
+      "id": "gu-ren-core-link-015",
+      "from": "entry-gu-world",
+      "to": "entry-two-heavens",
+      "type": "地理组成",
+      "note": "黑天与白天位于五域上方。"
+    },
+    {
+      "id": "gu-ren-core-link-016",
+      "from": "entry-central-continent",
+      "to": "entry-heavenly-court",
+      "type": "势力核心区域",
+      "note": "天庭以中洲为核心。"
+    },
+    {
+      "id": "gu-ren-core-link-017",
+      "from": "entry-northern-plains",
+      "to": "entry-changsheng-tian",
+      "type": "势力关联",
+      "note": "长生天深刻影响北原格局。"
+    }
+  ],
+  "events": [
+    {
+      "id": "event-human-myth",
+      "title": "人祖传说与蛊界神话",
+      "dateLabel": "神话层（寓言时间）",
+      "order": 10,
+      "summary": "人祖传说以寓言呈现欲望、恐惧、智慧、希望和规则。",
+      "body": "其中含象征线索，不等同可考年表。",
+      "importance": "major",
+      "entityIds": [
+        "entry-ren-zu-legend",
+        "entry-gu-world",
+        "entry-paths-daomarks"
+      ]
+    },
+    {
+      "id": "event-primordial-court",
+      "title": "元始仙尊奠定天庭",
+      "dateLabel": "远古尊者时代",
+      "order": 20,
+      "summary": "元始仙尊传承成为天庭建立和中洲秩序的重要基础。",
+      "body": "天庭此后累积传承、仙蛊屋与蛊仙网络。",
+      "importance": "major",
+      "entityIds": [
+        "venerable-primordial-origin",
+        "entry-heavenly-court",
+        "entry-central-continent"
+      ]
+    },
+    {
+      "id": "event-star-order",
+      "title": "星宿仙尊布局天庭",
+      "dateLabel": "远古尊者时代",
+      "order": 30,
+      "summary": "星宿仙尊的智道布局长期影响天庭维护秩序。",
+      "body": "其传承延续到后世决策及宿命蛊防线。",
+      "importance": "major",
+      "entityIds": [
+        "venerable-star-constellation",
+        "entry-heavenly-court",
+        "entry-heaven-will-fate",
+        "fate-gu"
+      ]
+    },
+    {
+      "id": "event-genesis-era",
+      "title": "元莲仙尊传承留世",
+      "dateLabel": "尊者时代",
+      "order": 40,
+      "summary": "元莲仙尊的木道传承与遗迹进入后世争夺。",
+      "body": "尊者遗产以仙蛊、洞天和历史布局等形式延续。",
+      "importance": "major",
+      "entityIds": [
+        "venerable-genesis-lotus",
+        "entry-ten-venerables"
+      ]
+    },
+    {
+      "id": "event-reckless-era",
+      "title": "狂蛮魔尊留下传承",
+      "dateLabel": "尊者时代",
+      "order": 50,
+      "summary": "狂蛮魔尊的遗产将力量与特殊考验留给后世。",
+      "body": "不同蛊仙探索和利用其传承。",
+      "importance": "major",
+      "entityIds": [
+        "venerable-reckless-savage",
+        "entry-ten-venerables"
+      ]
+    },
+    {
+      "id": "event-thieving-era",
+      "title": "盗天魔尊追寻异界归途",
+      "dateLabel": "尊者时代",
+      "order": 60,
+      "summary": "盗天魔尊的空间道传承与异界身份留下历史谜题。",
+      "body": "其行动把空间移动与离界目标带入尊者历史。",
+      "importance": "major",
+      "entityIds": [
+        "venerable-thieving-heaven",
+        "entry-ten-venerables"
+      ]
+    },
+    {
+      "id": "event-giant-sun-era",
+      "title": "巨阳传承塑造北原格局",
+      "dateLabel": "尊者时代",
+      "order": 70,
+      "summary": "巨阳仙尊的运道与血脉遗产成为长生天和北原格局根基。",
+      "body": "部族政治、王庭之争和运道资源都受其影响。",
+      "importance": "major",
+      "entityIds": [
+        "venerable-giant-sun",
+        "entry-changsheng-tian",
+        "entry-northern-plains",
+        "fortune-rivaling-heaven-gu"
+      ]
+    },
+    {
+      "id": "event-red-lotus-fate",
+      "title": "红莲魔尊干预宿命轨迹",
+      "dateLabel": "尊者时代",
+      "order": 80,
+      "summary": "红莲试图改变亲友命运，留下影响宿命蛊的时光道布局。",
+      "body": "他未直接取消宿命蛊，却为后人留下传承与改变历史的机会。",
+      "importance": "major",
+      "entityIds": [
+        "venerable-red-lotus",
+        "entry-heaven-will-fate",
+        "fate-gu",
+        "entry-spring-autumn-cicada",
+        "duke-long"
+      ]
+    },
+    {
+      "id": "event-spectral-shadow",
+      "title": "幽魂魔尊推动影宗计划",
+      "dateLabel": "尊者时代",
+      "order": 90,
+      "summary": "幽魂分魂与影宗布局持续积累，指向义天山和仙胎计划。",
+      "body": "计划将魂道、梦境、仙窍与多代行动串联。",
+      "importance": "major",
+      "entityIds": [
+        "venerable-spectral-soul",
+        "shadow-sect",
+        "sovereign-immortal-fetus-gu"
+      ]
+    },
+    {
+      "id": "event-paradise-legacy",
+      "title": "乐土仙尊留下传承",
+      "dateLabel": "尊者时代",
+      "order": 100,
+      "summary": "乐土遗产影响族群关系，并在后期尊者格局中重新显现。",
+      "body": "其最终意图须结合未完结篇章判断。",
+      "importance": "major",
+      "entityIds": [
+        "venerable-paradise-earth",
+        "entry-human-variant",
+        "crazed-demon-cave"
+      ]
+    },
+    {
+      "id": "event-first-life",
+      "title": "方源第一世修行至绝境",
+      "dateLabel": "方源第一世·数百年",
+      "order": 110,
+      "summary": "方源历经长期修行和争夺，最终在绝境中催动春秋蝉。",
+      "body": "第一世记忆带来信息优势，未来变化也会使部分知识失效。",
+      "importance": "major",
+      "entityIds": [
+        "entry-fang-yuan",
+        "entry-spring-autumn-cicada",
+        "entry-gu-cultivation"
+      ]
+    },
+    {
+      "id": "event-rebirth",
+      "title": "春秋蝉逆流重启主线",
+      "dateLabel": "主线起点·重生",
+      "order": 120,
+      "summary": "方源以春秋蝉回到过去，保留记忆并重新进入蛊师社会。",
+      "body": "重生带来信息优势，也带来修为、身份和资源落差。",
+      "importance": "major",
+      "entityIds": [
+        "entry-fang-yuan",
+        "entry-spring-autumn-cicada",
+        "entry-heaven-will-fate"
+      ]
+    },
+    {
+      "id": "event-qing-mao",
+      "title": "青茅山家族危机",
+      "dateLabel": "主线早期·青茅山",
+      "order": 130,
+      "summary": "继承竞争、方氏兄弟冲突与白凝冰异变交织，旧秩序崩解。",
+      "body": "方源与白凝冰离开原有环境，关系转为互利合作与竞争。",
+      "importance": "major",
+      "entityIds": [
+        "qing-mao-mountain",
+        "entry-fang-yuan",
+        "fang-zheng",
+        "bai-ning-bing",
+        "tie-ruo-nan"
+      ]
+    },
+    {
+      "id": "event-shang-city",
+      "title": "商家城交易与结盟",
+      "dateLabel": "主线早期·南疆",
+      "order": 140,
+      "summary": "方源在商家城交易、斗蛊并结识商心慈。",
+      "body": "城内规则提供暂时机会，盟友目标各不相同。",
+      "importance": "major",
+      "entityIds": [
+        "shang-clan-city",
+        "entry-fang-yuan",
+        "shang-xin-ci",
+        "bai-ning-bing"
+      ]
+    },
+    {
+      "id": "event-three-kings",
+      "title": "三王传承开启争夺",
+      "dateLabel": "主线早期·南疆",
+      "order": 150,
+      "summary": "多方进入三王传承争夺蛊虫、蛊方和晋升机会。",
+      "body": "考验迫使参与者在收益、时间和风险间取舍。",
+      "importance": "major",
+      "entityIds": [
+        "three-kings-inheritance",
+        "entry-fang-yuan",
+        "bai-ning-bing",
+        "entry-gu-worm"
+      ]
+    },
+    {
+      "id": "event-hu-immortal",
+      "title": "方源取得狐仙福地",
+      "dateLabel": "主线中段·福地经营",
+      "order": 160,
+      "summary": "方源控制狐仙福地和荡魂山，获得基地并引来仙鹤门竞争。",
+      "body": "经营和防守成本增长，福地成为修行与战略支点。",
+      "importance": "major",
+      "entityIds": [
+        "hu-immortal-blessed-land",
+        "dang-hun-mountain",
+        "entry-fang-yuan",
+        "immortal-crane-sect"
+      ]
+    },
+    {
+      "id": "event-imperial-court",
+      "title": "北原王庭之争",
+      "dateLabel": "主线中段·北原",
+      "order": 170,
+      "summary": "部族竞逐王庭资格，黑楼兰、马鸿运和方源等人道路交汇。",
+      "body": "王庭规则与巨阳遗产令战争超出普通部族争斗。",
+      "importance": "major",
+      "entityIds": [
+        "imperial-court-blessed-land",
+        "entry-fang-yuan",
+        "hei-lou-lan",
+        "ma-hong-yun",
+        "entry-changsheng-tian"
+      ]
+    },
+    {
+      "id": "event-true-yang-collapse",
+      "title": "八十八角真阳楼崩塌",
+      "dateLabel": "主线中段·北原",
+      "order": 180,
+      "summary": "方源介入真阳楼局势，巨阳遗产与天意布局受到冲击。",
+      "body": "事件使方源成为追查目标，并改变北原力量平衡。",
+      "importance": "major",
+      "entityIds": [
+        "true-yang-building",
+        "imperial-court-blessed-land",
+        "entry-fang-yuan",
+        "venerable-giant-sun",
+        "fortune-rivaling-heaven-gu"
+      ]
+    },
+    {
+      "id": "event-zombie-period",
+      "title": "僵尸与僵盟时期",
+      "dateLabel": "主线中后段·五域",
+      "order": 190,
+      "summary": "方源借僵盟网络寻找资源和摆脱僵尸状态的方法。",
+      "body": "影宗渗透及多域行动将他带入更高层次的仙蛊争夺。",
+      "importance": "major",
+      "entityIds": [
+        "entry-fang-yuan",
+        "zombie-alliance",
+        "shadow-sect",
+        "wisdom-gu"
+      ]
+    },
+    {
+      "id": "event-yitian-sovereign",
+      "title": "义天山局与主宰仙胎蛊",
+      "dateLabel": "主线中后段·南疆",
+      "order": 200,
+      "summary": "影宗计划在义天山推进，方源最终取得主宰仙胎蛊。",
+      "body": "幽魂布局、方源新生和五域追逐在此汇合。",
+      "importance": "major",
+      "entityIds": [
+        "yi-tian-mountain",
+        "shadow-sect",
+        "entry-fang-yuan",
+        "venerable-spectral-soul",
+        "sovereign-immortal-fetus-gu"
+      ]
+    },
+    {
+      "id": "event-lang-ya",
+      "title": "方源加入琅琊派",
+      "dateLabel": "主线后期·北原",
+      "order": 210,
+      "summary": "方源与琅琊地灵及毛民势力建立长期合作。",
+      "body": "炼道资源和盟友扩大方源力量，也使福地卷入对抗。",
+      "importance": "major",
+      "entityIds": [
+        "entry-fang-yuan",
+        "lang-ya-sect",
+        "lang-ya-land-spirit",
+        "lang-ya-blessed-land"
+      ]
+    },
+    {
+      "id": "event-dream-contest",
+      "title": "梦境与真意争夺升级",
+      "dateLabel": "主线后期·五域",
+      "order": 220,
+      "summary": "梦境成为战略资源，方源、影宗、天庭等势力相继布局。",
+      "body": "梦境带来突破，也可能困住探索者，改变五域力量平衡。",
+      "importance": "major",
+      "entityIds": [
+        "dream-realms",
+        "entry-fang-yuan",
+        "shadow-sect",
+        "entry-heavenly-court",
+        "feng-jin-huang"
+      ]
+    },
+    {
+      "id": "event-reverse-river",
+      "title": "逆流河生死争夺",
+      "dateLabel": "主线后期·北原",
+      "order": 230,
+      "summary": "方源在逆流河险境中突破限制并取得声名。",
+      "body": "特殊规则压制常规战术，影响各方对方源的判断。",
+      "importance": "major",
+      "entityIds": [
+        "reverse-flow-river",
+        "entry-fang-yuan",
+        "hei-lou-lan",
+        "entry-changsheng-tian"
+      ]
+    },
+    {
+      "id": "event-fate-war",
+      "title": "天庭宿命之战爆发",
+      "dateLabel": "主线后期·中洲",
+      "order": 240,
+      "summary": "围绕宿命蛊的控制与毁灭，天庭、方源及尊者布局交锋。",
+      "body": "红莲传承、凤九歌选择和五域力量共同作用，使战局突破天庭预案。",
+      "importance": "critical",
+      "entityIds": [
+        "entry-fang-yuan",
+        "entry-heavenly-court",
+        "fate-gu",
+        "venerable-red-lotus",
+        "feng-jiu-ge",
+        "fairy-zi-wei",
+        "duke-long"
+      ]
+    },
+    {
+      "id": "event-fate-destroyed",
+      "title": "宿命蛊被毁",
+      "dateLabel": "宿命之战·决定性转折",
+      "order": 250,
+      "summary": "方源及盟友摧毁宿命蛊，天庭秩序失去核心依托。",
+      "body": "众生不再受原有宿命轨迹约束，天意与其他规则仍然存在。",
+      "importance": "critical",
+      "entityIds": [
+        "fate-gu",
+        "entry-fang-yuan",
+        "entry-heavenly-court",
+        "entry-heaven-will-fate"
+      ]
+    },
+    {
+      "id": "event-great-love",
+      "title": "方源以大爱仙尊之名布局",
+      "dateLabel": "宿命之战后·尊者时代",
+      "order": 260,
+      "summary": "方源公开行动并建立跨域交易网络扩大影响力。",
+      "body": "联盟把资源交易化为战略工具，其他尊者重新评估合作与对抗。",
+      "importance": "critical",
+      "entityIds": [
+        "entry-fang-yuan",
+        "great-love-alliance",
+        "entry-heavenly-court",
+        "entry-changsheng-tian",
+        "venerable-star-constellation",
+        "venerable-giant-sun"
+      ]
+    },
+    {
+      "id": "event-venerables-return",
+      "title": "尊者重现，五域进入新对局",
+      "dateLabel": "宿命之战后·连载后期",
+      "order": 270,
+      "summary": "宿命蛊毁灭后的权力重组引出尊者级别竞争。",
+      "body": "已发表情节未给出最终胜负，不将推测写成定局。",
+      "importance": "critical",
+      "entityIds": [
+        "entry-fang-yuan",
+        "entry-heavenly-court",
+        "entry-changsheng-tian",
+        "venerable-star-constellation",
+        "venerable-giant-sun",
+        "venerable-paradise-earth"
+      ]
+    },
+    {
+      "id": "event-crazed-demon",
+      "title": "疯魔窟成为后期尊者战场",
+      "dateLabel": "连载后期·未完结",
+      "order": 280,
+      "summary": "多位尊者围绕疯魔窟深层布局和资源展开角力。",
+      "body": "原作未完结此线，档案只记录已展开局势。",
+      "importance": "critical",
+      "entityIds": [
+        "crazed-demon-cave",
+        "entry-fang-yuan",
+        "venerable-paradise-earth",
+        "venerable-star-constellation",
+        "venerable-giant-sun",
+        "venerable-spectral-soul"
+      ]
+    }
+  ]
+}
