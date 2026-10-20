@@ -6548,6 +6548,10 @@
   }
 
   function renderAiAssistant() {
+    const previousChatScroll = aiPanelRoot.querySelector('#ai-chat-scroll');
+    const previousScrollTop = previousChatScroll ? previousChatScroll.scrollTop : 0;
+    const previousMessageCount = previousChatScroll ? previousChatScroll.querySelectorAll('.ai-message').length : 0;
+    const wasAtBottom = !previousChatScroll || previousChatScroll.scrollHeight - previousChatScroll.scrollTop - previousChatScroll.clientHeight <= 32;
     const configured = aiIsConfigured();
     const imageConfigured = aiIsImageConfigured();
     const composerBusy = state.aiBusy || state.aiImageBusy;
@@ -6597,7 +6601,15 @@
       trigger.classList.toggle('is-open', state.aiDockOpen);
     }
     const scroll = aiPanelRoot.querySelector('#ai-chat-scroll');
-    if (scroll) scroll.scrollTop = scroll.scrollHeight;
+    if (scroll) {
+      const currentMessageCount = scroll.querySelectorAll('.ai-message').length;
+      const followTail = !previousChatScroll || wasAtBottom || currentMessageCount > previousMessageCount;
+      const maxScrollTop = Math.max(0, scroll.scrollHeight - scroll.clientHeight);
+      const nextScrollTop = followTail ? maxScrollTop : Math.min(previousScrollTop, maxScrollTop);
+      scroll.style.scrollBehavior = 'auto';
+      scroll.scrollTop = nextScrollTop;
+      scroll.style.scrollBehavior = '';
+    }
     hydrateAiGeneratedImagePreviews();
     const composer = aiPanelRoot.querySelector('#ai-extra');
     if (composer && state.aiDockOpen) {
