@@ -40,7 +40,6 @@
 
 ![《蛊真人》模板中的方源设定资料卡](assets/readme/gu-zhen-ren-setting-detail.png)
 
-*方源资料卡展示了自定义人物类型、摘要、专属字段、详细设定、标签和别名。*
 
 ### 地图
 
