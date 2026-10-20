@@ -1,0 +1,9 @@
+.ai-chunk-test/
+node_modules/
+__pycache__/
+*.py[cod]
+*.zip
+.env
+.env.*
+.DS_Store
+Thumbs.db
