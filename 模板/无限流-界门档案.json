@@ -1,0 +1,888 @@
+{
+  "schemaVersion": 4,
+  "project": {
+    "id": "gate-run-archive",
+    "name": "界门档案",
+    "genre": "无限流 · 副本闯关 · 系统悬疑",
+    "era": "无统一纪年 · 第二十三轮副本开放期间",
+    "tone": "生存规则清晰但信息不完整；队伍协作、资源分配和规则边界比单纯战力更重要。",
+    "premise": "界门系统开始把参与者送入来自不同历史与类型的封闭副本，完成任务即可返回并兑换资源。第二十三轮中，系统发布了一个没有退出条件的副本，队伍发现通关记录里出现了尚未进入的成员姓名。"
+  },
+  "typeGroups": [
+    {
+      "id": "geography",
+      "label": "副本与中转空间",
+      "fields": [
+        {
+          "id": "instance-map",
+          "label": "副本/关卡示意图",
+          "type": "image"
+        },
+        {
+          "id": "instance-profile",
+          "label": "副本状态",
+          "type": "polygon",
+          "sides": 5,
+          "axes": [
+            "规则透明",
+            "补给充足",
+            "威胁强度",
+            "退出难度",
+            "时间稳定"
+          ]
+        },
+        {
+          "id": "entry-condition",
+          "label": "进入条件",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:geography:instance-map",
+        "group:geography:instance-profile",
+        "group:geography:entry-condition",
+        "core:body"
+      ]
+    },
+    {
+      "id": "factions",
+      "label": "队伍与系统势力",
+      "fields": [
+        {
+          "id": "team-purpose",
+          "label": "队伍目标",
+          "type": "text"
+        },
+        {
+          "id": "trust",
+          "label": "成员信任",
+          "type": "text"
+        },
+        {
+          "id": "system-authority",
+          "label": "系统权限",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:factions:team-purpose",
+        "group:factions:trust",
+        "group:factions:system-authority",
+        "core:body"
+      ]
+    },
+    {
+      "id": "characters",
+      "label": "参与者与引导者",
+      "fields": [
+        {
+          "id": "role",
+          "label": "队伍定位",
+          "type": "text"
+        },
+        {
+          "id": "survival-skill",
+          "label": "生存专长",
+          "type": "text"
+        },
+        {
+          "id": "hidden-goal",
+          "label": "隐藏目标",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:characters:role",
+        "group:characters:survival-skill",
+        "group:characters:hidden-goal",
+        "core:body"
+      ]
+    },
+    {
+      "id": "rules",
+      "label": "副本规则",
+      "fields": [
+        {
+          "id": "trigger",
+          "label": "触发条件",
+          "type": "text"
+        },
+        {
+          "id": "penalty",
+          "label": "失败惩罚",
+          "type": "text"
+        },
+        {
+          "id": "loophole",
+          "label": "已知漏洞",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:rules:trigger",
+        "group:rules:penalty",
+        "group:rules:loophole",
+        "core:body"
+      ]
+    },
+    {
+      "id": "rewards",
+      "label": "奖励与能力",
+      "fields": [
+        {
+          "id": "source",
+          "label": "获得来源",
+          "type": "text"
+        },
+        {
+          "id": "limit",
+          "label": "使用限制",
+          "type": "text"
+        },
+        {
+          "id": "exchange",
+          "label": "兑换价值",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:rewards:source",
+        "group:rewards:limit",
+        "group:rewards:exchange",
+        "core:body"
+      ]
+    },
+    {
+      "id": "entities",
+      "label": "副本角色与威胁",
+      "fields": [
+        {
+          "id": "behavior",
+          "label": "行为模式",
+          "type": "text"
+        },
+        {
+          "id": "rule-link",
+          "label": "关联规则",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:entities:behavior",
+        "group:entities:rule-link",
+        "core:body"
+      ]
+    },
+    {
+      "id": "episodes",
+      "label": "关卡与任务",
+      "fields": [
+        {
+          "id": "objective",
+          "label": "通关目标",
+          "type": "text"
+        },
+        {
+          "id": "optional-goal",
+          "label": "可选目标",
+          "type": "text"
+        },
+        {
+          "id": "ending",
+          "label": "结算方式",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:episodes:objective",
+        "group:episodes:optional-goal",
+        "group:episodes:ending",
+        "core:body"
+      ]
+    },
+    {
+      "id": "records",
+      "label": "轮次与线索",
+      "fields": [
+        {
+          "id": "round",
+          "label": "轮次编号",
+          "type": "text"
+        },
+        {
+          "id": "reliability",
+          "label": "记录可信度",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:records:round",
+        "group:records:reliability",
+        "core:body"
+      ]
+    },
+    {
+      "id": "meta",
+      "label": "系统谜团",
+      "fields": [
+        {
+          "id": "clue",
+          "label": "关键线索",
+          "type": "text"
+        },
+        {
+          "id": "reveal-stage",
+          "label": "揭示阶段",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:meta:clue",
+        "group:meta:reveal-stage",
+        "core:body"
+      ]
+    }
+  ],
+  "typeDefinitions": [
+    {
+      "id": "world",
+      "label": "界门体系",
+      "groupId": "geography",
+      "fields": [
+        {
+          "id": "entry-interface",
+          "label": "入口界面",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:geography:instance-map",
+        "group:geography:instance-profile",
+        "group:geography:entry-condition",
+        "type:world:entry-interface",
+        "core:body"
+      ]
+    },
+    {
+      "id": "instance",
+      "label": "封闭副本",
+      "groupId": "geography",
+      "fields": [
+        {
+          "id": "instance-genre",
+          "label": "副本题材",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:geography:instance-map",
+        "group:geography:instance-profile",
+        "group:geography:entry-condition",
+        "type:instance:instance-genre",
+        "core:body"
+      ]
+    },
+    {
+      "id": "lobby",
+      "label": "中转大厅",
+      "groupId": "geography",
+      "fields": [
+        {
+          "id": "service-limit",
+          "label": "服务限制",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:geography:instance-map",
+        "group:geography:instance-profile",
+        "group:geography:entry-condition",
+        "type:lobby:service-limit",
+        "core:body"
+      ]
+    },
+    {
+      "id": "exit-gate",
+      "label": "返回出口",
+      "groupId": "geography",
+      "fields": [
+        {
+          "id": "return-destination",
+          "label": "返回地点",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:geography:instance-map",
+        "group:geography:instance-profile",
+        "group:geography:entry-condition",
+        "type:exit-gate:return-destination",
+        "core:body"
+      ]
+    },
+    {
+      "id": "safe-zone",
+      "label": "安全区",
+      "groupId": "geography",
+      "fields": [
+        {
+          "id": "safety-limit",
+          "label": "安全范围",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:geography:instance-map",
+        "group:geography:instance-profile",
+        "group:geography:entry-condition",
+        "type:safe-zone:safety-limit",
+        "core:body"
+      ]
+    },
+    {
+      "id": "faction",
+      "label": "参与势力",
+      "groupId": "factions",
+      "fields": [
+        {
+          "id": "entry-policy",
+          "label": "招募方式",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:factions:team-purpose",
+        "group:factions:trust",
+        "group:factions:system-authority",
+        "type:faction:entry-policy",
+        "core:body"
+      ]
+    },
+    {
+      "id": "team",
+      "label": "闯关队伍",
+      "groupId": "factions",
+      "fields": [
+        {
+          "id": "team-mark",
+          "label": "专属图标",
+          "type": "icon"
+        },
+        {
+          "id": "team-rule",
+          "label": "队伍约定",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:factions:team-purpose",
+        "group:factions:trust",
+        "group:factions:system-authority",
+        "type:team:team-mark",
+        "type:team:team-rule",
+        "core:body"
+      ]
+    },
+    {
+      "id": "system",
+      "label": "界门系统",
+      "groupId": "factions",
+      "fields": [
+        {
+          "id": "message-style",
+          "label": "信息发布方式",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:factions:team-purpose",
+        "group:factions:trust",
+        "group:factions:system-authority",
+        "type:system:message-style",
+        "core:body"
+      ]
+    },
+    {
+      "id": "gatekeeper",
+      "label": "关卡管理者",
+      "groupId": "factions",
+      "fields": [
+        {
+          "id": "intervention-limit",
+          "label": "干预边界",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:factions:team-purpose",
+        "group:factions:trust",
+        "group:factions:system-authority",
+        "type:gatekeeper:intervention-limit",
+        "core:body"
+      ]
+    },
+    {
+      "id": "character",
+      "label": "参与者",
+      "groupId": "characters",
+      "fields": [
+        {
+          "id": "portrait",
+          "label": "专属图标",
+          "type": "icon"
+        },
+        {
+          "id": "participant-profile",
+          "label": "参与者特质",
+          "type": "polygon",
+          "sides": 5,
+          "axes": [
+            "观察力",
+            "协作力",
+            "应变力",
+            "资源管理",
+            "规则理解"
+          ]
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:characters:role",
+        "group:characters:survival-skill",
+        "group:characters:hidden-goal",
+        "type:character:portrait",
+        "type:character:participant-profile",
+        "core:body"
+      ]
+    },
+    {
+      "id": "guide",
+      "label": "引导者",
+      "groupId": "characters",
+      "fields": [
+        {
+          "id": "knowledge-limit",
+          "label": "信息边界",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:characters:role",
+        "group:characters:survival-skill",
+        "group:characters:hidden-goal",
+        "type:guide:knowledge-limit",
+        "core:body"
+      ]
+    },
+    {
+      "id": "returnee",
+      "label": "归来者",
+      "groupId": "characters",
+      "fields": [
+        {
+          "id": "return-record",
+          "label": "返回记录",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:characters:role",
+        "group:characters:survival-skill",
+        "group:characters:hidden-goal",
+        "type:returnee:return-record",
+        "core:body"
+      ]
+    },
+    {
+      "id": "stage-rule",
+      "label": "关卡规则",
+      "groupId": "rules",
+      "fields": [
+        {
+          "id": "rule-discovery",
+          "label": "规则发现方式",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:rules:trigger",
+        "group:rules:penalty",
+        "group:rules:loophole",
+        "type:stage-rule:rule-discovery",
+        "core:body"
+      ]
+    },
+    {
+      "id": "death-rule",
+      "label": "失败与死亡规则",
+      "groupId": "rules",
+      "fields": [
+        {
+          "id": "recovery-cost",
+          "label": "复归代价",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:rules:trigger",
+        "group:rules:penalty",
+        "group:rules:loophole",
+        "type:death-rule:recovery-cost",
+        "core:body"
+      ]
+    },
+    {
+      "id": "reward-rule",
+      "label": "结算规则",
+      "groupId": "rules",
+      "fields": [
+        {
+          "id": "score-calculation",
+          "label": "评分方式",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:rules:trigger",
+        "group:rules:penalty",
+        "group:rules:loophole",
+        "type:reward-rule:score-calculation",
+        "core:body"
+      ]
+    },
+    {
+      "id": "token",
+      "label": "兑换凭证",
+      "groupId": "rewards",
+      "fields": [
+        {
+          "id": "token-icon",
+          "label": "专属图标",
+          "type": "icon"
+        },
+        {
+          "id": "transferability",
+          "label": "能否转让",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:rewards:source",
+        "group:rewards:limit",
+        "group:rewards:exchange",
+        "type:token:token-icon",
+        "type:token:transferability",
+        "core:body"
+      ]
+    },
+    {
+      "id": "skill",
+      "label": "获得能力",
+      "groupId": "rewards",
+      "fields": [
+        {
+          "id": "growth-condition",
+          "label": "成长条件",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:rewards:source",
+        "group:rewards:limit",
+        "group:rewards:exchange",
+        "type:skill:growth-condition",
+        "core:body"
+      ]
+    },
+    {
+      "id": "item",
+      "label": "副本道具",
+      "groupId": "rewards",
+      "fields": [
+        {
+          "id": "consumption",
+          "label": "消耗方式",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:rewards:source",
+        "group:rewards:limit",
+        "group:rewards:exchange",
+        "type:item:consumption",
+        "core:body"
+      ]
+    },
+    {
+      "id": "instance-entity",
+      "label": "副本角色",
+      "groupId": "entities",
+      "fields": [
+        {
+          "id": "role-in-instance",
+          "label": "副本身份",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:entities:behavior",
+        "group:entities:rule-link",
+        "type:instance-entity:role-in-instance",
+        "core:body"
+      ]
+    },
+    {
+      "id": "boss",
+      "label": "关底威胁",
+      "groupId": "entities",
+      "fields": [
+        {
+          "id": "entity-icon",
+          "label": "专属图标",
+          "type": "icon"
+        },
+        {
+          "id": "weak-point",
+          "label": "弱点与阶段",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:entities:behavior",
+        "group:entities:rule-link",
+        "type:boss:entity-icon",
+        "type:boss:weak-point",
+        "core:body"
+      ]
+    },
+    {
+      "id": "main-challenge",
+      "label": "主线关卡",
+      "groupId": "episodes",
+      "fields": [
+        {
+          "id": "clear-condition",
+          "label": "通关条件",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:episodes:objective",
+        "group:episodes:optional-goal",
+        "group:episodes:ending",
+        "type:main-challenge:clear-condition",
+        "core:body"
+      ]
+    },
+    {
+      "id": "side-task",
+      "label": "支线任务",
+      "groupId": "episodes",
+      "fields": [
+        {
+          "id": "optional-reward",
+          "label": "可选奖励",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:episodes:objective",
+        "group:episodes:optional-goal",
+        "group:episodes:ending",
+        "type:side-task:optional-reward",
+        "core:body"
+      ]
+    },
+    {
+      "id": "hidden-objective",
+      "label": "隐藏目标",
+      "groupId": "episodes",
+      "fields": [
+        {
+          "id": "discovery-hint",
+          "label": "发现线索",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:episodes:objective",
+        "group:episodes:optional-goal",
+        "group:episodes:ending",
+        "type:hidden-objective:discovery-hint",
+        "core:body"
+      ]
+    },
+    {
+      "id": "run-log",
+      "label": "轮次记录",
+      "groupId": "records",
+      "fields": [
+        {
+          "id": "record-owner",
+          "label": "记录者",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:records:round",
+        "group:records:reliability",
+        "type:run-log:record-owner",
+        "core:body"
+      ]
+    },
+    {
+      "id": "system-clue",
+      "label": "系统线索",
+      "groupId": "meta",
+      "fields": [
+        {
+          "id": "alternative-theory",
+          "label": "其他解释",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:meta:clue",
+        "group:meta:reveal-stage",
+        "type:system-clue:alternative-theory",
+        "core:body"
+      ]
+    }
+  ],
+  "entries": [
+    {
+      "id": "entry-gate-run-archive",
+      "name": "界门系统",
+      "type": "world",
+      "parentId": "",
+      "status": "draft",
+      "summary": "副本轮次与返回记录出现矛盾，参与者开始怀疑系统是否能可靠记录现实。",
+      "body": "运行框架：副本有入口、任务、规则、失败代价和结算方式；这些信息应在进入后逐步揭露。\\n\\n队伍协作：每名参与者可以有擅长领域、资源和隐藏目标，冲突应源于选择和信息差，而非任意改变规则。\\n\\n创作留白：系统的创建者、返回者是否回到原世界，以及通关记录为何提前出现姓名。",
+      "customFields": {},
+      "tags": [
+        "模板示例",
+        "无限流"
+      ],
+      "aliases": []
+    }
+  ],
+  "maps": [],
+  "relationGraphs": [
+    {
+      "id": "world-relations",
+      "name": "世界关系图谱",
+      "entryIds": [
+        "entry-gate-run-archive"
+      ],
+      "visibleEntryIds": [
+        "entry-gate-run-archive"
+      ],
+      "zoom": 100,
+      "nodePositions": {}
+    }
+  ],
+  "scripts": [],
+  "relations": [],
+  "events": []
+}

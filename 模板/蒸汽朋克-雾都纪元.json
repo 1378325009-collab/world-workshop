@@ -1,0 +1,866 @@
+{
+  "schemaVersion": 4,
+  "project": {
+    "id": "fogbound-steam",
+    "name": "雾都纪元",
+    "genre": "蒸汽朋克 · 工业奇想 · 阶层悬疑",
+    "era": "蒸汽历 83 年 · 第一次雾幕危机",
+    "tone": "齿轮、煤烟与飞空艇构成城市日常；技术能带来繁荣，也会把代价转嫁给底层。",
+    "premise": "首都的中央锅炉连续三夜发出不可能的回声，雾幕随之吞没下城区。工程师、工会调查员和贵族警探各自追查故障，发现城市能源系统正在按一张已被官方销毁的旧蓝图运行。"
+  },
+  "typeGroups": [
+    {
+      "id": "geography",
+      "label": "城市与航路",
+      "fields": [
+        {
+          "id": "city-plan",
+          "label": "城市/管网地图",
+          "type": "image"
+        },
+        {
+          "id": "district-profile",
+          "label": "城区状态",
+          "type": "polygon",
+          "sides": 5,
+          "axes": [
+            "能源供给",
+            "空气质量",
+            "交通通达",
+            "治安水平",
+            "阶层压力"
+          ]
+        },
+        {
+          "id": "infrastructure",
+          "label": "基础设施",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:geography:city-plan",
+        "group:geography:district-profile",
+        "group:geography:infrastructure",
+        "core:body"
+      ]
+    },
+    {
+      "id": "factions",
+      "label": "王权与社团",
+      "fields": [
+        {
+          "id": "authority",
+          "label": "权力来源",
+          "type": "text"
+        },
+        {
+          "id": "public-interest",
+          "label": "公开主张",
+          "type": "text"
+        },
+        {
+          "id": "private-interest",
+          "label": "隐秘利益",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:factions:authority",
+        "group:factions:public-interest",
+        "group:factions:private-interest",
+        "core:body"
+      ]
+    },
+    {
+      "id": "characters",
+      "label": "人物与阶层",
+      "fields": [
+        {
+          "id": "occupation",
+          "label": "职业与阶层",
+          "type": "text"
+        },
+        {
+          "id": "patron",
+          "label": "雇主/庇护者",
+          "type": "text"
+        },
+        {
+          "id": "secret",
+          "label": "隐秘牵连",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:characters:occupation",
+        "group:characters:patron",
+        "group:characters:secret",
+        "core:body"
+      ]
+    },
+    {
+      "id": "engineering",
+      "label": "机械与发明",
+      "fields": [
+        {
+          "id": "blueprint",
+          "label": "结构图/设计图",
+          "type": "image"
+        },
+        {
+          "id": "power-source",
+          "label": "动力来源",
+          "type": "text"
+        },
+        {
+          "id": "maintenance",
+          "label": "维护要求",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:engineering:blueprint",
+        "group:engineering:power-source",
+        "group:engineering:maintenance",
+        "core:body"
+      ]
+    },
+    {
+      "id": "laws",
+      "label": "城市规则",
+      "fields": [
+        {
+          "id": "operating-rule",
+          "label": "运转规则",
+          "type": "text"
+        },
+        {
+          "id": "failure-mode",
+          "label": "故障表现",
+          "type": "text"
+        },
+        {
+          "id": "social-cost",
+          "label": "社会代价",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:laws:operating-rule",
+        "group:laws:failure-mode",
+        "group:laws:social-cost",
+        "core:body"
+      ]
+    },
+    {
+      "id": "relics",
+      "label": "载具与装备",
+      "fields": [
+        {
+          "id": "capacity",
+          "label": "载荷与性能",
+          "type": "text"
+        },
+        {
+          "id": "crew",
+          "label": "操作人员",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:relics:capacity",
+        "group:relics:crew",
+        "core:body"
+      ]
+    },
+    {
+      "id": "operations",
+      "label": "案件与行动",
+      "fields": [
+        {
+          "id": "objective",
+          "label": "行动目标",
+          "type": "text"
+        },
+        {
+          "id": "complication",
+          "label": "阻碍与风险",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:operations:objective",
+        "group:operations:complication",
+        "core:body"
+      ]
+    },
+    {
+      "id": "culture",
+      "label": "风俗与观念",
+      "fields": [
+        {
+          "id": "class-custom",
+          "label": "阶层习俗",
+          "type": "text"
+        },
+        {
+          "id": "public-sentiment",
+          "label": "民间情绪",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:culture:class-custom",
+        "group:culture:public-sentiment",
+        "core:body"
+      ]
+    },
+    {
+      "id": "records",
+      "label": "蓝图与档案",
+      "fields": [
+        {
+          "id": "origin",
+          "label": "档案来源",
+          "type": "text"
+        },
+        {
+          "id": "alteration",
+          "label": "删改痕迹",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:records:origin",
+        "group:records:alteration",
+        "core:body"
+      ]
+    }
+  ],
+  "typeDefinitions": [
+    {
+      "id": "world",
+      "label": "工业世界",
+      "groupId": "geography",
+      "fields": [
+        {
+          "id": "industrial-revolution",
+          "label": "工业化进程",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:geography:city-plan",
+        "group:geography:district-profile",
+        "group:geography:infrastructure",
+        "type:world:industrial-revolution",
+        "core:body"
+      ]
+    },
+    {
+      "id": "region",
+      "label": "工业区/领地",
+      "groupId": "geography",
+      "fields": [
+        {
+          "id": "ownership",
+          "label": "管辖与产权",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:geography:city-plan",
+        "group:geography:district-profile",
+        "group:geography:infrastructure",
+        "type:region:ownership",
+        "core:body"
+      ]
+    },
+    {
+      "id": "location",
+      "label": "城市地点",
+      "groupId": "geography",
+      "fields": [
+        {
+          "id": "access-control",
+          "label": "出入管制",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:geography:city-plan",
+        "group:geography:district-profile",
+        "group:geography:infrastructure",
+        "type:location:access-control",
+        "core:body"
+      ]
+    },
+    {
+      "id": "skyport",
+      "label": "空港",
+      "groupId": "geography",
+      "fields": [
+        {
+          "id": "flight-window",
+          "label": "起降条件",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:geography:city-plan",
+        "group:geography:district-profile",
+        "group:geography:infrastructure",
+        "type:skyport:flight-window",
+        "core:body"
+      ]
+    },
+    {
+      "id": "undercity",
+      "label": "地下城区",
+      "groupId": "geography",
+      "fields": [
+        {
+          "id": "hidden-route",
+          "label": "隐秘通道",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:geography:city-plan",
+        "group:geography:district-profile",
+        "group:geography:infrastructure",
+        "type:undercity:hidden-route",
+        "core:body"
+      ]
+    },
+    {
+      "id": "faction",
+      "label": "政治势力",
+      "groupId": "factions",
+      "fields": [
+        {
+          "id": "political-agenda",
+          "label": "政治议程",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:factions:authority",
+        "group:factions:public-interest",
+        "group:factions:private-interest",
+        "type:faction:political-agenda",
+        "core:body"
+      ]
+    },
+    {
+      "id": "empire",
+      "label": "帝国机关",
+      "groupId": "factions",
+      "fields": [
+        {
+          "id": "bureaucracy",
+          "label": "官僚体系",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:factions:authority",
+        "group:factions:public-interest",
+        "group:factions:private-interest",
+        "type:empire:bureaucracy",
+        "core:body"
+      ]
+    },
+    {
+      "id": "guild",
+      "label": "行业公会",
+      "groupId": "factions",
+      "fields": [
+        {
+          "id": "trade-monopoly",
+          "label": "行业垄断",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:factions:authority",
+        "group:factions:public-interest",
+        "group:factions:private-interest",
+        "type:guild:trade-monopoly",
+        "core:body"
+      ]
+    },
+    {
+      "id": "labor-union",
+      "label": "工人联合会",
+      "groupId": "factions",
+      "fields": [
+        {
+          "id": "labor-demand",
+          "label": "劳工诉求",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:factions:authority",
+        "group:factions:public-interest",
+        "group:factions:private-interest",
+        "type:labor-union:labor-demand",
+        "core:body"
+      ]
+    },
+    {
+      "id": "inventor",
+      "label": "发明家",
+      "groupId": "characters",
+      "fields": [
+        {
+          "id": "portrait",
+          "label": "专属图标",
+          "type": "icon"
+        },
+        {
+          "id": "patent-status",
+          "label": "专利与资助",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:characters:occupation",
+        "group:characters:patron",
+        "group:characters:secret",
+        "type:inventor:portrait",
+        "type:inventor:patent-status",
+        "core:body"
+      ]
+    },
+    {
+      "id": "investigator",
+      "label": "调查员",
+      "groupId": "characters",
+      "fields": [
+        {
+          "id": "case-authority",
+          "label": "调查权限",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:characters:occupation",
+        "group:characters:patron",
+        "group:characters:secret",
+        "type:investigator:case-authority",
+        "core:body"
+      ]
+    },
+    {
+      "id": "worker",
+      "label": "工人",
+      "groupId": "characters",
+      "fields": [
+        {
+          "id": "work-condition",
+          "label": "工作环境",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:characters:occupation",
+        "group:characters:patron",
+        "group:characters:secret",
+        "type:worker:work-condition",
+        "core:body"
+      ]
+    },
+    {
+      "id": "aristocrat",
+      "label": "贵族",
+      "groupId": "characters",
+      "fields": [
+        {
+          "id": "family-influence",
+          "label": "家族影响",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:characters:occupation",
+        "group:characters:patron",
+        "group:characters:secret",
+        "type:aristocrat:family-influence",
+        "core:body"
+      ]
+    },
+    {
+      "id": "engine",
+      "label": "动力机组",
+      "groupId": "engineering",
+      "fields": [
+        {
+          "id": "output",
+          "label": "功率与输出",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:engineering:blueprint",
+        "group:engineering:power-source",
+        "group:engineering:maintenance",
+        "type:engine:output",
+        "core:body"
+      ]
+    },
+    {
+      "id": "automaton",
+      "label": "自动机械",
+      "groupId": "engineering",
+      "fields": [
+        {
+          "id": "machine-icon",
+          "label": "专属图标",
+          "type": "icon"
+        },
+        {
+          "id": "control-system",
+          "label": "控制系统",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:engineering:blueprint",
+        "group:engineering:power-source",
+        "group:engineering:maintenance",
+        "type:automaton:machine-icon",
+        "type:automaton:control-system",
+        "core:body"
+      ]
+    },
+    {
+      "id": "prosthesis",
+      "label": "机械义肢",
+      "groupId": "engineering",
+      "fields": [
+        {
+          "id": "body-interface",
+          "label": "人体接口",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:engineering:blueprint",
+        "group:engineering:power-source",
+        "group:engineering:maintenance",
+        "type:prosthesis:body-interface",
+        "core:body"
+      ]
+    },
+    {
+      "id": "blueprint",
+      "label": "发明蓝图",
+      "groupId": "engineering",
+      "fields": [
+        {
+          "id": "missing-component",
+          "label": "缺失部件",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:engineering:blueprint",
+        "group:engineering:power-source",
+        "group:engineering:maintenance",
+        "type:blueprint:missing-component",
+        "core:body"
+      ]
+    },
+    {
+      "id": "steam-system",
+      "label": "蒸汽系统",
+      "groupId": "laws",
+      "fields": [
+        {
+          "id": "pressure-limit",
+          "label": "压力与承载",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:laws:operating-rule",
+        "group:laws:failure-mode",
+        "group:laws:social-cost",
+        "type:steam-system:pressure-limit",
+        "core:body"
+      ]
+    },
+    {
+      "id": "pollution-law",
+      "label": "排污规则",
+      "groupId": "laws",
+      "fields": [
+        {
+          "id": "enforcement",
+          "label": "执法方式",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:laws:operating-rule",
+        "group:laws:failure-mode",
+        "group:laws:social-cost",
+        "type:pollution-law:enforcement",
+        "core:body"
+      ]
+    },
+    {
+      "id": "airship",
+      "label": "飞空艇",
+      "groupId": "relics",
+      "fields": [
+        {
+          "id": "vehicle-icon",
+          "label": "专属图标",
+          "type": "icon"
+        },
+        {
+          "id": "flight-range",
+          "label": "航程与续航",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:relics:capacity",
+        "group:relics:crew",
+        "type:airship:vehicle-icon",
+        "type:airship:flight-range",
+        "core:body"
+      ]
+    },
+    {
+      "id": "artifact",
+      "label": "特殊装置",
+      "groupId": "relics",
+      "fields": [
+        {
+          "id": "prototype-risk",
+          "label": "原型风险",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:relics:capacity",
+        "group:relics:crew",
+        "type:artifact:prototype-risk",
+        "core:body"
+      ]
+    },
+    {
+      "id": "investigation",
+      "label": "调查案件",
+      "groupId": "operations",
+      "fields": [
+        {
+          "id": "evidence-chain",
+          "label": "证据链",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:operations:objective",
+        "group:operations:complication",
+        "type:investigation:evidence-chain",
+        "core:body"
+      ]
+    },
+    {
+      "id": "strike",
+      "label": "劳工行动",
+      "groupId": "operations",
+      "fields": [
+        {
+          "id": "negotiation",
+          "label": "谈判条件",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:operations:objective",
+        "group:operations:complication",
+        "type:strike:negotiation",
+        "core:body"
+      ]
+    },
+    {
+      "id": "custom",
+      "label": "城市风俗",
+      "groupId": "culture",
+      "fields": [
+        {
+          "id": "who-practices",
+          "label": "适用阶层",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:culture:class-custom",
+        "group:culture:public-sentiment",
+        "type:custom:who-practices",
+        "core:body"
+      ]
+    },
+    {
+      "id": "archive",
+      "label": "旧档案",
+      "groupId": "records",
+      "fields": [
+        {
+          "id": "custodian",
+          "label": "保管者",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:records:origin",
+        "group:records:alteration",
+        "type:archive:custodian",
+        "core:body"
+      ]
+    }
+  ],
+  "entries": [
+    {
+      "id": "entry-fogbound-steam",
+      "name": "雾冠城",
+      "type": "world",
+      "parentId": "",
+      "status": "draft",
+      "summary": "工业繁荣依赖中央蒸汽网，雾幕危机暴露了能源系统和阶层秩序的裂缝。",
+      "body": "城市结构：上城掌握锅炉、电报与空港，下城承担煤矿、铸造和维修。蒸汽管网既是公共基础设施，也是控制城市的权力网络。\\n\\n核心冲突：危机可以归咎于一次事故，也可能是系统设计、劳工抗争或旧时代技术留下的结果。\\n\\n创作留白：雾幕的真实来源、工业改革的受益者和城市是否应停机检修尚未定论。",
+      "customFields": {},
+      "tags": [
+        "模板示例",
+        "蒸汽朋克"
+      ],
+      "aliases": []
+    }
+  ],
+  "maps": [],
+  "relationGraphs": [
+    {
+      "id": "world-relations",
+      "name": "世界关系图谱",
+      "entryIds": [
+        "entry-fogbound-steam"
+      ],
+      "visibleEntryIds": [
+        "entry-fogbound-steam"
+      ],
+      "zoom": 100,
+      "nodePositions": {}
+    }
+  ],
+  "scripts": [],
+  "relations": [],
+  "events": []
+}

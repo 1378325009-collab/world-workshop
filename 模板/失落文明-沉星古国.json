@@ -1,0 +1,886 @@
+{
+  "schemaVersion": 4,
+  "project": {
+    "id": "sunken-star-civilization",
+    "name": "沉星古国",
+    "genre": "失落文明 · 考古探索 · 古代科技谜团",
+    "era": "现代考察纪元 · 深层信标首次回应后",
+    "tone": "遗迹既是历史证据也是仍在运行的系统；发现越多，越要谨慎判断古人留下的目的。",
+    "premise": "一支考察队在海床下发现一座仍能供能的古都，信标发出的回应却使用了队员尚未发送的口令。遗迹带来能源、文献和危险的争夺，队伍必须在启动全城、封存核心和公开发现之间选择。"
+  },
+  "typeGroups": [
+    {
+      "id": "geography",
+      "label": "遗址与古都",
+      "fields": [
+        {
+          "id": "excavation-map",
+          "label": "遗址/发掘区域图",
+          "type": "image"
+        },
+        {
+          "id": "site-profile",
+          "label": "遗址状况",
+          "type": "polygon",
+          "sides": 5,
+          "axes": [
+            "结构完整",
+            "能源残量",
+            "防护强度",
+            "考察难度",
+            "坍塌风险"
+          ]
+        },
+        {
+          "id": "access-route",
+          "label": "进入路线",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:geography:excavation-map",
+        "group:geography:site-profile",
+        "group:geography:access-route",
+        "core:body"
+      ]
+    },
+    {
+      "id": "factions",
+      "label": "考察与争夺势力",
+      "fields": [
+        {
+          "id": "mandate",
+          "label": "行动授权",
+          "type": "text"
+        },
+        {
+          "id": "funding",
+          "label": "资金来源",
+          "type": "text"
+        },
+        {
+          "id": "ownership-claim",
+          "label": "所有权主张",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:factions:mandate",
+        "group:factions:funding",
+        "group:factions:ownership-claim",
+        "core:body"
+      ]
+    },
+    {
+      "id": "characters",
+      "label": "考察者与古代人物",
+      "fields": [
+        {
+          "id": "specialty",
+          "label": "专业领域",
+          "type": "text"
+        },
+        {
+          "id": "field-role",
+          "label": "现场职责",
+          "type": "text"
+        },
+        {
+          "id": "interpretation",
+          "label": "个人判断",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:characters:specialty",
+        "group:characters:field-role",
+        "group:characters:interpretation",
+        "core:body"
+      ]
+    },
+    {
+      "id": "entities",
+      "label": "守护系统与造物",
+      "fields": [
+        {
+          "id": "operating-purpose",
+          "label": "运行目的",
+          "type": "text"
+        },
+        {
+          "id": "command-source",
+          "label": "指令来源",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:entities:operating-purpose",
+        "group:entities:command-source",
+        "core:body"
+      ]
+    },
+    {
+      "id": "traditions",
+      "label": "古国文字与仪式",
+      "fields": [
+        {
+          "id": "translation-status",
+          "label": "释读进度",
+          "type": "text"
+        },
+        {
+          "id": "regional-variant",
+          "label": "地域变体",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:traditions:translation-status",
+        "group:traditions:regional-variant",
+        "core:body"
+      ]
+    },
+    {
+      "id": "technology",
+      "label": "古代技术系统",
+      "fields": [
+        {
+          "id": "system-diagram",
+          "label": "结构/电路示意",
+          "type": "image"
+        },
+        {
+          "id": "energy-source",
+          "label": "能源来源",
+          "type": "text"
+        },
+        {
+          "id": "dependency",
+          "label": "系统依赖",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:technology:system-diagram",
+        "group:technology:energy-source",
+        "group:technology:dependency",
+        "core:body"
+      ]
+    },
+    {
+      "id": "laws",
+      "label": "封存与失效机制",
+      "fields": [
+        {
+          "id": "activation-condition",
+          "label": "启动条件",
+          "type": "text"
+        },
+        {
+          "id": "failsafe",
+          "label": "安全机制",
+          "type": "text"
+        },
+        {
+          "id": "failure-consequence",
+          "label": "失效后果",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:laws:activation-condition",
+        "group:laws:failsafe",
+        "group:laws:failure-consequence",
+        "core:body"
+      ]
+    },
+    {
+      "id": "relics",
+      "label": "器物与核心",
+      "fields": [
+        {
+          "id": "relic-image",
+          "label": "器物图片",
+          "type": "image"
+        },
+        {
+          "id": "handling",
+          "label": "接触与保管",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:relics:relic-image",
+        "group:relics:handling",
+        "core:body"
+      ]
+    },
+    {
+      "id": "excavations",
+      "label": "发掘与解读",
+      "fields": [
+        {
+          "id": "research-question",
+          "label": "研究问题",
+          "type": "text"
+        },
+        {
+          "id": "next-action",
+          "label": "下一步行动",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:excavations:research-question",
+        "group:excavations:next-action",
+        "core:body"
+      ]
+    },
+    {
+      "id": "archives",
+      "label": "铭文与档案",
+      "fields": [
+        {
+          "id": "medium",
+          "label": "记录媒介",
+          "type": "text"
+        },
+        {
+          "id": "translation-confidence",
+          "label": "释读可信度",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:archives:medium",
+        "group:archives:translation-confidence",
+        "core:body"
+      ]
+    }
+  ],
+  "typeDefinitions": [
+    {
+      "id": "world",
+      "label": "古国遗存世界",
+      "groupId": "geography",
+      "fields": [
+        {
+          "id": "modern-context",
+          "label": "现代背景",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:geography:excavation-map",
+        "group:geography:site-profile",
+        "group:geography:access-route",
+        "type:world:modern-context",
+        "core:body"
+      ]
+    },
+    {
+      "id": "region",
+      "label": "遗址区域",
+      "groupId": "geography",
+      "fields": [
+        {
+          "id": "stratigraphy",
+          "label": "地层关系",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:geography:excavation-map",
+        "group:geography:site-profile",
+        "group:geography:access-route",
+        "type:region:stratigraphy",
+        "core:body"
+      ]
+    },
+    {
+      "id": "location",
+      "label": "遗迹地点",
+      "groupId": "geography",
+      "fields": [
+        {
+          "id": "excavation-status",
+          "label": "发掘状态",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:geography:excavation-map",
+        "group:geography:site-profile",
+        "group:geography:access-route",
+        "type:location:excavation-status",
+        "core:body"
+      ]
+    },
+    {
+      "id": "ancient-capital",
+      "label": "地下古都",
+      "groupId": "geography",
+      "fields": [
+        {
+          "id": "city-function",
+          "label": "城市功能",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:geography:excavation-map",
+        "group:geography:site-profile",
+        "group:geography:access-route",
+        "type:ancient-capital:city-function",
+        "core:body"
+      ]
+    },
+    {
+      "id": "orbital-remnant",
+      "label": "高空/轨道遗构",
+      "groupId": "geography",
+      "fields": [
+        {
+          "id": "access-method",
+          "label": "抵达方式",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:geography:excavation-map",
+        "group:geography:site-profile",
+        "group:geography:access-route",
+        "type:orbital-remnant:access-method",
+        "core:body"
+      ]
+    },
+    {
+      "id": "faction",
+      "label": "考察势力",
+      "groupId": "factions",
+      "fields": [
+        {
+          "id": "public-claim",
+          "label": "公开主张",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:factions:mandate",
+        "group:factions:funding",
+        "group:factions:ownership-claim",
+        "type:faction:public-claim",
+        "core:body"
+      ]
+    },
+    {
+      "id": "archaeology-institute",
+      "label": "考古机构",
+      "groupId": "factions",
+      "fields": [
+        {
+          "id": "publication-policy",
+          "label": "公开政策",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:factions:mandate",
+        "group:factions:funding",
+        "group:factions:ownership-claim",
+        "type:archaeology-institute:publication-policy",
+        "core:body"
+      ]
+    },
+    {
+      "id": "salvage-guild",
+      "label": "遗物回收团体",
+      "groupId": "factions",
+      "fields": [
+        {
+          "id": "salvage-rights",
+          "label": "回收权利",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:factions:mandate",
+        "group:factions:funding",
+        "group:factions:ownership-claim",
+        "type:salvage-guild:salvage-rights",
+        "core:body"
+      ]
+    },
+    {
+      "id": "character",
+      "label": "考察者",
+      "groupId": "characters",
+      "fields": [
+        {
+          "id": "portrait",
+          "label": "专属图标",
+          "type": "icon"
+        },
+        {
+          "id": "field-notes",
+          "label": "现场笔记",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:characters:specialty",
+        "group:characters:field-role",
+        "group:characters:interpretation",
+        "type:character:portrait",
+        "type:character:field-notes",
+        "core:body"
+      ]
+    },
+    {
+      "id": "archaeologist",
+      "label": "考古学者",
+      "groupId": "characters",
+      "fields": [
+        {
+          "id": "method",
+          "label": "研究方法",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:characters:specialty",
+        "group:characters:field-role",
+        "group:characters:interpretation",
+        "type:archaeologist:method",
+        "core:body"
+      ]
+    },
+    {
+      "id": "descendant",
+      "label": "古国后裔",
+      "groupId": "characters",
+      "fields": [
+        {
+          "id": "inherited-memory",
+          "label": "传承记忆",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:characters:specialty",
+        "group:characters:field-role",
+        "group:characters:interpretation",
+        "type:descendant:inherited-memory",
+        "core:body"
+      ]
+    },
+    {
+      "id": "keeper-ai",
+      "label": "遗迹守护智能",
+      "groupId": "characters",
+      "fields": [
+        {
+          "id": "instruction-history",
+          "label": "指令历史",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:characters:specialty",
+        "group:characters:field-role",
+        "group:characters:interpretation",
+        "type:keeper-ai:instruction-history",
+        "core:body"
+      ]
+    },
+    {
+      "id": "guardian",
+      "label": "遗迹守护者",
+      "groupId": "entities",
+      "fields": [
+        {
+          "id": "guardian-icon",
+          "label": "专属图标",
+          "type": "icon"
+        },
+        {
+          "id": "recognition-rule",
+          "label": "识别规则",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:entities:operating-purpose",
+        "group:entities:command-source",
+        "type:guardian:guardian-icon",
+        "type:guardian:recognition-rule",
+        "core:body"
+      ]
+    },
+    {
+      "id": "automaton",
+      "label": "古代造物",
+      "groupId": "entities",
+      "fields": [
+        {
+          "id": "repair-state",
+          "label": "维修状态",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:entities:operating-purpose",
+        "group:entities:command-source",
+        "type:automaton:repair-state",
+        "core:body"
+      ]
+    },
+    {
+      "id": "ancient-script",
+      "label": "古文字体系",
+      "groupId": "traditions",
+      "fields": [
+        {
+          "id": "known-variants",
+          "label": "已知变体",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:traditions:translation-status",
+        "group:traditions:regional-variant",
+        "type:ancient-script:known-variants",
+        "core:body"
+      ]
+    },
+    {
+      "id": "ritual",
+      "label": "古国仪式",
+      "groupId": "traditions",
+      "fields": [
+        {
+          "id": "social-function",
+          "label": "社会功能",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:traditions:translation-status",
+        "group:traditions:regional-variant",
+        "type:ritual:social-function",
+        "core:body"
+      ]
+    },
+    {
+      "id": "energy-grid",
+      "label": "能源网络",
+      "groupId": "technology",
+      "fields": [
+        {
+          "id": "active-sectors",
+          "label": "活动区域",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:technology:system-diagram",
+        "group:technology:energy-source",
+        "group:technology:dependency",
+        "type:energy-grid:active-sectors",
+        "core:body"
+      ]
+    },
+    {
+      "id": "archive-system",
+      "label": "记忆档案系统",
+      "groupId": "technology",
+      "fields": [
+        {
+          "id": "data-integrity",
+          "label": "数据完整性",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:technology:system-diagram",
+        "group:technology:energy-source",
+        "group:technology:dependency",
+        "type:archive-system:data-integrity",
+        "core:body"
+      ]
+    },
+    {
+      "id": "sealed-system",
+      "label": "封存机制",
+      "groupId": "laws",
+      "fields": [
+        {
+          "id": "authorized-key",
+          "label": "授权凭证",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:laws:activation-condition",
+        "group:laws:failsafe",
+        "group:laws:failure-consequence",
+        "type:sealed-system:authorized-key",
+        "core:body"
+      ]
+    },
+    {
+      "id": "artifact",
+      "label": "古代器物",
+      "groupId": "relics",
+      "fields": [
+        {
+          "id": "artifact-icon",
+          "label": "专属图标",
+          "type": "icon"
+        },
+        {
+          "id": "material",
+          "label": "材质与年代",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:relics:relic-image",
+        "group:relics:handling",
+        "type:artifact:artifact-icon",
+        "type:artifact:material",
+        "core:body"
+      ]
+    },
+    {
+      "id": "core",
+      "label": "信标核心",
+      "groupId": "relics",
+      "fields": [
+        {
+          "id": "response-pattern",
+          "label": "回应规律",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:relics:relic-image",
+        "group:relics:handling",
+        "type:core:response-pattern",
+        "core:body"
+      ]
+    },
+    {
+      "id": "excavation",
+      "label": "考古发掘",
+      "groupId": "excavations",
+      "fields": [
+        {
+          "id": "team-composition",
+          "label": "队伍配置",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:excavations:research-question",
+        "group:excavations:next-action",
+        "type:excavation:team-composition",
+        "core:body"
+      ]
+    },
+    {
+      "id": "decryption",
+      "label": "档案解读",
+      "groupId": "excavations",
+      "fields": [
+        {
+          "id": "competing-translation",
+          "label": "不同译文",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:excavations:research-question",
+        "group:excavations:next-action",
+        "type:decryption:competing-translation",
+        "core:body"
+      ]
+    },
+    {
+      "id": "inscription",
+      "label": "铭文",
+      "groupId": "archives",
+      "fields": [
+        {
+          "id": "rubbing-image",
+          "label": "拓片/照片",
+          "type": "image"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:archives:medium",
+        "group:archives:translation-confidence",
+        "type:inscription:rubbing-image",
+        "core:body"
+      ]
+    },
+    {
+      "id": "data-fragment",
+      "label": "数据残片",
+      "groupId": "archives",
+      "fields": [
+        {
+          "id": "reconstruction",
+          "label": "重建情况",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:archives:medium",
+        "group:archives:translation-confidence",
+        "type:data-fragment:reconstruction",
+        "core:body"
+      ]
+    }
+  ],
+  "entries": [
+    {
+      "id": "entry-sunken-star-civilization",
+      "name": "沉星古国遗址群",
+      "type": "world",
+      "parentId": "",
+      "status": "draft",
+      "summary": "深层信标回应后，考察队确认古都系统仍在运行，但其意图尚不可知。",
+      "body": "文明遗存：古国留下地下城、能源网络、记忆档案和仍然活动的守护系统。不同遗迹可能属于同一时期，也可能经历过多次改造。\\n\\n考察原则：区分实地观察、译文、推断和传说；古代系统发出的提示不等于可信指令。\\n\\n创作留白：古国消失的原因、信标回应对象及现代社会应如何处置发现的技术。",
+      "customFields": {},
+      "tags": [
+        "模板示例",
+        "失落文明"
+      ],
+      "aliases": []
+    }
+  ],
+  "maps": [],
+  "relationGraphs": [
+    {
+      "id": "world-relations",
+      "name": "世界关系图谱",
+      "entryIds": [
+        "entry-sunken-star-civilization"
+      ],
+      "visibleEntryIds": [
+        "entry-sunken-star-civilization"
+      ],
+      "zoom": 100,
+      "nodePositions": {}
+    }
+  ],
+  "scripts": [],
+  "relations": [],
+  "events": []
+}

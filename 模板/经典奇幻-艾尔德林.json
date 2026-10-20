@@ -1,0 +1,829 @@
+{
+  "schemaVersion": 4,
+  "project": {
+    "id": "elderlyn",
+    "name": "艾尔德林",
+    "genre": "经典奇幻 · 史诗冒险 · 古老预言",
+    "era": "龙眠历 892 年 · 苍白彗星出现前夕",
+    "tone": "古老文明、远行队伍与命运抉择交织；神话真实存在，但传说中的答案往往不完整。",
+    "premise": "苍白彗星重返天空，沉睡数百年的边境巨龙同时苏醒。古王国要求各族履行一份被遗忘的盟约，旅者们必须穿越失落王道，在盟约失效前找出彗星究竟是征兆、钥匙，还是某种古老生物的归来。"
+  },
+  "typeGroups": [
+    {
+      "id": "geography",
+      "label": "大陆与王国",
+      "fields": [
+        {
+          "id": "world-map",
+          "label": "大陆/王国地图",
+          "type": "image"
+        },
+        {
+          "id": "realm-profile",
+          "label": "王国概况",
+          "type": "polygon",
+          "sides": 5,
+          "axes": [
+            "粮食",
+            "军备",
+            "魔法",
+            "贸易",
+            "内部稳定"
+          ]
+        },
+        {
+          "id": "ancient-history",
+          "label": "古代沿革",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:geography:world-map",
+        "group:geography:realm-profile",
+        "group:geography:ancient-history",
+        "core:body"
+      ]
+    },
+    {
+      "id": "factions",
+      "label": "王国与盟约",
+      "fields": [
+        {
+          "id": "authority",
+          "label": "统治方式",
+          "type": "text"
+        },
+        {
+          "id": "alliance",
+          "label": "盟约关系",
+          "type": "text"
+        },
+        {
+          "id": "current-crisis",
+          "label": "当前危机",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:factions:authority",
+        "group:factions:alliance",
+        "group:factions:current-crisis",
+        "core:body"
+      ]
+    },
+    {
+      "id": "characters",
+      "label": "英雄与旅者",
+      "fields": [
+        {
+          "id": "calling",
+          "label": "身份与召唤",
+          "type": "text"
+        },
+        {
+          "id": "promise",
+          "label": "承诺与牵挂",
+          "type": "text"
+        },
+        {
+          "id": "personal-arc",
+          "label": "成长方向",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:characters:calling",
+        "group:characters:promise",
+        "group:characters:personal-arc",
+        "core:body"
+      ]
+    },
+    {
+      "id": "races",
+      "label": "智慧族群",
+      "fields": [
+        {
+          "id": "homeland",
+          "label": "故土与迁徙",
+          "type": "text"
+        },
+        {
+          "id": "customs",
+          "label": "文化传统",
+          "type": "text"
+        },
+        {
+          "id": "intergroup-relations",
+          "label": "族群关系",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:races:homeland",
+        "group:races:customs",
+        "group:races:intergroup-relations",
+        "core:body"
+      ]
+    },
+    {
+      "id": "creatures",
+      "label": "神话生物",
+      "fields": [
+        {
+          "id": "territory",
+          "label": "领地与活动",
+          "type": "text"
+        },
+        {
+          "id": "threat",
+          "label": "威胁与弱点",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:creatures:territory",
+        "group:creatures:threat",
+        "core:body"
+      ]
+    },
+    {
+      "id": "deities",
+      "label": "神祇与信仰",
+      "fields": [
+        {
+          "id": "domain",
+          "label": "神职与领域",
+          "type": "text"
+        },
+        {
+          "id": "worship",
+          "label": "信仰实践",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:deities:domain",
+        "group:deities:worship",
+        "core:body"
+      ]
+    },
+    {
+      "id": "magic",
+      "label": "魔法与预言",
+      "fields": [
+        {
+          "id": "source",
+          "label": "魔力来源",
+          "type": "text"
+        },
+        {
+          "id": "limitation",
+          "label": "施法限制",
+          "type": "text"
+        },
+        {
+          "id": "interpretation",
+          "label": "预言解释",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:magic:source",
+        "group:magic:limitation",
+        "group:magic:interpretation",
+        "core:body"
+      ]
+    },
+    {
+      "id": "artifacts",
+      "label": "遗物与圣器",
+      "fields": [
+        {
+          "id": "relic-image",
+          "label": "遗物图像",
+          "type": "image"
+        },
+        {
+          "id": "origin",
+          "label": "来源与传承",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:artifacts:relic-image",
+        "group:artifacts:origin",
+        "core:body"
+      ]
+    },
+    {
+      "id": "quests",
+      "label": "远征与使命",
+      "fields": [
+        {
+          "id": "destination",
+          "label": "目标地点",
+          "type": "text"
+        },
+        {
+          "id": "obstacles",
+          "label": "主要阻碍",
+          "type": "text"
+        },
+        {
+          "id": "stakes",
+          "label": "失败代价",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:quests:destination",
+        "group:quests:obstacles",
+        "group:quests:stakes",
+        "core:body"
+      ]
+    },
+    {
+      "id": "lore",
+      "label": "传说与史诗",
+      "fields": [
+        {
+          "id": "version",
+          "label": "传说版本",
+          "type": "text"
+        },
+        {
+          "id": "evidence",
+          "label": "依据与疑点",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:lore:version",
+        "group:lore:evidence",
+        "core:body"
+      ]
+    }
+  ],
+  "typeDefinitions": [
+    {
+      "id": "world",
+      "label": "奇幻大陆",
+      "groupId": "geography",
+      "fields": [
+        {
+          "id": "world-order",
+          "label": "世界格局",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:geography:world-map",
+        "group:geography:realm-profile",
+        "group:geography:ancient-history",
+        "type:world:world-order",
+        "core:body"
+      ]
+    },
+    {
+      "id": "region",
+      "label": "大洲与王国",
+      "groupId": "geography",
+      "fields": [
+        {
+          "id": "border-history",
+          "label": "边界沿革",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:geography:world-map",
+        "group:geography:realm-profile",
+        "group:geography:ancient-history",
+        "type:region:border-history",
+        "core:body"
+      ]
+    },
+    {
+      "id": "location",
+      "label": "城镇与领地",
+      "groupId": "geography",
+      "fields": [
+        {
+          "id": "local-ruler",
+          "label": "领主/议会",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:geography:world-map",
+        "group:geography:realm-profile",
+        "group:geography:ancient-history",
+        "type:location:local-ruler",
+        "core:body"
+      ]
+    },
+    {
+      "id": "dungeon",
+      "label": "地下城与遗迹",
+      "groupId": "geography",
+      "fields": [
+        {
+          "id": "depth-and-seal",
+          "label": "深度与封印",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:geography:world-map",
+        "group:geography:realm-profile",
+        "group:geography:ancient-history",
+        "type:dungeon:depth-and-seal",
+        "core:body"
+      ]
+    },
+    {
+      "id": "faction",
+      "label": "政治势力",
+      "groupId": "factions",
+      "fields": [
+        {
+          "id": "claim",
+          "label": "权力主张",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:factions:authority",
+        "group:factions:alliance",
+        "group:factions:current-crisis",
+        "type:faction:claim",
+        "core:body"
+      ]
+    },
+    {
+      "id": "kingdom",
+      "label": "王国",
+      "groupId": "factions",
+      "fields": [
+        {
+          "id": "banner",
+          "label": "专属图标",
+          "type": "icon"
+        },
+        {
+          "id": "succession",
+          "label": "王位继承",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:factions:authority",
+        "group:factions:alliance",
+        "group:factions:current-crisis",
+        "type:kingdom:banner",
+        "type:kingdom:succession",
+        "core:body"
+      ]
+    },
+    {
+      "id": "order",
+      "label": "骑士团/秘法会",
+      "groupId": "factions",
+      "fields": [
+        {
+          "id": "vow",
+          "label": "组织誓约",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:factions:authority",
+        "group:factions:alliance",
+        "group:factions:current-crisis",
+        "type:order:vow",
+        "core:body"
+      ]
+    },
+    {
+      "id": "character",
+      "label": "旅者",
+      "groupId": "characters",
+      "fields": [
+        {
+          "id": "portrait",
+          "label": "专属图标",
+          "type": "icon"
+        },
+        {
+          "id": "hero-profile",
+          "label": "旅者特质",
+          "type": "polygon",
+          "sides": 5,
+          "axes": [
+            "勇气",
+            "智慧",
+            "协作",
+            "声望",
+            "命运牵引"
+          ]
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:characters:calling",
+        "group:characters:promise",
+        "group:characters:personal-arc",
+        "type:character:portrait",
+        "type:character:hero-profile",
+        "core:body"
+      ]
+    },
+    {
+      "id": "ruler",
+      "label": "君主与使者",
+      "groupId": "characters",
+      "fields": [
+        {
+          "id": "diplomatic-goal",
+          "label": "外交目标",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:characters:calling",
+        "group:characters:promise",
+        "group:characters:personal-arc",
+        "type:ruler:diplomatic-goal",
+        "core:body"
+      ]
+    },
+    {
+      "id": "race",
+      "label": "智慧族群",
+      "groupId": "races",
+      "fields": [
+        {
+          "id": "origin-story",
+          "label": "族群起源",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:races:homeland",
+        "group:races:customs",
+        "group:races:intergroup-relations",
+        "type:race:origin-story",
+        "core:body"
+      ]
+    },
+    {
+      "id": "elf",
+      "label": "精灵",
+      "groupId": "races",
+      "fields": [
+        {
+          "id": "forest-bond",
+          "label": "森林盟约",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:races:homeland",
+        "group:races:customs",
+        "group:races:intergroup-relations",
+        "type:elf:forest-bond",
+        "core:body"
+      ]
+    },
+    {
+      "id": "dwarf",
+      "label": "矮人",
+      "groupId": "races",
+      "fields": [
+        {
+          "id": "craft-heritage",
+          "label": "工艺传承",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:races:homeland",
+        "group:races:customs",
+        "group:races:intergroup-relations",
+        "type:dwarf:craft-heritage",
+        "core:body"
+      ]
+    },
+    {
+      "id": "dragonkin",
+      "label": "龙裔",
+      "groupId": "races",
+      "fields": [
+        {
+          "id": "draconic-legacy",
+          "label": "龙族遗产",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:races:homeland",
+        "group:races:customs",
+        "group:races:intergroup-relations",
+        "type:dragonkin:draconic-legacy",
+        "core:body"
+      ]
+    },
+    {
+      "id": "dragon",
+      "label": "巨龙",
+      "groupId": "creatures",
+      "fields": [
+        {
+          "id": "creature-icon",
+          "label": "专属图标",
+          "type": "icon"
+        },
+        {
+          "id": "hoard",
+          "label": "珍藏与欲望",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:creatures:territory",
+        "group:creatures:threat",
+        "type:dragon:creature-icon",
+        "type:dragon:hoard",
+        "core:body"
+      ]
+    },
+    {
+      "id": "undead",
+      "label": "亡灵",
+      "groupId": "creatures",
+      "fields": [
+        {
+          "id": "binding",
+          "label": "束缚与安息条件",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:creatures:territory",
+        "group:creatures:threat",
+        "type:undead:binding",
+        "core:body"
+      ]
+    },
+    {
+      "id": "deity",
+      "label": "神祇",
+      "groupId": "deities",
+      "fields": [
+        {
+          "id": "deity-icon",
+          "label": "专属图标",
+          "type": "icon"
+        },
+        {
+          "id": "divine-sign",
+          "label": "神迹表现",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:deities:domain",
+        "group:deities:worship",
+        "type:deity:deity-icon",
+        "type:deity:divine-sign",
+        "core:body"
+      ]
+    },
+    {
+      "id": "spell",
+      "label": "法术",
+      "groupId": "magic",
+      "fields": [
+        {
+          "id": "casting-condition",
+          "label": "施法条件",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:magic:source",
+        "group:magic:limitation",
+        "group:magic:interpretation",
+        "type:spell:casting-condition",
+        "core:body"
+      ]
+    },
+    {
+      "id": "prophecy",
+      "label": "预言",
+      "groupId": "magic",
+      "fields": [
+        {
+          "id": "ambiguous-phrasing",
+          "label": "含混表述",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:magic:source",
+        "group:magic:limitation",
+        "group:magic:interpretation",
+        "type:prophecy:ambiguous-phrasing",
+        "core:body"
+      ]
+    },
+    {
+      "id": "artifact",
+      "label": "古代圣器",
+      "groupId": "artifacts",
+      "fields": [
+        {
+          "id": "artifact-icon",
+          "label": "专属图标",
+          "type": "icon"
+        },
+        {
+          "id": "chosen-bearer",
+          "label": "持有者条件",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:artifacts:relic-image",
+        "group:artifacts:origin",
+        "type:artifact:artifact-icon",
+        "type:artifact:chosen-bearer",
+        "core:body"
+      ]
+    },
+    {
+      "id": "quest",
+      "label": "远征任务",
+      "groupId": "quests",
+      "fields": [
+        {
+          "id": "party-role",
+          "label": "队伍分工",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:quests:destination",
+        "group:quests:obstacles",
+        "group:quests:stakes",
+        "type:quest:party-role",
+        "core:body"
+      ]
+    },
+    {
+      "id": "legend",
+      "label": "古老传说",
+      "groupId": "lore",
+      "fields": [
+        {
+          "id": "contradicting-version",
+          "label": "互相矛盾的版本",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:lore:version",
+        "group:lore:evidence",
+        "type:legend:contradicting-version",
+        "core:body"
+      ]
+    }
+  ],
+  "entries": [
+    {
+      "id": "entry-elderlyn",
+      "name": "艾尔德林大陆",
+      "type": "world",
+      "parentId": "",
+      "status": "draft",
+      "summary": "古老盟约即将失效，彗星与巨龙苏醒预示着多个文明都无法回避的变局。",
+      "body": "世界构成：人类诸国、精灵森林、矮人山城和龙族旧境彼此相连，也各自保留不同的历史记忆。\\n\\n冒险引擎：远行需要同盟、地图、补给和可信的向导；预言只给出有限线索，不能代替人物选择。\\n\\n创作留白：盟约的原文、彗星的性质和各族是否愿意继续合作尚未确定。",
+      "customFields": {},
+      "tags": [
+        "模板示例",
+        "经典奇幻"
+      ],
+      "aliases": []
+    }
+  ],
+  "maps": [],
+  "relationGraphs": [
+    {
+      "id": "world-relations",
+      "name": "世界关系图谱",
+      "entryIds": [
+        "entry-elderlyn"
+      ],
+      "visibleEntryIds": [
+        "entry-elderlyn"
+      ],
+      "zoom": 100,
+      "nodePositions": {}
+    }
+  ],
+  "scripts": [],
+  "relations": [],
+  "events": []
+}

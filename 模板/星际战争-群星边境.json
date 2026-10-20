@@ -1,0 +1,709 @@
+{
+  "schemaVersion": 4,
+  "project": {
+    "id": "starfrontier",
+    "name": "群星边境",
+    "genre": "星际战争 · 军事科幻 · 群像",
+    "era": "人类历 2476 年 · 外环战争第三年",
+    "tone": "前线求生与星际政治并重；技术迭代很快，胜利常伴随补给、民意与盟约的代价。",
+    "premise": "跃迁门网连续失稳后，数个星际政权被切断补给。各方争夺一条仍可通行的外环航道，前线舰队必须在守住殖民地、服从命令与阻止战争扩大的选择间周旋。"
+  },
+  "typeGroups": [
+    {
+      "id": "geography",
+      "label": "星域与战区",
+      "fields": [
+        {
+          "id": "star-chart",
+          "label": "星图/战区地图",
+          "type": "image"
+        },
+        {
+          "id": "strategic-profile",
+          "label": "战略态势",
+          "type": "polygon",
+          "sides": 5,
+          "axes": [
+            "资源储量",
+            "航路价值",
+            "补给能力",
+            "威胁程度",
+            "环境稳定"
+          ]
+        },
+        {
+          "id": "stellar-hazards",
+          "label": "天体与战区风险",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:geography:star-chart",
+        "group:geography:strategic-profile",
+        "group:geography:stellar-hazards",
+        "core:body"
+      ]
+    },
+    {
+      "id": "factions",
+      "label": "星际势力",
+      "fields": [
+        {
+          "id": "political-goal",
+          "label": "政治目标",
+          "type": "text"
+        },
+        {
+          "id": "logistics",
+          "label": "后勤体系",
+          "type": "text"
+        },
+        {
+          "id": "force-profile",
+          "label": "综合实力",
+          "type": "polygon",
+          "sides": 5,
+          "axes": [
+            "舰队规模",
+            "工业能力",
+            "情报能力",
+            "后勤能力",
+            "盟友支持"
+          ]
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:factions:political-goal",
+        "group:factions:logistics",
+        "group:factions:force-profile",
+        "core:body"
+      ]
+    },
+    {
+      "id": "characters",
+      "label": "人物与舰员",
+      "fields": [
+        {
+          "id": "post",
+          "label": "职务与岗位",
+          "type": "text"
+        },
+        {
+          "id": "allegiance",
+          "label": "效忠对象",
+          "type": "text"
+        },
+        {
+          "id": "personal-stake",
+          "label": "个人牵挂",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:characters:post",
+        "group:characters:allegiance",
+        "group:characters:personal-stake",
+        "core:body"
+      ]
+    },
+    {
+      "id": "civilizations",
+      "label": "文明与种族",
+      "fields": [
+        {
+          "id": "biology",
+          "label": "生理与寿命",
+          "type": "text"
+        },
+        {
+          "id": "diplomacy",
+          "label": "外交习惯",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:civilizations:biology",
+        "group:civilizations:diplomacy",
+        "core:body"
+      ]
+    },
+    {
+      "id": "warfare",
+      "label": "科技与战术",
+      "fields": [
+        {
+          "id": "operating-limit",
+          "label": "使用条件",
+          "type": "text"
+        },
+        {
+          "id": "countermeasure",
+          "label": "反制方式",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:warfare:operating-limit",
+        "group:warfare:countermeasure",
+        "core:body"
+      ]
+    },
+    {
+      "id": "engineering",
+      "label": "舰船与装备",
+      "fields": [
+        {
+          "id": "schematic",
+          "label": "外观/舱段示意",
+          "type": "image"
+        },
+        {
+          "id": "maintenance",
+          "label": "维护与补给",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:engineering:schematic",
+        "group:engineering:maintenance",
+        "core:body"
+      ]
+    },
+    {
+      "id": "campaigns",
+      "label": "战役与任务",
+      "fields": [
+        {
+          "id": "objective",
+          "label": "作战目标",
+          "type": "text"
+        },
+        {
+          "id": "campaign-stakes",
+          "label": "战局代价",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:campaigns:objective",
+        "group:campaigns:campaign-stakes",
+        "core:body"
+      ]
+    },
+    {
+      "id": "intelligence",
+      "label": "情报与秘密",
+      "fields": [
+        {
+          "id": "source",
+          "label": "情报来源",
+          "type": "text"
+        },
+        {
+          "id": "reliability",
+          "label": "可信度与偏差",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:intelligence:source",
+        "group:intelligence:reliability",
+        "core:body"
+      ]
+    }
+  ],
+  "typeDefinitions": [
+    {
+      "id": "world",
+      "label": "已知星域",
+      "groupId": "geography",
+      "fields": [
+        {
+          "id": "political-map",
+          "label": "势力边界",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:geography:star-chart",
+        "group:geography:strategic-profile",
+        "group:geography:stellar-hazards",
+        "type:world:political-map",
+        "core:body"
+      ]
+    },
+    {
+      "id": "region",
+      "label": "星区",
+      "groupId": "geography",
+      "fields": [
+        {
+          "id": "strategic-value",
+          "label": "战略价值",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:geography:star-chart",
+        "group:geography:strategic-profile",
+        "group:geography:stellar-hazards",
+        "type:region:strategic-value",
+        "core:body"
+      ]
+    },
+    {
+      "id": "location",
+      "label": "行星/空间站",
+      "groupId": "geography",
+      "fields": [
+        {
+          "id": "local-condition",
+          "label": "当地环境",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:geography:star-chart",
+        "group:geography:strategic-profile",
+        "group:geography:stellar-hazards",
+        "type:location:local-condition",
+        "core:body"
+      ]
+    },
+    {
+      "id": "battlefield",
+      "label": "战场",
+      "groupId": "geography",
+      "fields": [
+        {
+          "id": "battle-phase",
+          "label": "战况阶段",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:geography:star-chart",
+        "group:geography:strategic-profile",
+        "group:geography:stellar-hazards",
+        "type:battlefield:battle-phase",
+        "core:body"
+      ]
+    },
+    {
+      "id": "jump-route",
+      "label": "跃迁航道",
+      "groupId": "geography",
+      "fields": [
+        {
+          "id": "route-condition",
+          "label": "航道状态",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:geography:star-chart",
+        "group:geography:strategic-profile",
+        "group:geography:stellar-hazards",
+        "type:jump-route:route-condition",
+        "core:body"
+      ]
+    },
+    {
+      "id": "faction",
+      "label": "交战阵营",
+      "groupId": "factions",
+      "fields": [
+        {
+          "id": "insignia",
+          "label": "专属图标",
+          "type": "icon"
+        },
+        {
+          "id": "command-structure",
+          "label": "指挥结构",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:factions:political-goal",
+        "group:factions:logistics",
+        "group:factions:force-profile",
+        "type:faction:insignia",
+        "type:faction:command-structure",
+        "core:body"
+      ]
+    },
+    {
+      "id": "fleet",
+      "label": "舰队",
+      "groupId": "factions",
+      "fields": [
+        {
+          "id": "fleet-composition",
+          "label": "舰队编成",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:factions:political-goal",
+        "group:factions:logistics",
+        "group:factions:force-profile",
+        "type:fleet:fleet-composition",
+        "core:body"
+      ]
+    },
+    {
+      "id": "corporation",
+      "label": "军工集团",
+      "groupId": "factions",
+      "fields": [
+        {
+          "id": "production-chain",
+          "label": "军工产能",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:factions:political-goal",
+        "group:factions:logistics",
+        "group:factions:force-profile",
+        "type:corporation:production-chain",
+        "core:body"
+      ]
+    },
+    {
+      "id": "character",
+      "label": "舰员/人物",
+      "groupId": "characters",
+      "fields": [
+        {
+          "id": "portrait",
+          "label": "专属图标",
+          "type": "icon"
+        },
+        {
+          "id": "service-record",
+          "label": "服役经历",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:characters:post",
+        "group:characters:allegiance",
+        "group:characters:personal-stake",
+        "type:character:portrait",
+        "type:character:service-record",
+        "core:body"
+      ]
+    },
+    {
+      "id": "commander",
+      "label": "战区指挥官",
+      "groupId": "characters",
+      "fields": [
+        {
+          "id": "command-style",
+          "label": "指挥风格",
+          "type": "text"
+        },
+        {
+          "id": "orders",
+          "label": "当前命令",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:characters:post",
+        "group:characters:allegiance",
+        "group:characters:personal-stake",
+        "type:commander:command-style",
+        "type:commander:orders",
+        "core:body"
+      ]
+    },
+    {
+      "id": "civilization",
+      "label": "智慧文明",
+      "groupId": "civilizations",
+      "fields": [
+        {
+          "id": "historical-contact",
+          "label": "接触历史",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:civilizations:biology",
+        "group:civilizations:diplomacy",
+        "type:civilization:historical-contact",
+        "core:body"
+      ]
+    },
+    {
+      "id": "species",
+      "label": "外星种族",
+      "groupId": "civilizations",
+      "fields": [
+        {
+          "id": "communication",
+          "label": "沟通方式",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:civilizations:biology",
+        "group:civilizations:diplomacy",
+        "type:species:communication",
+        "core:body"
+      ]
+    },
+    {
+      "id": "war-doctrine",
+      "label": "作战学说",
+      "groupId": "warfare",
+      "fields": [
+        {
+          "id": "doctrine-goal",
+          "label": "作战目的",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:warfare:operating-limit",
+        "group:warfare:countermeasure",
+        "type:war-doctrine:doctrine-goal",
+        "core:body"
+      ]
+    },
+    {
+      "id": "strategic-tech",
+      "label": "战略技术",
+      "groupId": "warfare",
+      "fields": [
+        {
+          "id": "technology-risk",
+          "label": "技术风险",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:warfare:operating-limit",
+        "group:warfare:countermeasure",
+        "type:strategic-tech:technology-risk",
+        "core:body"
+      ]
+    },
+    {
+      "id": "starship",
+      "label": "星舰",
+      "groupId": "engineering",
+      "fields": [
+        {
+          "id": "ship-icon",
+          "label": "专属图标",
+          "type": "icon"
+        },
+        {
+          "id": "ship-role",
+          "label": "舰船定位",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:engineering:schematic",
+        "group:engineering:maintenance",
+        "type:starship:ship-icon",
+        "type:starship:ship-role",
+        "core:body"
+      ]
+    },
+    {
+      "id": "weapon-system",
+      "label": "武器平台",
+      "groupId": "engineering",
+      "fields": [
+        {
+          "id": "range-and-cost",
+          "label": "射程与代价",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:engineering:schematic",
+        "group:engineering:maintenance",
+        "type:weapon-system:range-and-cost",
+        "core:body"
+      ]
+    },
+    {
+      "id": "campaign",
+      "label": "战役",
+      "groupId": "campaigns",
+      "fields": [
+        {
+          "id": "campaign-turning-point",
+          "label": "战役转折",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:campaigns:objective",
+        "group:campaigns:campaign-stakes",
+        "type:campaign:campaign-turning-point",
+        "core:body"
+      ]
+    },
+    {
+      "id": "operation",
+      "label": "军事行动",
+      "groupId": "campaigns",
+      "fields": [
+        {
+          "id": "operation-plan",
+          "label": "行动方案",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:campaigns:objective",
+        "group:campaigns:campaign-stakes",
+        "type:operation:operation-plan",
+        "core:body"
+      ]
+    },
+    {
+      "id": "intelligence-report",
+      "label": "情报条目",
+      "groupId": "intelligence",
+      "fields": [
+        {
+          "id": "verification",
+          "label": "核实情况",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:intelligence:source",
+        "group:intelligence:reliability",
+        "type:intelligence-report:verification",
+        "core:body"
+      ]
+    }
+  ],
+  "entries": [
+    {
+      "id": "entry-starfrontier",
+      "name": "猎户外环战区",
+      "type": "world",
+      "parentId": "",
+      "status": "draft",
+      "summary": "跃迁航道失稳后的关键前线，殖民地、舰队与补给线都成为争夺目标。",
+      "body": "战区构成：由数个资源型行星、边境空间站和一条可用跃迁航道组成。\\n\\n冲突核心：交战双方都声称自己在保护殖民地，实际目标却涉及航道控制权和战后秩序。\\n\\n创作留白：战争导火索、各方真实伤亡和航道失稳原因可在后续设定中补全。",
+      "customFields": {},
+      "tags": [
+        "模板示例",
+        "星际战争"
+      ],
+      "aliases": []
+    }
+  ],
+  "maps": [],
+  "relationGraphs": [
+    {
+      "id": "world-relations",
+      "name": "世界关系图谱",
+      "entryIds": [
+        "entry-starfrontier"
+      ],
+      "visibleEntryIds": [
+        "entry-starfrontier"
+      ],
+      "zoom": 100,
+      "nodePositions": {}
+    }
+  ],
+  "scripts": [],
+  "relations": [],
+  "events": []
+}

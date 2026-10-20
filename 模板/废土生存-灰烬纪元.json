@@ -1,0 +1,799 @@
+{
+  "schemaVersion": 4,
+  "project": {
+    "id": "ashfall",
+    "name": "灰烬纪元",
+    "genre": "废土生存 · 灾后冒险 · 聚落经营",
+    "era": "灰烬纪第 18 年 · 长旱第三年",
+    "tone": "资源紧缺、环境残酷，但互助与重建仍有价值；每次远行都需要计算风险和回程。",
+    "premise": "连年尘暴遮蔽天空后，旧世界的水网和电网相继失效。长旱迫使各聚落争夺一处重新出水的地下泵站，一支拾荒队必须决定要把有限燃料交给商队、病患还是守城者。"
+  },
+  "typeGroups": [
+    {
+      "id": "geography",
+      "label": "荒地与聚落",
+      "fields": [
+        {
+          "id": "route-map",
+          "label": "路线/区域地图",
+          "type": "image"
+        },
+        {
+          "id": "habitability",
+          "label": "生存条件",
+          "type": "polygon",
+          "sides": 5,
+          "axes": [
+            "水源",
+            "食物",
+            "遮蔽",
+            "污染",
+            "通行安全"
+          ]
+        },
+        {
+          "id": "environment-hazard",
+          "label": "环境威胁",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:geography:route-map",
+        "group:geography:habitability",
+        "group:geography:environment-hazard",
+        "core:body"
+      ]
+    },
+    {
+      "id": "factions",
+      "label": "聚落与团体",
+      "fields": [
+        {
+          "id": "resource-base",
+          "label": "资源基础",
+          "type": "text"
+        },
+        {
+          "id": "leadership",
+          "label": "治理方式",
+          "type": "text"
+        },
+        {
+          "id": "trade-policy",
+          "label": "交易与外交",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:factions:resource-base",
+        "group:factions:leadership",
+        "group:factions:trade-policy",
+        "core:body"
+      ]
+    },
+    {
+      "id": "survivors",
+      "label": "幸存者",
+      "fields": [
+        {
+          "id": "specialty",
+          "label": "专长与职业",
+          "type": "text"
+        },
+        {
+          "id": "needs",
+          "label": "当前需求",
+          "type": "text"
+        },
+        {
+          "id": "personal-limit",
+          "label": "底线与顾虑",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:survivors:specialty",
+        "group:survivors:needs",
+        "group:survivors:personal-limit",
+        "core:body"
+      ]
+    },
+    {
+      "id": "ecosystems",
+      "label": "变异生态",
+      "fields": [
+        {
+          "id": "habitat",
+          "label": "栖息地",
+          "type": "text"
+        },
+        {
+          "id": "behavior",
+          "label": "活动规律",
+          "type": "text"
+        },
+        {
+          "id": "harvest-risk",
+          "label": "采集风险",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:ecosystems:habitat",
+        "group:ecosystems:behavior",
+        "group:ecosystems:harvest-risk",
+        "core:body"
+      ]
+    },
+    {
+      "id": "rules",
+      "label": "环境与生存规则",
+      "fields": [
+        {
+          "id": "exposure",
+          "label": "暴露后果",
+          "type": "text"
+        },
+        {
+          "id": "treatment",
+          "label": "应对方法",
+          "type": "text"
+        },
+        {
+          "id": "seasonal-change",
+          "label": "季节变化",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:rules:exposure",
+        "group:rules:treatment",
+        "group:rules:seasonal-change",
+        "core:body"
+      ]
+    },
+    {
+      "id": "supplies",
+      "label": "物资与装备",
+      "fields": [
+        {
+          "id": "item-reference",
+          "label": "外观参考图",
+          "type": "image"
+        },
+        {
+          "id": "scarcity",
+          "label": "稀缺程度",
+          "type": "text"
+        },
+        {
+          "id": "repair",
+          "label": "维修与替代",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:supplies:item-reference",
+        "group:supplies:scarcity",
+        "group:supplies:repair",
+        "core:body"
+      ]
+    },
+    {
+      "id": "operations",
+      "label": "远行与任务",
+      "fields": [
+        {
+          "id": "destination",
+          "label": "目的地",
+          "type": "text"
+        },
+        {
+          "id": "required-supplies",
+          "label": "必需物资",
+          "type": "text"
+        },
+        {
+          "id": "return-plan",
+          "label": "撤离方案",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:operations:destination",
+        "group:operations:required-supplies",
+        "group:operations:return-plan",
+        "core:body"
+      ]
+    },
+    {
+      "id": "records",
+      "label": "传闻与记录",
+      "fields": [
+        {
+          "id": "source",
+          "label": "信息来源",
+          "type": "text"
+        },
+        {
+          "id": "verification",
+          "label": "核实情况",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:records:source",
+        "group:records:verification",
+        "core:body"
+      ]
+    }
+  ],
+  "typeDefinitions": [
+    {
+      "id": "world",
+      "label": "废土世界",
+      "groupId": "geography",
+      "fields": [
+        {
+          "id": "catastrophe",
+          "label": "灾变后格局",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:geography:route-map",
+        "group:geography:habitability",
+        "group:geography:environment-hazard",
+        "type:world:catastrophe",
+        "core:body"
+      ]
+    },
+    {
+      "id": "region",
+      "label": "荒地分区",
+      "groupId": "geography",
+      "fields": [
+        {
+          "id": "seasonal-route",
+          "label": "季节性路线",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:geography:route-map",
+        "group:geography:habitability",
+        "group:geography:environment-hazard",
+        "type:region:seasonal-route",
+        "core:body"
+      ]
+    },
+    {
+      "id": "settlement",
+      "label": "幸存者聚落",
+      "groupId": "geography",
+      "fields": [
+        {
+          "id": "population",
+          "label": "人口与守备",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:geography:route-map",
+        "group:geography:habitability",
+        "group:geography:environment-hazard",
+        "type:settlement:population",
+        "core:body"
+      ]
+    },
+    {
+      "id": "shelter",
+      "label": "避难所",
+      "groupId": "geography",
+      "fields": [
+        {
+          "id": "life-support",
+          "label": "维生系统",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:geography:route-map",
+        "group:geography:habitability",
+        "group:geography:environment-hazard",
+        "type:shelter:life-support",
+        "core:body"
+      ]
+    },
+    {
+      "id": "ruin",
+      "label": "旧世界遗址",
+      "groupId": "geography",
+      "fields": [
+        {
+          "id": "remaining-power",
+          "label": "残余能源",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:geography:route-map",
+        "group:geography:habitability",
+        "group:geography:environment-hazard",
+        "type:ruin:remaining-power",
+        "core:body"
+      ]
+    },
+    {
+      "id": "faction",
+      "label": "幸存者团体",
+      "groupId": "factions",
+      "fields": [
+        {
+          "id": "banner",
+          "label": "专属图标",
+          "type": "icon"
+        },
+        {
+          "id": "territory",
+          "label": "势力范围",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:factions:resource-base",
+        "group:factions:leadership",
+        "group:factions:trade-policy",
+        "type:faction:banner",
+        "type:faction:territory",
+        "core:body"
+      ]
+    },
+    {
+      "id": "raider-band",
+      "label": "掠夺者团伙",
+      "groupId": "factions",
+      "fields": [
+        {
+          "id": "raiding-method",
+          "label": "袭击方式",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:factions:resource-base",
+        "group:factions:leadership",
+        "group:factions:trade-policy",
+        "type:raider-band:raiding-method",
+        "core:body"
+      ]
+    },
+    {
+      "id": "convoy",
+      "label": "商队/车队",
+      "groupId": "factions",
+      "fields": [
+        {
+          "id": "route-schedule",
+          "label": "行进路线",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:factions:resource-base",
+        "group:factions:leadership",
+        "group:factions:trade-policy",
+        "type:convoy:route-schedule",
+        "core:body"
+      ]
+    },
+    {
+      "id": "survivor",
+      "label": "幸存者",
+      "groupId": "survivors",
+      "fields": [
+        {
+          "id": "portrait",
+          "label": "专属图标",
+          "type": "icon"
+        },
+        {
+          "id": "equipment",
+          "label": "随身装备",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:survivors:specialty",
+        "group:survivors:needs",
+        "group:survivors:personal-limit",
+        "type:survivor:portrait",
+        "type:survivor:equipment",
+        "core:body"
+      ]
+    },
+    {
+      "id": "scavenger",
+      "label": "拾荒者",
+      "groupId": "survivors",
+      "fields": [
+        {
+          "id": "salvage-skill",
+          "label": "搜寻专长",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:survivors:specialty",
+        "group:survivors:needs",
+        "group:survivors:personal-limit",
+        "type:scavenger:salvage-skill",
+        "core:body"
+      ]
+    },
+    {
+      "id": "medic",
+      "label": "医护者",
+      "groupId": "survivors",
+      "fields": [
+        {
+          "id": "medical-stock",
+          "label": "医疗储备",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:survivors:specialty",
+        "group:survivors:needs",
+        "group:survivors:personal-limit",
+        "type:medic:medical-stock",
+        "core:body"
+      ]
+    },
+    {
+      "id": "mutant",
+      "label": "变异生物",
+      "groupId": "ecosystems",
+      "fields": [
+        {
+          "id": "creature-icon",
+          "label": "专属图标",
+          "type": "icon"
+        },
+        {
+          "id": "mutation",
+          "label": "变异特征",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:ecosystems:habitat",
+        "group:ecosystems:behavior",
+        "group:ecosystems:harvest-risk",
+        "type:mutant:creature-icon",
+        "type:mutant:mutation",
+        "core:body"
+      ]
+    },
+    {
+      "id": "predator",
+      "label": "荒地掠食者",
+      "groupId": "ecosystems",
+      "fields": [
+        {
+          "id": "hunting-pattern",
+          "label": "捕猎规律",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:ecosystems:habitat",
+        "group:ecosystems:behavior",
+        "group:ecosystems:harvest-risk",
+        "type:predator:hunting-pattern",
+        "core:body"
+      ]
+    },
+    {
+      "id": "hazard",
+      "label": "环境灾害",
+      "groupId": "rules",
+      "fields": [
+        {
+          "id": "warning-sign",
+          "label": "预警征兆",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:rules:exposure",
+        "group:rules:treatment",
+        "group:rules:seasonal-change",
+        "type:hazard:warning-sign",
+        "core:body"
+      ]
+    },
+    {
+      "id": "infection",
+      "label": "污染与疫病",
+      "groupId": "rules",
+      "fields": [
+        {
+          "id": "incubation",
+          "label": "潜伏与传播",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:rules:exposure",
+        "group:rules:treatment",
+        "group:rules:seasonal-change",
+        "type:infection:incubation",
+        "core:body"
+      ]
+    },
+    {
+      "id": "survival-rule",
+      "label": "生存规矩",
+      "groupId": "rules",
+      "fields": [
+        {
+          "id": "cost-of-breaking",
+          "label": "违背后果",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:rules:exposure",
+        "group:rules:treatment",
+        "group:rules:seasonal-change",
+        "type:survival-rule:cost-of-breaking",
+        "core:body"
+      ]
+    },
+    {
+      "id": "resource",
+      "label": "关键资源",
+      "groupId": "supplies",
+      "fields": [
+        {
+          "id": "substitute",
+          "label": "替代品",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:supplies:item-reference",
+        "group:supplies:scarcity",
+        "group:supplies:repair",
+        "type:resource:substitute",
+        "core:body"
+      ]
+    },
+    {
+      "id": "weapon",
+      "label": "武器",
+      "groupId": "supplies",
+      "fields": [
+        {
+          "id": "ammunition",
+          "label": "弹药与消耗",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:supplies:item-reference",
+        "group:supplies:scarcity",
+        "group:supplies:repair",
+        "type:weapon:ammunition",
+        "core:body"
+      ]
+    },
+    {
+      "id": "vehicle",
+      "label": "载具",
+      "groupId": "supplies",
+      "fields": [
+        {
+          "id": "vehicle-icon",
+          "label": "专属图标",
+          "type": "icon"
+        },
+        {
+          "id": "fuel-range",
+          "label": "燃料与续航",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:supplies:item-reference",
+        "group:supplies:scarcity",
+        "group:supplies:repair",
+        "type:vehicle:vehicle-icon",
+        "type:vehicle:fuel-range",
+        "core:body"
+      ]
+    },
+    {
+      "id": "expedition",
+      "label": "远征",
+      "groupId": "operations",
+      "fields": [
+        {
+          "id": "team-composition",
+          "label": "队伍配置",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:operations:destination",
+        "group:operations:required-supplies",
+        "group:operations:return-plan",
+        "type:expedition:team-composition",
+        "core:body"
+      ]
+    },
+    {
+      "id": "supply-run",
+      "label": "补给行动",
+      "groupId": "operations",
+      "fields": [
+        {
+          "id": "delivery-priority",
+          "label": "交付优先级",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:operations:destination",
+        "group:operations:required-supplies",
+        "group:operations:return-plan",
+        "type:supply-run:delivery-priority",
+        "core:body"
+      ]
+    },
+    {
+      "id": "record",
+      "label": "幸存者记录",
+      "groupId": "records",
+      "fields": [
+        {
+          "id": "author",
+          "label": "记录者",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:records:source",
+        "group:records:verification",
+        "type:record:author",
+        "core:body"
+      ]
+    }
+  ],
+  "entries": [
+    {
+      "id": "entry-ashfall",
+      "name": "北方灰烬带",
+      "type": "world",
+      "parentId": "",
+      "status": "draft",
+      "summary": "水源衰竭与尘暴迁徙迫使聚落重新争夺安全路线和旧世界设施。",
+      "body": "生存底线：干净水、可储存食物、能源和能修复装备的人都十分稀缺。\\n\\n地理格局：尘暴会改变道路和能见度，旧世界的地下设施仍可能运转，但进入前必须承担污染与结构坍塌风险。\\n\\n创作留白：灾变起因、幸存者数量以及聚落之间能否建立长期互助，可按故事方向展开。",
+      "customFields": {},
+      "tags": [
+        "模板示例",
+        "废土生存"
+      ],
+      "aliases": []
+    }
+  ],
+  "maps": [],
+  "relationGraphs": [
+    {
+      "id": "world-relations",
+      "name": "世界关系图谱",
+      "entryIds": [
+        "entry-ashfall"
+      ],
+      "visibleEntryIds": [
+        "entry-ashfall"
+      ],
+      "zoom": 100,
+      "nodePositions": {}
+    }
+  ],
+  "scripts": [],
+  "relations": [],
+  "events": []
+}

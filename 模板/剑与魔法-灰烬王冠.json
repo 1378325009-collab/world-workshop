@@ -1,0 +1,813 @@
+{
+  "schemaVersion": 4,
+  "project": {
+    "id": "ashen-crown",
+    "name": "灰烬王冠",
+    "genre": "剑与魔法 · 低魔冒险 · 王国纷争",
+    "era": "王国历 314 年 · 王位空悬之际",
+    "tone": "刀剑与旅途写实，魔法稀少而昂贵；个人誓言常与领地、家族和生存冲突。",
+    "premise": "先王死于没有继承人的冬季围城，三方同时宣称王冠合法。边境魔法正在衰退，古老地城却陆续开启；一支临时结成的冒险队受雇护送证人，逐渐发现王位争夺与魔法枯竭指向同一份旧契约。"
+  },
+  "typeGroups": [
+    {
+      "id": "geography",
+      "label": "王国与旅途",
+      "fields": [
+        {
+          "id": "map-reference",
+          "label": "地图/地城示意",
+          "type": "image"
+        },
+        {
+          "id": "regional-profile",
+          "label": "地区特征",
+          "type": "polygon",
+          "sides": 5,
+          "axes": [
+            "人口密度",
+            "粮食储备",
+            "道路安全",
+            "魔法活性",
+            "政治稳定"
+          ]
+        },
+        {
+          "id": "travel-risk",
+          "label": "旅行风险",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:geography:map-reference",
+        "group:geography:regional-profile",
+        "group:geography:travel-risk",
+        "core:body"
+      ]
+    },
+    {
+      "id": "factions",
+      "label": "王权与组织",
+      "fields": [
+        {
+          "id": "authority",
+          "label": "权力来源",
+          "type": "text"
+        },
+        {
+          "id": "resources",
+          "label": "资源与封地",
+          "type": "text"
+        },
+        {
+          "id": "public-standing",
+          "label": "民众观感",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:factions:authority",
+        "group:factions:resources",
+        "group:factions:public-standing",
+        "core:body"
+      ]
+    },
+    {
+      "id": "characters",
+      "label": "人物与职业",
+      "fields": [
+        {
+          "id": "profession",
+          "label": "职业与技艺",
+          "type": "text"
+        },
+        {
+          "id": "oath",
+          "label": "誓言与债务",
+          "type": "text"
+        },
+        {
+          "id": "personal-goal",
+          "label": "个人目标",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:characters:profession",
+        "group:characters:oath",
+        "group:characters:personal-goal",
+        "core:body"
+      ]
+    },
+    {
+      "id": "races",
+      "label": "族群",
+      "fields": [
+        {
+          "id": "lifespan",
+          "label": "寿命与成长",
+          "type": "text"
+        },
+        {
+          "id": "customs",
+          "label": "习俗与偏见",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:races:lifespan",
+        "group:races:customs",
+        "core:body"
+      ]
+    },
+    {
+      "id": "creatures",
+      "label": "怪物与野兽",
+      "fields": [
+        {
+          "id": "habitat",
+          "label": "栖息地",
+          "type": "text"
+        },
+        {
+          "id": "weakness",
+          "label": "弱点与习性",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:creatures:habitat",
+        "group:creatures:weakness",
+        "core:body"
+      ]
+    },
+    {
+      "id": "magic",
+      "label": "魔法与誓约",
+      "fields": [
+        {
+          "id": "casting-cost",
+          "label": "施法代价",
+          "type": "text"
+        },
+        {
+          "id": "conditions",
+          "label": "触发条件",
+          "type": "text"
+        },
+        {
+          "id": "countermeasure",
+          "label": "限制与克制",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:magic:casting-cost",
+        "group:magic:conditions",
+        "group:magic:countermeasure",
+        "core:body"
+      ]
+    },
+    {
+      "id": "relics",
+      "label": "武器与遗物",
+      "fields": [
+        {
+          "id": "reference-image",
+          "label": "外观参考图",
+          "type": "image"
+        },
+        {
+          "id": "origin",
+          "label": "来历",
+          "type": "text"
+        },
+        {
+          "id": "burden",
+          "label": "副作用/维护",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:relics:reference-image",
+        "group:relics:origin",
+        "group:relics:burden",
+        "core:body"
+      ]
+    },
+    {
+      "id": "quests",
+      "label": "委托与旅途",
+      "fields": [
+        {
+          "id": "goal",
+          "label": "目标与报酬",
+          "type": "text"
+        },
+        {
+          "id": "complication",
+          "label": "意外阻碍",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:quests:goal",
+        "group:quests:complication",
+        "core:body"
+      ]
+    },
+    {
+      "id": "lore",
+      "label": "传说与文书",
+      "fields": [
+        {
+          "id": "source",
+          "label": "来源",
+          "type": "text"
+        },
+        {
+          "id": "reliability",
+          "label": "可信程度",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:lore:source",
+        "group:lore:reliability",
+        "core:body"
+      ]
+    }
+  ],
+  "typeDefinitions": [
+    {
+      "id": "world",
+      "label": "王国大陆",
+      "groupId": "geography",
+      "fields": [
+        {
+          "id": "realm-structure",
+          "label": "地理格局",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:geography:map-reference",
+        "group:geography:regional-profile",
+        "group:geography:travel-risk",
+        "type:world:realm-structure",
+        "core:body"
+      ]
+    },
+    {
+      "id": "region",
+      "label": "封地与边境",
+      "groupId": "geography",
+      "fields": [
+        {
+          "id": "local-lord",
+          "label": "领主与边界",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:geography:map-reference",
+        "group:geography:regional-profile",
+        "group:geography:travel-risk",
+        "type:region:local-lord",
+        "core:body"
+      ]
+    },
+    {
+      "id": "location",
+      "label": "城镇与村落",
+      "groupId": "geography",
+      "fields": [
+        {
+          "id": "local-custom",
+          "label": "地方风俗",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:geography:map-reference",
+        "group:geography:regional-profile",
+        "group:geography:travel-risk",
+        "type:location:local-custom",
+        "core:body"
+      ]
+    },
+    {
+      "id": "dungeon",
+      "label": "地城与遗迹",
+      "groupId": "geography",
+      "fields": [
+        {
+          "id": "dungeon-depth",
+          "label": "危险层级",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:geography:map-reference",
+        "group:geography:regional-profile",
+        "group:geography:travel-risk",
+        "type:dungeon:dungeon-depth",
+        "core:body"
+      ]
+    },
+    {
+      "id": "faction",
+      "label": "政治派系",
+      "groupId": "factions",
+      "fields": [
+        {
+          "id": "claim-to-rule",
+          "label": "统治主张",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:factions:authority",
+        "group:factions:resources",
+        "group:factions:public-standing",
+        "type:faction:claim-to-rule",
+        "core:body"
+      ]
+    },
+    {
+      "id": "kingdom",
+      "label": "王国/公国",
+      "groupId": "factions",
+      "fields": [
+        {
+          "id": "succession",
+          "label": "继承规则",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:factions:authority",
+        "group:factions:resources",
+        "group:factions:public-standing",
+        "type:kingdom:succession",
+        "core:body"
+      ]
+    },
+    {
+      "id": "guild",
+      "label": "冒险者公会",
+      "groupId": "factions",
+      "fields": [
+        {
+          "id": "guild-contract",
+          "label": "委托规程",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:factions:authority",
+        "group:factions:resources",
+        "group:factions:public-standing",
+        "type:guild:guild-contract",
+        "core:body"
+      ]
+    },
+    {
+      "id": "temple",
+      "label": "教会与修会",
+      "groupId": "factions",
+      "fields": [
+        {
+          "id": "doctrine",
+          "label": "信仰教义",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:factions:authority",
+        "group:factions:resources",
+        "group:factions:public-standing",
+        "type:temple:doctrine",
+        "core:body"
+      ]
+    },
+    {
+      "id": "character",
+      "label": "人物",
+      "groupId": "characters",
+      "fields": [
+        {
+          "id": "portrait",
+          "label": "专属图标",
+          "type": "icon"
+        },
+        {
+          "id": "character-profile",
+          "label": "人物特质",
+          "type": "polygon",
+          "sides": 5,
+          "axes": [
+            "勇气",
+            "谋略",
+            "技艺",
+            "声望",
+            "野心"
+          ]
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:characters:profession",
+        "group:characters:oath",
+        "group:characters:personal-goal",
+        "type:character:portrait",
+        "type:character:character-profile",
+        "core:body"
+      ]
+    },
+    {
+      "id": "adventurer",
+      "label": "冒险者",
+      "groupId": "characters",
+      "fields": [
+        {
+          "id": "combat-role",
+          "label": "队伍定位",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:characters:profession",
+        "group:characters:oath",
+        "group:characters:personal-goal",
+        "type:adventurer:combat-role",
+        "core:body"
+      ]
+    },
+    {
+      "id": "mage",
+      "label": "施法者",
+      "groupId": "characters",
+      "fields": [
+        {
+          "id": "magic-source",
+          "label": "魔力来源",
+          "type": "text"
+        },
+        {
+          "id": "known-spells",
+          "label": "擅长法术",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:characters:profession",
+        "group:characters:oath",
+        "group:characters:personal-goal",
+        "type:mage:magic-source",
+        "type:mage:known-spells",
+        "core:body"
+      ]
+    },
+    {
+      "id": "race",
+      "label": "族群",
+      "groupId": "races",
+      "fields": [
+        {
+          "id": "homeland",
+          "label": "故乡与迁徙",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:races:lifespan",
+        "group:races:customs",
+        "type:race:homeland",
+        "core:body"
+      ]
+    },
+    {
+      "id": "elf",
+      "label": "精灵",
+      "groupId": "races",
+      "fields": [
+        {
+          "id": "relation-to-magic",
+          "label": "与魔法的关系",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:races:lifespan",
+        "group:races:customs",
+        "type:elf:relation-to-magic",
+        "core:body"
+      ]
+    },
+    {
+      "id": "dwarf",
+      "label": "矮人",
+      "groupId": "races",
+      "fields": [
+        {
+          "id": "craft-tradition",
+          "label": "工艺传统",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:races:lifespan",
+        "group:races:customs",
+        "type:dwarf:craft-tradition",
+        "core:body"
+      ]
+    },
+    {
+      "id": "monster",
+      "label": "怪物",
+      "groupId": "creatures",
+      "fields": [
+        {
+          "id": "bestiary-icon",
+          "label": "专属图标",
+          "type": "icon"
+        },
+        {
+          "id": "threat-rank",
+          "label": "威胁等级",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:creatures:habitat",
+        "group:creatures:weakness",
+        "type:monster:bestiary-icon",
+        "type:monster:threat-rank",
+        "core:body"
+      ]
+    },
+    {
+      "id": "dragon",
+      "label": "巨龙",
+      "groupId": "creatures",
+      "fields": [
+        {
+          "id": "hoard-and-domain",
+          "label": "巢穴与领地",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:creatures:habitat",
+        "group:creatures:weakness",
+        "type:dragon:hoard-and-domain",
+        "core:body"
+      ]
+    },
+    {
+      "id": "spell",
+      "label": "法术",
+      "groupId": "magic",
+      "fields": [
+        {
+          "id": "spell-range",
+          "label": "作用范围",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:magic:casting-cost",
+        "group:magic:conditions",
+        "group:magic:countermeasure",
+        "type:spell:spell-range",
+        "core:body"
+      ]
+    },
+    {
+      "id": "magic-law",
+      "label": "魔法规则",
+      "groupId": "magic",
+      "fields": [
+        {
+          "id": "known-exception",
+          "label": "已知例外",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:magic:casting-cost",
+        "group:magic:conditions",
+        "group:magic:countermeasure",
+        "type:magic-law:known-exception",
+        "core:body"
+      ]
+    },
+    {
+      "id": "artifact",
+      "label": "遗物",
+      "groupId": "relics",
+      "fields": [
+        {
+          "id": "artifact-icon",
+          "label": "专属图标",
+          "type": "icon"
+        },
+        {
+          "id": "binding-condition",
+          "label": "持有条件",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:relics:reference-image",
+        "group:relics:origin",
+        "group:relics:burden",
+        "type:artifact:artifact-icon",
+        "type:artifact:binding-condition",
+        "core:body"
+      ]
+    },
+    {
+      "id": "weapon",
+      "label": "武器",
+      "groupId": "relics",
+      "fields": [
+        {
+          "id": "weapon-style",
+          "label": "使用方式",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:relics:reference-image",
+        "group:relics:origin",
+        "group:relics:burden",
+        "type:weapon:weapon-style",
+        "core:body"
+      ]
+    },
+    {
+      "id": "quest",
+      "label": "冒险委托",
+      "groupId": "quests",
+      "fields": [
+        {
+          "id": "quest-choice",
+          "label": "关键抉择",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:quests:goal",
+        "group:quests:complication",
+        "type:quest:quest-choice",
+        "core:body"
+      ]
+    },
+    {
+      "id": "prophecy",
+      "label": "预言",
+      "groupId": "lore",
+      "fields": [
+        {
+          "id": "interpretations",
+          "label": "不同解释",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:lore:source",
+        "group:lore:reliability",
+        "type:prophecy:interpretations",
+        "core:body"
+      ]
+    }
+  ],
+  "entries": [
+    {
+      "id": "entry-ashen-crown",
+      "name": "灰烬王国",
+      "type": "world",
+      "parentId": "",
+      "status": "draft",
+      "summary": "王位继承危机与魔法衰退同时发生，佣兵、贵族和冒险者都被卷入。",
+      "body": "权力格局：王国由城邦、封臣领地和教会共同维持，王冠空悬后旧有誓约开始失效。\\n\\n冒险基调：旅途危险来自现实的饥荒、债务和战争；魔法能改变局势，但施法材料稀缺且留下可追踪的痕迹。\\n\\n创作留白：王位合法性、古老契约的内容和冒险队的最终立场均可自行改写。",
+      "customFields": {},
+      "tags": [
+        "模板示例",
+        "剑与魔法"
+      ],
+      "aliases": []
+    }
+  ],
+  "maps": [],
+  "relationGraphs": [
+    {
+      "id": "world-relations",
+      "name": "世界关系图谱",
+      "entryIds": [
+        "entry-ashen-crown"
+      ],
+      "visibleEntryIds": [
+        "entry-ashen-crown"
+      ],
+      "zoom": 100,
+      "nodePositions": {}
+    }
+  ],
+  "scripts": [],
+  "relations": [],
+  "events": []
+}

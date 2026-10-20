@@ -1,0 +1,817 @@
+{
+  "schemaVersion": 4,
+  "project": {
+    "id": "mirror-tide-city",
+    "name": "镜潮之城",
+    "genre": "镜面倒影 · 都市奇幻 · 身份悬疑",
+    "era": "当代 · 全城首次出现双影后的第三十天",
+    "tone": "熟悉空间不断出现细微错位；倒影既可能揭示被隐藏的选择，也可能制造新的误认。",
+    "premise": "三十天前，临海城市的所有镜面同时映出一条不存在的街道。此后部分居民在倒影中看见另一个自己，并收到只有镜中人记得的共同经历；调查者需要确认现实与倒影的对应规则，避免把无辜者当成替身。"
+  },
+  "typeGroups": [
+    {
+      "id": "geography",
+      "label": "现实空间与镜界",
+      "fields": [
+        {
+          "id": "paired-map",
+          "label": "现实/镜界对照地图",
+          "type": "image"
+        },
+        {
+          "id": "reflection-profile",
+          "label": "镜界状态",
+          "type": "polygon",
+          "sides": 5,
+          "axes": [
+            "空间对应",
+            "时间偏差",
+            "通行难度",
+            "记忆稳定",
+            "现实影响"
+          ]
+        },
+        {
+          "id": "surface-condition",
+          "label": "镜面状态",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:geography:paired-map",
+        "group:geography:reflection-profile",
+        "group:geography:surface-condition",
+        "core:body"
+      ]
+    },
+    {
+      "id": "factions",
+      "label": "现实与镜界组织",
+      "fields": [
+        {
+          "id": "public-policy",
+          "label": "公开政策",
+          "type": "text"
+        },
+        {
+          "id": "mirror-policy",
+          "label": "镜界立场",
+          "type": "text"
+        },
+        {
+          "id": "trust",
+          "label": "相互信任",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:factions:public-policy",
+        "group:factions:mirror-policy",
+        "group:factions:trust",
+        "core:body"
+      ]
+    },
+    {
+      "id": "characters",
+      "label": "本体与倒影",
+      "fields": [
+        {
+          "id": "identity-link",
+          "label": "对应关系",
+          "type": "text"
+        },
+        {
+          "id": "memory-difference",
+          "label": "记忆差异",
+          "type": "text"
+        },
+        {
+          "id": "independent-choice",
+          "label": "独立选择",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:characters:identity-link",
+        "group:characters:memory-difference",
+        "group:characters:independent-choice",
+        "core:body"
+      ]
+    },
+    {
+      "id": "entities",
+      "label": "镜界存在",
+      "fields": [
+        {
+          "id": "appearance",
+          "label": "出现形态",
+          "type": "text"
+        },
+        {
+          "id": "contact-method",
+          "label": "接触方式",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:entities:appearance",
+        "group:entities:contact-method",
+        "core:body"
+      ]
+    },
+    {
+      "id": "rules",
+      "label": "对应与反转规则",
+      "fields": [
+        {
+          "id": "correspondence",
+          "label": "对应原则",
+          "type": "text"
+        },
+        {
+          "id": "reversal",
+          "label": "反转方式",
+          "type": "text"
+        },
+        {
+          "id": "crossing-cost",
+          "label": "穿越代价",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:rules:correspondence",
+        "group:rules:reversal",
+        "group:rules:crossing-cost",
+        "core:body"
+      ]
+    },
+    {
+      "id": "reflection-artifacts",
+      "label": "镜面物件",
+      "fields": [
+        {
+          "id": "object-image",
+          "label": "镜面/物件图片",
+          "type": "image"
+        },
+        {
+          "id": "real-counterpart",
+          "label": "现实对应物",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:reflection-artifacts:object-image",
+        "group:reflection-artifacts:real-counterpart",
+        "core:body"
+      ]
+    },
+    {
+      "id": "events",
+      "label": "重叠与失踪",
+      "fields": [
+        {
+          "id": "affected-people",
+          "label": "受影响者",
+          "type": "text"
+        },
+        {
+          "id": "resolution",
+          "label": "处置结果",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:events:affected-people",
+        "group:events:resolution",
+        "core:body"
+      ]
+    },
+    {
+      "id": "traces",
+      "label": "错位痕迹与讯息",
+      "fields": [
+        {
+          "id": "observer",
+          "label": "发现者",
+          "type": "text"
+        },
+        {
+          "id": "verification",
+          "label": "核实方法",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:traces:observer",
+        "group:traces:verification",
+        "core:body"
+      ]
+    }
+  ],
+  "typeDefinitions": [
+    {
+      "id": "world",
+      "label": "现实与镜界",
+      "groupId": "geography",
+      "fields": [
+        {
+          "id": "first-appearance",
+          "label": "首次显现",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:geography:paired-map",
+        "group:geography:reflection-profile",
+        "group:geography:surface-condition",
+        "type:world:first-appearance",
+        "core:body"
+      ]
+    },
+    {
+      "id": "region",
+      "label": "城市区域",
+      "groupId": "geography",
+      "fields": [
+        {
+          "id": "mirror-coverage",
+          "label": "镜面覆盖",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:geography:paired-map",
+        "group:geography:reflection-profile",
+        "group:geography:surface-condition",
+        "type:region:mirror-coverage",
+        "core:body"
+      ]
+    },
+    {
+      "id": "location",
+      "label": "现实地点",
+      "groupId": "geography",
+      "fields": [
+        {
+          "id": "reflection-match",
+          "label": "对应镜界地点",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:geography:paired-map",
+        "group:geography:reflection-profile",
+        "group:geography:surface-condition",
+        "type:location:reflection-match",
+        "core:body"
+      ]
+    },
+    {
+      "id": "mirror-city",
+      "label": "镜中城市",
+      "groupId": "geography",
+      "fields": [
+        {
+          "id": "spatial-difference",
+          "label": "空间差异",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:geography:paired-map",
+        "group:geography:reflection-profile",
+        "group:geography:surface-condition",
+        "type:mirror-city:spatial-difference",
+        "core:body"
+      ]
+    },
+    {
+      "id": "threshold",
+      "label": "镜面门槛",
+      "groupId": "geography",
+      "fields": [
+        {
+          "id": "entry-condition",
+          "label": "进入条件",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:geography:paired-map",
+        "group:geography:reflection-profile",
+        "group:geography:surface-condition",
+        "type:threshold:entry-condition",
+        "core:body"
+      ]
+    },
+    {
+      "id": "faction",
+      "label": "相关组织",
+      "groupId": "factions",
+      "fields": [
+        {
+          "id": "information-policy",
+          "label": "信息公开方式",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:factions:public-policy",
+        "group:factions:mirror-policy",
+        "group:factions:trust",
+        "type:faction:information-policy",
+        "core:body"
+      ]
+    },
+    {
+      "id": "mirror-agency",
+      "label": "镜界调查机构",
+      "groupId": "factions",
+      "fields": [
+        {
+          "id": "investigation-authority",
+          "label": "调查权限",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:factions:public-policy",
+        "group:factions:mirror-policy",
+        "group:factions:trust",
+        "type:mirror-agency:investigation-authority",
+        "core:body"
+      ]
+    },
+    {
+      "id": "mirror-society",
+      "label": "镜中居民社群",
+      "groupId": "factions",
+      "fields": [
+        {
+          "id": "community-rule",
+          "label": "社群约定",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:factions:public-policy",
+        "group:factions:mirror-policy",
+        "group:factions:trust",
+        "type:mirror-society:community-rule",
+        "core:body"
+      ]
+    },
+    {
+      "id": "surface-cult",
+      "label": "镜面信仰团体",
+      "groupId": "factions",
+      "fields": [
+        {
+          "id": "belief",
+          "label": "信仰解释",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:factions:public-policy",
+        "group:factions:mirror-policy",
+        "group:factions:trust",
+        "type:surface-cult:belief",
+        "core:body"
+      ]
+    },
+    {
+      "id": "character",
+      "label": "现实人物",
+      "groupId": "characters",
+      "fields": [
+        {
+          "id": "portrait",
+          "label": "专属图标",
+          "type": "icon"
+        },
+        {
+          "id": "mirror-contact",
+          "label": "镜面接触史",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:characters:identity-link",
+        "group:characters:memory-difference",
+        "group:characters:independent-choice",
+        "type:character:portrait",
+        "type:character:mirror-contact",
+        "core:body"
+      ]
+    },
+    {
+      "id": "original",
+      "label": "本体",
+      "groupId": "characters",
+      "fields": [
+        {
+          "id": "known-differences",
+          "label": "已知差异",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:characters:identity-link",
+        "group:characters:memory-difference",
+        "group:characters:independent-choice",
+        "type:original:known-differences",
+        "core:body"
+      ]
+    },
+    {
+      "id": "reflection",
+      "label": "倒影人格",
+      "groupId": "characters",
+      "fields": [
+        {
+          "id": "reflection-icon",
+          "label": "专属图标",
+          "type": "icon"
+        },
+        {
+          "id": "self-identity",
+          "label": "自我认知",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:characters:identity-link",
+        "group:characters:memory-difference",
+        "group:characters:independent-choice",
+        "type:reflection:reflection-icon",
+        "type:reflection:self-identity",
+        "core:body"
+      ]
+    },
+    {
+      "id": "lost-double",
+      "label": "失联替身",
+      "groupId": "characters",
+      "fields": [
+        {
+          "id": "last-sighting",
+          "label": "最后目击",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:characters:identity-link",
+        "group:characters:memory-difference",
+        "group:characters:independent-choice",
+        "type:lost-double:last-sighting",
+        "core:body"
+      ]
+    },
+    {
+      "id": "mirror-entity",
+      "label": "镜界生物",
+      "groupId": "entities",
+      "fields": [
+        {
+          "id": "entity-icon",
+          "label": "专属图标",
+          "type": "icon"
+        },
+        {
+          "id": "crossing-ability",
+          "label": "穿越能力",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:entities:appearance",
+        "group:entities:contact-method",
+        "type:mirror-entity:entity-icon",
+        "type:mirror-entity:crossing-ability",
+        "core:body"
+      ]
+    },
+    {
+      "id": "memory-echo",
+      "label": "记忆回声",
+      "groupId": "entities",
+      "fields": [
+        {
+          "id": "repeated-memory",
+          "label": "重复记忆",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:entities:appearance",
+        "group:entities:contact-method",
+        "type:memory-echo:repeated-memory",
+        "core:body"
+      ]
+    },
+    {
+      "id": "glass-warden",
+      "label": "镜面守卫",
+      "groupId": "entities",
+      "fields": [
+        {
+          "id": "boundary-duty",
+          "label": "边界职责",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:entities:appearance",
+        "group:entities:contact-method",
+        "type:glass-warden:boundary-duty",
+        "core:body"
+      ]
+    },
+    {
+      "id": "correspondence-rule",
+      "label": "对应规则",
+      "groupId": "rules",
+      "fields": [
+        {
+          "id": "known-counterexample",
+          "label": "已知反例",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:rules:correspondence",
+        "group:rules:reversal",
+        "group:rules:crossing-cost",
+        "type:correspondence-rule:known-counterexample",
+        "core:body"
+      ]
+    },
+    {
+      "id": "inversion-rule",
+      "label": "反转规则",
+      "groupId": "rules",
+      "fields": [
+        {
+          "id": "reversal-trigger",
+          "label": "反转触发",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:rules:correspondence",
+        "group:rules:reversal",
+        "group:rules:crossing-cost",
+        "type:inversion-rule:reversal-trigger",
+        "core:body"
+      ]
+    },
+    {
+      "id": "mirror-object",
+      "label": "镜中物件",
+      "groupId": "reflection-artifacts",
+      "fields": [
+        {
+          "id": "object-icon",
+          "label": "专属图标",
+          "type": "icon"
+        },
+        {
+          "id": "transfer-condition",
+          "label": "移出条件",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:reflection-artifacts:object-image",
+        "group:reflection-artifacts:real-counterpart",
+        "type:mirror-object:object-icon",
+        "type:mirror-object:transfer-condition",
+        "core:body"
+      ]
+    },
+    {
+      "id": "shard",
+      "label": "镜片碎片",
+      "groupId": "reflection-artifacts",
+      "fields": [
+        {
+          "id": "origin-surface",
+          "label": "原始镜面",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:reflection-artifacts:object-image",
+        "group:reflection-artifacts:real-counterpart",
+        "type:shard:origin-surface",
+        "core:body"
+      ]
+    },
+    {
+      "id": "overlap-event",
+      "label": "空间重叠事件",
+      "groupId": "events",
+      "fields": [
+        {
+          "id": "overlap-duration",
+          "label": "持续时间",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:events:affected-people",
+        "group:events:resolution",
+        "type:overlap-event:overlap-duration",
+        "core:body"
+      ]
+    },
+    {
+      "id": "identity-swap",
+      "label": "身份错置",
+      "groupId": "events",
+      "fields": [
+        {
+          "id": "restoration-condition",
+          "label": "恢复条件",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:events:affected-people",
+        "group:events:resolution",
+        "type:identity-swap:restoration-condition",
+        "core:body"
+      ]
+    },
+    {
+      "id": "discrepancy",
+      "label": "现实错位痕迹",
+      "groupId": "traces",
+      "fields": [
+        {
+          "id": "trace-image",
+          "label": "照片/记录图",
+          "type": "image"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:traces:observer",
+        "group:traces:verification",
+        "type:discrepancy:trace-image",
+        "core:body"
+      ]
+    },
+    {
+      "id": "mirror-message",
+      "label": "镜中讯息",
+      "groupId": "traces",
+      "fields": [
+        {
+          "id": "decoding",
+          "label": "解读过程",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:traces:observer",
+        "group:traces:verification",
+        "type:mirror-message:decoding",
+        "core:body"
+      ]
+    }
+  ],
+  "entries": [
+    {
+      "id": "entry-mirror-tide-city",
+      "name": "镜潮之城",
+      "type": "world",
+      "parentId": "",
+      "status": "draft",
+      "summary": "全城镜面映出不存在的街道，倒影人物开始拥有与现实不同的记忆。",
+      "body": "空间关系：镜中区域与现实地点大体对应，但门窗、方向、时间和通行规则可能出现例外。每条规则都应记录观察条件和反例。\\n\\n身份关系：倒影不自动等同于复制体；其记忆、选择与现实人物的差异需要单独记录。\\n\\n创作留白：镜潮从何处扩散、倒影能否独立行动，以及关闭镜面是否会伤害镜中居民。",
+      "customFields": {},
+      "tags": [
+        "模板示例",
+        "镜面倒影"
+      ],
+      "aliases": []
+    }
+  ],
+  "maps": [],
+  "relationGraphs": [
+    {
+      "id": "world-relations",
+      "name": "世界关系图谱",
+      "entryIds": [
+        "entry-mirror-tide-city"
+      ],
+      "visibleEntryIds": [
+        "entry-mirror-tide-city"
+      ],
+      "zoom": 100,
+      "nodePositions": {}
+    }
+  ],
+  "scripts": [],
+  "relations": [],
+  "events": []
+}

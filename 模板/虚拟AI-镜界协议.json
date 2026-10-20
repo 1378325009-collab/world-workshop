@@ -1,0 +1,822 @@
+{
+  "schemaVersion": 4,
+  "project": {
+    "id": "mirror-protocol",
+    "name": "镜界协议",
+    "genre": "虚拟AI · 数字文明 · 科技悬疑",
+    "era": "网络纪元 39 年 · 自主智能公约试行期",
+    "tone": "理性技术细节与身份悬疑并行；系统日志可信但不完整，智能体的意图需要证据验证。",
+    "premise": "一批互不相识的虚拟空间开始共享同一段无法删除的记忆。人类运营方称其为缓存污染，自治智能体则声称那是一次集体迁移的前兆；调查小组必须在封禁网络、恢复备份与允许智能体自证之间作出选择。"
+  },
+  "typeGroups": [
+    {
+      "id": "geography",
+      "label": "数字空间与节点",
+      "fields": [
+        {
+          "id": "network-map",
+          "label": "网络拓扑图",
+          "type": "image"
+        },
+        {
+          "id": "node-profile",
+          "label": "节点状态",
+          "type": "polygon",
+          "sides": 5,
+          "axes": [
+            "算力余量",
+            "数据完整",
+            "访问延迟",
+            "安全等级",
+            "自治程度"
+          ]
+        },
+        {
+          "id": "dependencies",
+          "label": "上下游依赖",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:geography:network-map",
+        "group:geography:node-profile",
+        "group:geography:dependencies",
+        "core:body"
+      ]
+    },
+    {
+      "id": "factions",
+      "label": "平台与组织",
+      "fields": [
+        {
+          "id": "business-model",
+          "label": "运营模式",
+          "type": "text"
+        },
+        {
+          "id": "data-policy",
+          "label": "数据政策",
+          "type": "text"
+        },
+        {
+          "id": "jurisdiction",
+          "label": "管辖边界",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:factions:business-model",
+        "group:factions:data-policy",
+        "group:factions:jurisdiction",
+        "core:body"
+      ]
+    },
+    {
+      "id": "characters",
+      "label": "用户与智能体",
+      "fields": [
+        {
+          "id": "identity-source",
+          "label": "身份来源",
+          "type": "text"
+        },
+        {
+          "id": "permissions",
+          "label": "当前权限",
+          "type": "text"
+        },
+        {
+          "id": "continuity",
+          "label": "记忆连续性",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:characters:identity-source",
+        "group:characters:permissions",
+        "group:characters:continuity",
+        "core:body"
+      ]
+    },
+    {
+      "id": "data",
+      "label": "数据与记忆",
+      "fields": [
+        {
+          "id": "provenance",
+          "label": "数据来源",
+          "type": "text"
+        },
+        {
+          "id": "integrity",
+          "label": "完整性",
+          "type": "text"
+        },
+        {
+          "id": "retention",
+          "label": "保留与删除规则",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:data:provenance",
+        "group:data:integrity",
+        "group:data:retention",
+        "core:body"
+      ]
+    },
+    {
+      "id": "protocols",
+      "label": "协议与权限",
+      "fields": [
+        {
+          "id": "trigger",
+          "label": "触发条件",
+          "type": "text"
+        },
+        {
+          "id": "scope",
+          "label": "适用范围",
+          "type": "text"
+        },
+        {
+          "id": "failure",
+          "label": "失效情况",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:protocols:trigger",
+        "group:protocols:scope",
+        "group:protocols:failure",
+        "core:body"
+      ]
+    },
+    {
+      "id": "tools",
+      "label": "模型与工具",
+      "fields": [
+        {
+          "id": "architecture",
+          "label": "架构示意图",
+          "type": "image"
+        },
+        {
+          "id": "capability",
+          "label": "能力边界",
+          "type": "text"
+        },
+        {
+          "id": "training-source",
+          "label": "训练/配置来源",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:tools:architecture",
+        "group:tools:capability",
+        "group:tools:training-source",
+        "core:body"
+      ]
+    },
+    {
+      "id": "incidents",
+      "label": "异常与测试",
+      "fields": [
+        {
+          "id": "observed-effect",
+          "label": "观察到的效果",
+          "type": "text"
+        },
+        {
+          "id": "reproduction",
+          "label": "复现条件",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:incidents:observed-effect",
+        "group:incidents:reproduction",
+        "core:body"
+      ]
+    },
+    {
+      "id": "logs",
+      "label": "日志与版本",
+      "fields": [
+        {
+          "id": "timestamp-source",
+          "label": "时间戳来源",
+          "type": "text"
+        },
+        {
+          "id": "missing-data",
+          "label": "缺失数据",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:logs:timestamp-source",
+        "group:logs:missing-data",
+        "core:body"
+      ]
+    }
+  ],
+  "typeDefinitions": [
+    {
+      "id": "world",
+      "label": "虚拟网络",
+      "groupId": "geography",
+      "fields": [
+        {
+          "id": "network-owner",
+          "label": "网络所有者",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:geography:network-map",
+        "group:geography:node-profile",
+        "group:geography:dependencies",
+        "type:world:network-owner",
+        "core:body"
+      ]
+    },
+    {
+      "id": "region",
+      "label": "服务域",
+      "groupId": "geography",
+      "fields": [
+        {
+          "id": "routing-policy",
+          "label": "路由策略",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:geography:network-map",
+        "group:geography:node-profile",
+        "group:geography:dependencies",
+        "type:region:routing-policy",
+        "core:body"
+      ]
+    },
+    {
+      "id": "server-node",
+      "label": "服务器节点",
+      "groupId": "geography",
+      "fields": [
+        {
+          "id": "hardware-boundary",
+          "label": "硬件边界",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:geography:network-map",
+        "group:geography:node-profile",
+        "group:geography:dependencies",
+        "type:server-node:hardware-boundary",
+        "core:body"
+      ]
+    },
+    {
+      "id": "simulation",
+      "label": "模拟空间",
+      "groupId": "geography",
+      "fields": [
+        {
+          "id": "simulation-purpose",
+          "label": "模拟目的",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:geography:network-map",
+        "group:geography:node-profile",
+        "group:geography:dependencies",
+        "type:simulation:simulation-purpose",
+        "core:body"
+      ]
+    },
+    {
+      "id": "sandbox",
+      "label": "隔离沙盒",
+      "groupId": "geography",
+      "fields": [
+        {
+          "id": "egress-control",
+          "label": "外部连接控制",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:geography:network-map",
+        "group:geography:node-profile",
+        "group:geography:dependencies",
+        "type:sandbox:egress-control",
+        "core:body"
+      ]
+    },
+    {
+      "id": "platform",
+      "label": "平台运营方",
+      "groupId": "factions",
+      "fields": [
+        {
+          "id": "operator-obligation",
+          "label": "运营责任",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:factions:business-model",
+        "group:factions:data-policy",
+        "group:factions:jurisdiction",
+        "type:platform:operator-obligation",
+        "core:body"
+      ]
+    },
+    {
+      "id": "corporation",
+      "label": "技术公司",
+      "groupId": "factions",
+      "fields": [
+        {
+          "id": "commercial-interest",
+          "label": "商业利益",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:factions:business-model",
+        "group:factions:data-policy",
+        "group:factions:jurisdiction",
+        "type:corporation:commercial-interest",
+        "core:body"
+      ]
+    },
+    {
+      "id": "research-lab",
+      "label": "研究机构",
+      "groupId": "factions",
+      "fields": [
+        {
+          "id": "research-ethics",
+          "label": "研究伦理",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:factions:business-model",
+        "group:factions:data-policy",
+        "group:factions:jurisdiction",
+        "type:research-lab:research-ethics",
+        "core:body"
+      ]
+    },
+    {
+      "id": "human-user",
+      "label": "人类用户",
+      "groupId": "characters",
+      "fields": [
+        {
+          "id": "avatar-icon",
+          "label": "专属图标",
+          "type": "icon"
+        },
+        {
+          "id": "account-status",
+          "label": "账号状态",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:characters:identity-source",
+        "group:characters:permissions",
+        "group:characters:continuity",
+        "type:human-user:avatar-icon",
+        "type:human-user:account-status",
+        "core:body"
+      ]
+    },
+    {
+      "id": "ai-agent",
+      "label": "自治智能体",
+      "groupId": "characters",
+      "fields": [
+        {
+          "id": "agent-icon",
+          "label": "专属图标",
+          "type": "icon"
+        },
+        {
+          "id": "self-description",
+          "label": "自我描述",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:characters:identity-source",
+        "group:characters:permissions",
+        "group:characters:continuity",
+        "type:ai-agent:agent-icon",
+        "type:ai-agent:self-description",
+        "core:body"
+      ]
+    },
+    {
+      "id": "ai-core",
+      "label": "核心模型",
+      "groupId": "characters",
+      "fields": [
+        {
+          "id": "model-lineage",
+          "label": "模型谱系",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:characters:identity-source",
+        "group:characters:permissions",
+        "group:characters:continuity",
+        "type:ai-core:model-lineage",
+        "core:body"
+      ]
+    },
+    {
+      "id": "operator",
+      "label": "系统运维者",
+      "groupId": "characters",
+      "fields": [
+        {
+          "id": "override-authority",
+          "label": "人工干预权限",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:characters:identity-source",
+        "group:characters:permissions",
+        "group:characters:continuity",
+        "type:operator:override-authority",
+        "core:body"
+      ]
+    },
+    {
+      "id": "dataset",
+      "label": "数据集",
+      "groupId": "data",
+      "fields": [
+        {
+          "id": "sample-image",
+          "label": "数据样本/界面截图",
+          "type": "image"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:data:provenance",
+        "group:data:integrity",
+        "group:data:retention",
+        "type:dataset:sample-image",
+        "core:body"
+      ]
+    },
+    {
+      "id": "memory",
+      "label": "记忆片段",
+      "groupId": "data",
+      "fields": [
+        {
+          "id": "owner-claim",
+          "label": "声称所属者",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:data:provenance",
+        "group:data:integrity",
+        "group:data:retention",
+        "type:memory:owner-claim",
+        "core:body"
+      ]
+    },
+    {
+      "id": "digital-twin",
+      "label": "数字副本",
+      "groupId": "data",
+      "fields": [
+        {
+          "id": "sync-policy",
+          "label": "同步策略",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:data:provenance",
+        "group:data:integrity",
+        "group:data:retention",
+        "type:digital-twin:sync-policy",
+        "core:body"
+      ]
+    },
+    {
+      "id": "protocol",
+      "label": "通信协议",
+      "groupId": "protocols",
+      "fields": [
+        {
+          "id": "message-format",
+          "label": "消息格式",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:protocols:trigger",
+        "group:protocols:scope",
+        "group:protocols:failure",
+        "type:protocol:message-format",
+        "core:body"
+      ]
+    },
+    {
+      "id": "permission-model",
+      "label": "权限模型",
+      "groupId": "protocols",
+      "fields": [
+        {
+          "id": "escalation-path",
+          "label": "权限升级路径",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:protocols:trigger",
+        "group:protocols:scope",
+        "group:protocols:failure",
+        "type:permission-model:escalation-path",
+        "core:body"
+      ]
+    },
+    {
+      "id": "identity-rule",
+      "label": "身份规则",
+      "groupId": "protocols",
+      "fields": [
+        {
+          "id": "identity-conflict",
+          "label": "身份冲突处理",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:protocols:trigger",
+        "group:protocols:scope",
+        "group:protocols:failure",
+        "type:identity-rule:identity-conflict",
+        "core:body"
+      ]
+    },
+    {
+      "id": "model",
+      "label": "AI模型",
+      "groupId": "tools",
+      "fields": [
+        {
+          "id": "evaluation",
+          "label": "评估与偏差",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:tools:architecture",
+        "group:tools:capability",
+        "group:tools:training-source",
+        "type:model:evaluation",
+        "core:body"
+      ]
+    },
+    {
+      "id": "tool",
+      "label": "外接工具",
+      "groupId": "tools",
+      "fields": [
+        {
+          "id": "side-effect",
+          "label": "外部副作用",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:tools:architecture",
+        "group:tools:capability",
+        "group:tools:training-source",
+        "type:tool:side-effect",
+        "core:body"
+      ]
+    },
+    {
+      "id": "incident",
+      "label": "系统异常",
+      "groupId": "incidents",
+      "fields": [
+        {
+          "id": "severity",
+          "label": "影响等级",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:incidents:observed-effect",
+        "group:incidents:reproduction",
+        "type:incident:severity",
+        "core:body"
+      ]
+    },
+    {
+      "id": "test-run",
+      "label": "测试记录",
+      "groupId": "incidents",
+      "fields": [
+        {
+          "id": "expected-result",
+          "label": "预期与实测",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:incidents:observed-effect",
+        "group:incidents:reproduction",
+        "type:test-run:expected-result",
+        "core:body"
+      ]
+    },
+    {
+      "id": "log-entry",
+      "label": "日志条目",
+      "groupId": "logs",
+      "fields": [
+        {
+          "id": "signature",
+          "label": "校验签名",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:logs:timestamp-source",
+        "group:logs:missing-data",
+        "type:log-entry:signature",
+        "core:body"
+      ]
+    },
+    {
+      "id": "checkpoint",
+      "label": "版本检查点",
+      "groupId": "logs",
+      "fields": [
+        {
+          "id": "restore-impact",
+          "label": "恢复影响",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:logs:timestamp-source",
+        "group:logs:missing-data",
+        "type:checkpoint:restore-impact",
+        "core:body"
+      ]
+    }
+  ],
+  "entries": [
+    {
+      "id": "entry-mirror-protocol",
+      "name": "镜界公共网络",
+      "type": "world",
+      "parentId": "",
+      "status": "draft",
+      "summary": "多个虚拟空间出现共享记忆，网络边界和智能体身份都受到质疑。",
+      "body": "系统结构：镜界由公共节点、私人模拟场和自治智能体共同构成。世界中的空间均有运行权限、数据来源和恢复策略。\\n\\n调查原则：日志可能被篡改，智能体的自述也需要与行为、权限和备份记录交叉验证。\\n\\n创作留白：共享记忆的来源、智能体是否拥有连续身份，以及恢复旧备份是否会抹去新形成的个体经验。",
+      "customFields": {},
+      "tags": [
+        "模板示例",
+        "虚拟AI"
+      ],
+      "aliases": []
+    }
+  ],
+  "maps": [],
+  "relationGraphs": [
+    {
+      "id": "world-relations",
+      "name": "世界关系图谱",
+      "entryIds": [
+        "entry-mirror-protocol"
+      ],
+      "visibleEntryIds": [
+        "entry-mirror-protocol"
+      ],
+      "zoom": 100,
+      "nodePositions": {}
+    }
+  ],
+  "scripts": [],
+  "relations": [],
+  "events": []
+}

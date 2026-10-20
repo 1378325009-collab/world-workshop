@@ -1,0 +1,787 @@
+{
+  "schemaVersion": 4,
+  "project": {
+    "id": "new-maritime-era",
+    "name": "海贸新纪",
+    "genre": "历史架空 · 海权博弈 · 社会变迁",
+    "era": "嘉靖十六年（架空分歧线）",
+    "tone": "以制度、财政、技术和普通人的生活变化推动历史；重大决策都有可追溯的利益与代价。",
+    "premise": "本模板以架空明代为底板：嘉靖十六年，朝廷提前推行海防与海贸新政，东南港口、商帮和边防体系随之改变。海上贸易带来新技术与财富，也引发税权、地方自治和海疆控制的争夺；后续政权与事件均为虚构设定。"
+  },
+  "typeGroups": [
+    {
+      "id": "geography",
+      "label": "疆域与航路",
+      "fields": [
+        {
+          "id": "historical-map",
+          "label": "疆域/航路地图",
+          "type": "image"
+        },
+        {
+          "id": "regional-profile",
+          "label": "区域态势",
+          "type": "polygon",
+          "sides": 5,
+          "axes": [
+            "人口规模",
+            "财政能力",
+            "交通条件",
+            "军备水平",
+            "政局稳定"
+          ]
+        },
+        {
+          "id": "frontier-pressure",
+          "label": "边疆压力",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:geography:historical-map",
+        "group:geography:regional-profile",
+        "group:geography:frontier-pressure",
+        "core:body"
+      ]
+    },
+    {
+      "id": "factions",
+      "label": "朝廷与政治势力",
+      "fields": [
+        {
+          "id": "legitimacy",
+          "label": "权力合法性",
+          "type": "text"
+        },
+        {
+          "id": "revenue-base",
+          "label": "财政来源",
+          "type": "text"
+        },
+        {
+          "id": "policy-position",
+          "label": "政策立场",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:factions:legitimacy",
+        "group:factions:revenue-base",
+        "group:factions:policy-position",
+        "core:body"
+      ]
+    },
+    {
+      "id": "characters",
+      "label": "历史人物",
+      "fields": [
+        {
+          "id": "office",
+          "label": "身份与官职",
+          "type": "text"
+        },
+        {
+          "id": "political-network",
+          "label": "政治关系",
+          "type": "text"
+        },
+        {
+          "id": "historical-choice",
+          "label": "关键抉择",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:characters:office",
+        "group:characters:political-network",
+        "group:characters:historical-choice",
+        "core:body"
+      ]
+    },
+    {
+      "id": "institutions",
+      "label": "制度与机构",
+      "fields": [
+        {
+          "id": "jurisdiction",
+          "label": "管辖范围",
+          "type": "text"
+        },
+        {
+          "id": "appointment",
+          "label": "任免方式",
+          "type": "text"
+        },
+        {
+          "id": "implementation",
+          "label": "执行效果",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:institutions:jurisdiction",
+        "group:institutions:appointment",
+        "group:institutions:implementation",
+        "core:body"
+      ]
+    },
+    {
+      "id": "society",
+      "label": "社会与风俗",
+      "fields": [
+        {
+          "id": "class-structure",
+          "label": "阶层结构",
+          "type": "text"
+        },
+        {
+          "id": "daily-life",
+          "label": "日常生活",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:society:class-structure",
+        "group:society:daily-life",
+        "core:body"
+      ]
+    },
+    {
+      "id": "technology",
+      "label": "技术与生产",
+      "fields": [
+        {
+          "id": "technical-sketch",
+          "label": "器物/工艺图",
+          "type": "image"
+        },
+        {
+          "id": "adoption-cost",
+          "label": "推广成本",
+          "type": "text"
+        },
+        {
+          "id": "strategic-impact",
+          "label": "战略影响",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:technology:technical-sketch",
+        "group:technology:adoption-cost",
+        "group:technology:strategic-impact",
+        "core:body"
+      ]
+    },
+    {
+      "id": "assumptions",
+      "label": "架空规则",
+      "fields": [
+        {
+          "id": "divergence",
+          "label": "分歧前提",
+          "type": "text"
+        },
+        {
+          "id": "constraints",
+          "label": "推演边界",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:assumptions:divergence",
+        "group:assumptions:constraints",
+        "core:body"
+      ]
+    },
+    {
+      "id": "chronology",
+      "label": "历史进程",
+      "fields": [
+        {
+          "id": "causes",
+          "label": "事件起因",
+          "type": "text"
+        },
+        {
+          "id": "consequences",
+          "label": "后续影响",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:chronology:causes",
+        "group:chronology:consequences",
+        "core:body"
+      ]
+    },
+    {
+      "id": "archives",
+      "label": "史料与叙事",
+      "fields": [
+        {
+          "id": "source-type",
+          "label": "史料类型",
+          "type": "text"
+        },
+        {
+          "id": "perspective",
+          "label": "叙述立场",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:archives:source-type",
+        "group:archives:perspective",
+        "core:body"
+      ]
+    }
+  ],
+  "typeDefinitions": [
+    {
+      "id": "world",
+      "label": "架空天下",
+      "groupId": "geography",
+      "fields": [
+        {
+          "id": "political-order",
+          "label": "天下格局",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:geography:historical-map",
+        "group:geography:regional-profile",
+        "group:geography:frontier-pressure",
+        "type:world:political-order",
+        "core:body"
+      ]
+    },
+    {
+      "id": "region",
+      "label": "行省/边疆",
+      "groupId": "geography",
+      "fields": [
+        {
+          "id": "administrative-change",
+          "label": "行政沿革",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:geography:historical-map",
+        "group:geography:regional-profile",
+        "group:geography:frontier-pressure",
+        "type:region:administrative-change",
+        "core:body"
+      ]
+    },
+    {
+      "id": "location",
+      "label": "城镇与港口",
+      "groupId": "geography",
+      "fields": [
+        {
+          "id": "trade-function",
+          "label": "贸易职能",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:geography:historical-map",
+        "group:geography:regional-profile",
+        "group:geography:frontier-pressure",
+        "type:location:trade-function",
+        "core:body"
+      ]
+    },
+    {
+      "id": "sea-route",
+      "label": "海上航路",
+      "groupId": "geography",
+      "fields": [
+        {
+          "id": "seasonal-window",
+          "label": "季风与航期",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:geography:historical-map",
+        "group:geography:regional-profile",
+        "group:geography:frontier-pressure",
+        "type:sea-route:seasonal-window",
+        "core:body"
+      ]
+    },
+    {
+      "id": "faction",
+      "label": "政治派系",
+      "groupId": "factions",
+      "fields": [
+        {
+          "id": "coalition",
+          "label": "结盟与对立",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:factions:legitimacy",
+        "group:factions:revenue-base",
+        "group:factions:policy-position",
+        "type:faction:coalition",
+        "core:body"
+      ]
+    },
+    {
+      "id": "dynasty",
+      "label": "王朝/政权",
+      "groupId": "factions",
+      "fields": [
+        {
+          "id": "succession",
+          "label": "继承秩序",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:factions:legitimacy",
+        "group:factions:revenue-base",
+        "group:factions:policy-position",
+        "type:dynasty:succession",
+        "core:body"
+      ]
+    },
+    {
+      "id": "state",
+      "label": "地方政权",
+      "groupId": "factions",
+      "fields": [
+        {
+          "id": "autonomy",
+          "label": "自治程度",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:factions:legitimacy",
+        "group:factions:revenue-base",
+        "group:factions:policy-position",
+        "type:state:autonomy",
+        "core:body"
+      ]
+    },
+    {
+      "id": "trade-association",
+      "label": "商帮",
+      "groupId": "factions",
+      "fields": [
+        {
+          "id": "trade-monopoly",
+          "label": "贸易范围",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:factions:legitimacy",
+        "group:factions:revenue-base",
+        "group:factions:policy-position",
+        "type:trade-association:trade-monopoly",
+        "core:body"
+      ]
+    },
+    {
+      "id": "character",
+      "label": "历史人物",
+      "groupId": "characters",
+      "fields": [
+        {
+          "id": "portrait",
+          "label": "专属图标",
+          "type": "icon"
+        },
+        {
+          "id": "public-image",
+          "label": "后世评价",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:characters:office",
+        "group:characters:political-network",
+        "group:characters:historical-choice",
+        "type:character:portrait",
+        "type:character:public-image",
+        "core:body"
+      ]
+    },
+    {
+      "id": "ruler",
+      "label": "君主/统治者",
+      "groupId": "characters",
+      "fields": [
+        {
+          "id": "decision-process",
+          "label": "决策机制",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:characters:office",
+        "group:characters:political-network",
+        "group:characters:historical-choice",
+        "type:ruler:decision-process",
+        "core:body"
+      ]
+    },
+    {
+      "id": "reformer",
+      "label": "改革者",
+      "groupId": "characters",
+      "fields": [
+        {
+          "id": "reform-agenda",
+          "label": "改革主张",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:characters:office",
+        "group:characters:political-network",
+        "group:characters:historical-choice",
+        "type:reformer:reform-agenda",
+        "core:body"
+      ]
+    },
+    {
+      "id": "institution",
+      "label": "制度机构",
+      "groupId": "institutions",
+      "fields": [
+        {
+          "id": "funding",
+          "label": "经费来源",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:institutions:jurisdiction",
+        "group:institutions:appointment",
+        "group:institutions:implementation",
+        "type:institution:funding",
+        "core:body"
+      ]
+    },
+    {
+      "id": "academy",
+      "label": "书院/学派",
+      "groupId": "institutions",
+      "fields": [
+        {
+          "id": "curriculum",
+          "label": "学术主张",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:institutions:jurisdiction",
+        "group:institutions:appointment",
+        "group:institutions:implementation",
+        "type:academy:curriculum",
+        "core:body"
+      ]
+    },
+    {
+      "id": "social-custom",
+      "label": "社会风俗",
+      "groupId": "society",
+      "fields": [
+        {
+          "id": "regional-variation",
+          "label": "地域差异",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:society:class-structure",
+        "group:society:daily-life",
+        "type:social-custom:regional-variation",
+        "core:body"
+      ]
+    },
+    {
+      "id": "invention",
+      "label": "技术发明",
+      "groupId": "technology",
+      "fields": [
+        {
+          "id": "production-capacity",
+          "label": "制造能力",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:technology:technical-sketch",
+        "group:technology:adoption-cost",
+        "group:technology:strategic-impact",
+        "type:invention:production-capacity",
+        "core:body"
+      ]
+    },
+    {
+      "id": "military-reform",
+      "label": "军事改革",
+      "groupId": "technology",
+      "fields": [
+        {
+          "id": "deployment",
+          "label": "部署方式",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:technology:technical-sketch",
+        "group:technology:adoption-cost",
+        "group:technology:strategic-impact",
+        "type:military-reform:deployment",
+        "core:body"
+      ]
+    },
+    {
+      "id": "divergence",
+      "label": "历史分歧点",
+      "groupId": "assumptions",
+      "fields": [
+        {
+          "id": "historical-basis",
+          "label": "史实基底",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:assumptions:divergence",
+        "group:assumptions:constraints",
+        "type:divergence:historical-basis",
+        "core:body"
+      ]
+    },
+    {
+      "id": "policy-reform",
+      "label": "政策改革",
+      "groupId": "chronology",
+      "fields": [
+        {
+          "id": "winners-and-losers",
+          "label": "利益得失",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:chronology:causes",
+        "group:chronology:consequences",
+        "type:policy-reform:winners-and-losers",
+        "core:body"
+      ]
+    },
+    {
+      "id": "historic-event",
+      "label": "历史事件",
+      "groupId": "chronology",
+      "fields": [
+        {
+          "id": "event-evidence",
+          "label": "记录与争议",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:chronology:causes",
+        "group:chronology:consequences",
+        "type:historic-event:event-evidence",
+        "core:body"
+      ]
+    },
+    {
+      "id": "treaty",
+      "label": "条约与盟约",
+      "groupId": "chronology",
+      "fields": [
+        {
+          "id": "enforcement",
+          "label": "执行与违约",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:chronology:causes",
+        "group:chronology:consequences",
+        "type:treaty:enforcement",
+        "core:body"
+      ]
+    },
+    {
+      "id": "archive",
+      "label": "档案文书",
+      "groupId": "archives",
+      "fields": [
+        {
+          "id": "document-image",
+          "label": "文书/地图图像",
+          "type": "image"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:archives:source-type",
+        "group:archives:perspective",
+        "type:archive:document-image",
+        "core:body"
+      ]
+    },
+    {
+      "id": "propaganda",
+      "label": "政令与舆论",
+      "groupId": "archives",
+      "fields": [
+        {
+          "id": "intended-audience",
+          "label": "面向人群",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:archives:source-type",
+        "group:archives:perspective",
+        "type:propaganda:intended-audience",
+        "core:body"
+      ]
+    }
+  ],
+  "entries": [
+    {
+      "id": "entry-new-maritime-era",
+      "name": "海贸新纪",
+      "type": "world",
+      "parentId": "",
+      "status": "draft",
+      "summary": "一条提前开启的合法海贸路线改变了财政、军事和地方权力格局。",
+      "body": "分歧点：嘉靖十六年，朝廷选择以许可贸易和常备海防替代临时禁令。此后各地制度变化应由这一决策逐步推演。\\n\\n推演原则：记录政策如何影响税收、航运、军备、人口迁移和地方利益；重大变化需要说明中间环节。\\n\\n创作留白：改革的推动者、反对派及周边政权的应对尚未设定，避免把架空推演误作真实史实。",
+      "customFields": {},
+      "tags": [
+        "模板示例",
+        "历史架空"
+      ],
+      "aliases": []
+    }
+  ],
+  "maps": [],
+  "relationGraphs": [
+    {
+      "id": "world-relations",
+      "name": "世界关系图谱",
+      "entryIds": [
+        "entry-new-maritime-era"
+      ],
+      "visibleEntryIds": [
+        "entry-new-maritime-era"
+      ],
+      "zoom": 100,
+      "nodePositions": {}
+    }
+  ],
+  "scripts": [],
+  "relations": [],
+  "events": []
+}

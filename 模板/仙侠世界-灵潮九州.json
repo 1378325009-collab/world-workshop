@@ -1,0 +1,1269 @@
+{
+  "schemaVersion": 4,
+  "project": {
+    "id": "lingchao-jiuzhou",
+    "name": "灵潮九州",
+    "genre": "东方仙侠 · 修真群像 · 秘境冒险",
+    "era": "新灵潮历七年（旧天衡崩解后）",
+    "tone": "宏阔奇诡、仙凡并行；机缘与代价相伴，修行仍离不开人情。",
+    "premise": "旧天衡崩解后的第七年，沉寂千年的九条地脉一同改道，凡人城邦边缘涌现秘境与妖潮。宗门争夺新生灵脉，凡人试图守住自己的秩序；每次破境都要偿还一笔可见的因果。众人追索灵潮源头，也必须回答：修真资源应由强者垄断，还是由众生共守？"
+  },
+  "typeGroups": [
+    {
+      "id": "geography",
+      "label": "地理与秘境",
+      "fields": [
+        {
+          "id": "geo-setting",
+          "label": "地理概况",
+          "type": "text"
+        },
+        {
+          "id": "map-reference",
+          "label": "地图/地貌参考图",
+          "type": "image"
+        },
+        {
+          "id": "spirit-veins",
+          "label": "灵脉与资源",
+          "type": "text"
+        },
+        {
+          "id": "environment-profile",
+          "label": "环境概况",
+          "type": "polygon",
+          "sides": 5,
+          "axes": [
+            "灵气浓度",
+            "资源丰度",
+            "通行便利",
+            "环境危险",
+            "空间稳定"
+          ]
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:geography:geo-setting",
+        "group:geography:map-reference",
+        "group:geography:spirit-veins",
+        "group:geography:environment-profile",
+        "core:body"
+      ]
+    },
+    {
+      "id": "factions",
+      "label": "宗门与势力",
+      "fields": [
+        {
+          "id": "power-level",
+          "label": "势力层级",
+          "type": "text"
+        },
+        {
+          "id": "resources",
+          "label": "资源与产业",
+          "type": "text"
+        },
+        {
+          "id": "external-relations",
+          "label": "对外关系与立场",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:factions:power-level",
+        "group:factions:resources",
+        "group:factions:external-relations",
+        "core:body"
+      ]
+    },
+    {
+      "id": "characters",
+      "label": "人物",
+      "fields": [
+        {
+          "id": "background",
+          "label": "出身与经历",
+          "type": "text"
+        },
+        {
+          "id": "cultivation-realm",
+          "label": "当前境界",
+          "type": "text"
+        },
+        {
+          "id": "motivation",
+          "label": "目标与执念",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:characters:background",
+        "group:characters:cultivation-realm",
+        "group:characters:motivation",
+        "core:body"
+      ]
+    },
+    {
+      "id": "races",
+      "label": "族群",
+      "fields": [
+        {
+          "id": "appearance",
+          "label": "外形与体征",
+          "type": "text"
+        },
+        {
+          "id": "life-cycle",
+          "label": "寿命与成长",
+          "type": "text"
+        },
+        {
+          "id": "customs",
+          "label": "族群风俗",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:races:appearance",
+        "group:races:life-cycle",
+        "group:races:customs",
+        "core:body"
+      ]
+    },
+    {
+      "id": "creatures",
+      "label": "灵兽与妖兽",
+      "fields": [
+        {
+          "id": "habitat",
+          "label": "栖息地",
+          "type": "text"
+        },
+        {
+          "id": "temperament",
+          "label": "习性与威胁",
+          "type": "text"
+        },
+        {
+          "id": "ecology",
+          "label": "生态与灵性",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:creatures:habitat",
+        "group:creatures:temperament",
+        "group:creatures:ecology",
+        "core:body"
+      ]
+    },
+    {
+      "id": "deities",
+      "label": "仙神",
+      "fields": [
+        {
+          "id": "authority",
+          "label": "神职与权能",
+          "type": "text"
+        },
+        {
+          "id": "worship",
+          "label": "信仰与祭祀",
+          "type": "text"
+        },
+        {
+          "id": "manifestation",
+          "label": "显化方式",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:deities:authority",
+        "group:deities:worship",
+        "group:deities:manifestation",
+        "core:body"
+      ]
+    },
+    {
+      "id": "cultures",
+      "label": "修行文化",
+      "fields": [
+        {
+          "id": "rites",
+          "label": "礼俗与仪式",
+          "type": "text"
+        },
+        {
+          "id": "taboos",
+          "label": "戒律与禁忌",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:cultures:rites",
+        "group:cultures:taboos",
+        "core:body"
+      ]
+    },
+    {
+      "id": "rules",
+      "label": "修行体系",
+      "fields": [
+        {
+          "id": "scope",
+          "label": "适用范围",
+          "type": "text"
+        },
+        {
+          "id": "trigger",
+          "label": "触发条件",
+          "type": "text"
+        },
+        {
+          "id": "cost",
+          "label": "代价与限制",
+          "type": "text"
+        },
+        {
+          "id": "exceptions",
+          "label": "例外情况",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:rules:scope",
+        "group:rules:trigger",
+        "group:rules:cost",
+        "group:rules:exceptions",
+        "core:body"
+      ]
+    },
+    {
+      "id": "items",
+      "label": "功法与灵物",
+      "fields": [
+        {
+          "id": "source",
+          "label": "来历与来源",
+          "type": "text"
+        },
+        {
+          "id": "reference-image",
+          "label": "外观参考图",
+          "type": "image"
+        },
+        {
+          "id": "function",
+          "label": "用途与效果",
+          "type": "text"
+        },
+        {
+          "id": "limits",
+          "label": "限制与副作用",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:items:source",
+        "group:items:reference-image",
+        "group:items:function",
+        "group:items:limits",
+        "core:body"
+      ]
+    },
+    {
+      "id": "quests",
+      "label": "机缘与事件",
+      "fields": [
+        {
+          "id": "quest-trigger",
+          "label": "触发条件",
+          "type": "text"
+        },
+        {
+          "id": "stakes",
+          "label": "目标与代价",
+          "type": "text"
+        },
+        {
+          "id": "outcome",
+          "label": "结果与影响",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:quests:quest-trigger",
+        "group:quests:stakes",
+        "group:quests:outcome",
+        "core:body"
+      ]
+    },
+    {
+      "id": "notes",
+      "label": "伏笔与资料",
+      "fields": [
+        {
+          "id": "source",
+          "label": "线索来源",
+          "type": "text"
+        },
+        {
+          "id": "open-questions",
+          "label": "待确认问题",
+          "type": "text"
+        },
+        {
+          "id": "reveal-stage",
+          "label": "揭示阶段",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:notes:source",
+        "group:notes:open-questions",
+        "group:notes:reveal-stage",
+        "core:body"
+      ]
+    },
+    {
+      "id": "miscellaneous",
+      "label": "其他",
+      "fields": [],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "core:body"
+      ]
+    }
+  ],
+  "typeDefinitions": [
+    {
+      "id": "world",
+      "label": "修真界",
+      "groupId": "geography",
+      "fields": [
+        {
+          "id": "cosmology",
+          "label": "天地结构",
+          "type": "text"
+        },
+        {
+          "id": "celestial-order",
+          "label": "世界底层秩序",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:geography:geo-setting",
+        "group:geography:map-reference",
+        "group:geography:spirit-veins",
+        "group:geography:environment-profile",
+        "type:world:cosmology",
+        "type:world:celestial-order",
+        "core:body"
+      ]
+    },
+    {
+      "id": "region",
+      "label": "大域",
+      "groupId": "geography",
+      "fields": [
+        {
+          "id": "regional-features",
+          "label": "本域特色",
+          "type": "text"
+        },
+        {
+          "id": "key-routes",
+          "label": "主要通道",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:geography:geo-setting",
+        "group:geography:map-reference",
+        "group:geography:spirit-veins",
+        "group:geography:environment-profile",
+        "type:region:regional-features",
+        "type:region:key-routes",
+        "core:body"
+      ]
+    },
+    {
+      "id": "location",
+      "label": "地点与城池",
+      "groupId": "geography",
+      "fields": [
+        {
+          "id": "access-condition",
+          "label": "进入与通行条件",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:geography:geo-setting",
+        "group:geography:map-reference",
+        "group:geography:spirit-veins",
+        "group:geography:environment-profile",
+        "type:location:access-condition",
+        "core:body"
+      ]
+    },
+    {
+      "id": "secret-realm",
+      "label": "秘境",
+      "groupId": "geography",
+      "fields": [
+        {
+          "id": "opening-cycle",
+          "label": "开启周期",
+          "type": "text"
+        },
+        {
+          "id": "trial-mechanism",
+          "label": "秘境试炼",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:geography:geo-setting",
+        "group:geography:map-reference",
+        "group:geography:spirit-veins",
+        "group:geography:environment-profile",
+        "type:secret-realm:opening-cycle",
+        "type:secret-realm:trial-mechanism",
+        "core:body"
+      ]
+    },
+    {
+      "id": "cave-heaven",
+      "label": "洞天福地",
+      "groupId": "geography",
+      "fields": [
+        {
+          "id": "time-flow",
+          "label": "时流与空间",
+          "type": "text"
+        },
+        {
+          "id": "stewardship",
+          "label": "洞天归属",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:geography:geo-setting",
+        "group:geography:map-reference",
+        "group:geography:spirit-veins",
+        "group:geography:environment-profile",
+        "type:cave-heaven:time-flow",
+        "type:cave-heaven:stewardship",
+        "core:body"
+      ]
+    },
+    {
+      "id": "faction",
+      "label": "宗门",
+      "groupId": "factions",
+      "fields": [
+        {
+          "id": "emblem",
+          "label": "专属图标",
+          "type": "icon"
+        },
+        {
+          "id": "dao-lineage",
+          "label": "道统传承",
+          "type": "text"
+        },
+        {
+          "id": "discipline",
+          "label": "门规与收徒",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:factions:power-level",
+        "group:factions:resources",
+        "group:factions:external-relations",
+        "type:faction:emblem",
+        "type:faction:dao-lineage",
+        "type:faction:discipline",
+        "core:body"
+      ]
+    },
+    {
+      "id": "organization",
+      "label": "仙盟与组织",
+      "groupId": "factions",
+      "fields": [
+        {
+          "id": "charter",
+          "label": "组织章程",
+          "type": "text"
+        },
+        {
+          "id": "membership",
+          "label": "加入条件",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:factions:power-level",
+        "group:factions:resources",
+        "group:factions:external-relations",
+        "type:organization:charter",
+        "type:organization:membership",
+        "core:body"
+      ]
+    },
+    {
+      "id": "family",
+      "label": "修真世家",
+      "groupId": "factions",
+      "fields": [
+        {
+          "id": "lineage",
+          "label": "血脉传承",
+          "type": "text"
+        },
+        {
+          "id": "succession",
+          "label": "继承规则",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:factions:power-level",
+        "group:factions:resources",
+        "group:factions:external-relations",
+        "type:family:lineage",
+        "type:family:succession",
+        "core:body"
+      ]
+    },
+    {
+      "id": "dynasty",
+      "label": "凡俗王朝",
+      "groupId": "factions",
+      "fields": [
+        {
+          "id": "political-order",
+          "label": "凡俗政制",
+          "type": "text"
+        },
+        {
+          "id": "cultivator-policy",
+          "label": "修士与朝廷关系",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:factions:power-level",
+        "group:factions:resources",
+        "group:factions:external-relations",
+        "type:dynasty:political-order",
+        "type:dynasty:cultivator-policy",
+        "core:body"
+      ]
+    },
+    {
+      "id": "character",
+      "label": "修士人物",
+      "groupId": "characters",
+      "fields": [
+        {
+          "id": "portrait",
+          "label": "专属图标",
+          "type": "icon"
+        },
+        {
+          "id": "character-profile",
+          "label": "人物特质",
+          "type": "polygon",
+          "sides": 5,
+          "axes": [
+            "心性",
+            "悟性",
+            "战力",
+            "声望",
+            "气运"
+          ]
+        },
+        {
+          "id": "cause-thread",
+          "label": "因果与机缘",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:characters:background",
+        "group:characters:cultivation-realm",
+        "group:characters:motivation",
+        "type:character:portrait",
+        "type:character:character-profile",
+        "type:character:cause-thread",
+        "core:body"
+      ]
+    },
+    {
+      "id": "mortal",
+      "label": "凡俗人物",
+      "groupId": "characters",
+      "fields": [
+        {
+          "id": "livelihood",
+          "label": "生计与技艺",
+          "type": "text"
+        },
+        {
+          "id": "view-of-cultivation",
+          "label": "对修行者的看法",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:characters:background",
+        "group:characters:cultivation-realm",
+        "group:characters:motivation",
+        "type:mortal:livelihood",
+        "type:mortal:view-of-cultivation",
+        "core:body"
+      ]
+    },
+    {
+      "id": "immortal",
+      "label": "仙人/大能",
+      "groupId": "characters",
+      "fields": [
+        {
+          "id": "dao-title",
+          "label": "道号与称谓",
+          "type": "text"
+        },
+        {
+          "id": "domain",
+          "label": "道场与领域",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:characters:background",
+        "group:characters:cultivation-realm",
+        "group:characters:motivation",
+        "type:immortal:dao-title",
+        "type:immortal:domain",
+        "core:body"
+      ]
+    },
+    {
+      "id": "race",
+      "label": "族群",
+      "groupId": "races",
+      "fields": [
+        {
+          "id": "origin",
+          "label": "族源与迁徙",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:races:appearance",
+        "group:races:life-cycle",
+        "group:races:customs",
+        "type:race:origin",
+        "core:body"
+      ]
+    },
+    {
+      "id": "human",
+      "label": "人族",
+      "groupId": "races",
+      "fields": [
+        {
+          "id": "cultivation-path",
+          "label": "修行传统",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:races:appearance",
+        "group:races:life-cycle",
+        "group:races:customs",
+        "type:human:cultivation-path",
+        "core:body"
+      ]
+    },
+    {
+      "id": "yao",
+      "label": "妖族",
+      "groupId": "races",
+      "fields": [
+        {
+          "id": "transformation",
+          "label": "化形规则",
+          "type": "text"
+        },
+        {
+          "id": "tribe-structure",
+          "label": "族群结构",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:races:appearance",
+        "group:races:life-cycle",
+        "group:races:customs",
+        "type:yao:transformation",
+        "type:yao:tribe-structure",
+        "core:body"
+      ]
+    },
+    {
+      "id": "spirit",
+      "label": "灵族",
+      "groupId": "races",
+      "fields": [
+        {
+          "id": "birth-method",
+          "label": "诞生方式",
+          "type": "text"
+        },
+        {
+          "id": "survival-condition",
+          "label": "依存条件",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:races:appearance",
+        "group:races:life-cycle",
+        "group:races:customs",
+        "type:spirit:birth-method",
+        "type:spirit:survival-condition",
+        "core:body"
+      ]
+    },
+    {
+      "id": "creature",
+      "label": "灵兽/妖兽",
+      "groupId": "creatures",
+      "fields": [
+        {
+          "id": "bestiary-icon",
+          "label": "专属图标",
+          "type": "icon"
+        },
+        {
+          "id": "beast-rank",
+          "label": "品阶与成长",
+          "type": "text"
+        },
+        {
+          "id": "bonding",
+          "label": "驯养与契约",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:creatures:habitat",
+        "group:creatures:temperament",
+        "group:creatures:ecology",
+        "type:creature:bestiary-icon",
+        "type:creature:beast-rank",
+        "type:creature:bonding",
+        "core:body"
+      ]
+    },
+    {
+      "id": "deity",
+      "label": "仙神/古神",
+      "groupId": "deities",
+      "fields": [
+        {
+          "id": "divine-icon",
+          "label": "专属图标",
+          "type": "icon"
+        },
+        {
+          "id": "incarnation",
+          "label": "降世方式",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:deities:authority",
+        "group:deities:worship",
+        "group:deities:manifestation",
+        "type:deity:divine-icon",
+        "type:deity:incarnation",
+        "core:body"
+      ]
+    },
+    {
+      "id": "culture",
+      "label": "修行礼俗",
+      "groupId": "cultures",
+      "fields": [
+        {
+          "id": "sect-etiquette",
+          "label": "宗门礼法",
+          "type": "text"
+        },
+        {
+          "id": "mortal-practice",
+          "label": "凡俗习俗",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:cultures:rites",
+        "group:cultures:taboos",
+        "type:culture:sect-etiquette",
+        "type:culture:mortal-practice",
+        "core:body"
+      ]
+    },
+    {
+      "id": "rule",
+      "label": "天地法则",
+      "groupId": "rules",
+      "fields": [
+        {
+          "id": "rule-consequence",
+          "label": "违背规则的后果",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:rules:scope",
+        "group:rules:trigger",
+        "group:rules:cost",
+        "group:rules:exceptions",
+        "type:rule:rule-consequence",
+        "core:body"
+      ]
+    },
+    {
+      "id": "cultivation-system",
+      "label": "修炼体系",
+      "groupId": "rules",
+      "fields": [
+        {
+          "id": "cultivation-paths",
+          "label": "修行路径",
+          "type": "text"
+        },
+        {
+          "id": "system-profile",
+          "label": "体系特征",
+          "type": "polygon",
+          "sides": 5,
+          "axes": [
+            "入门门槛",
+            "资源需求",
+            "心性要求",
+            "修行风险",
+            "成长上限"
+          ]
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:rules:scope",
+        "group:rules:trigger",
+        "group:rules:cost",
+        "group:rules:exceptions",
+        "type:cultivation-system:cultivation-paths",
+        "type:cultivation-system:system-profile",
+        "core:body"
+      ]
+    },
+    {
+      "id": "realm-system",
+      "label": "境界体系",
+      "groupId": "rules",
+      "fields": [
+        {
+          "id": "realm-sequence",
+          "label": "境界序列",
+          "type": "text"
+        },
+        {
+          "id": "breakthrough-rule",
+          "label": "破境条件",
+          "type": "text"
+        },
+        {
+          "id": "failure-cost",
+          "label": "失败代价",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:rules:scope",
+        "group:rules:trigger",
+        "group:rules:cost",
+        "group:rules:exceptions",
+        "type:realm-system:realm-sequence",
+        "type:realm-system:breakthrough-rule",
+        "type:realm-system:failure-cost",
+        "core:body"
+      ]
+    },
+    {
+      "id": "tribulation",
+      "label": "天劫与因果",
+      "groupId": "rules",
+      "fields": [
+        {
+          "id": "tribulation-form",
+          "label": "劫数形式",
+          "type": "text"
+        },
+        {
+          "id": "mitigation",
+          "label": "应劫方式",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:rules:scope",
+        "group:rules:trigger",
+        "group:rules:cost",
+        "group:rules:exceptions",
+        "type:tribulation:tribulation-form",
+        "type:tribulation:mitigation",
+        "core:body"
+      ]
+    },
+    {
+      "id": "item",
+      "label": "法宝/灵物",
+      "groupId": "items",
+      "fields": [
+        {
+          "id": "item-icon",
+          "label": "专属图标",
+          "type": "icon"
+        },
+        {
+          "id": "grade",
+          "label": "品阶与灵性",
+          "type": "text"
+        },
+        {
+          "id": "attunement",
+          "label": "认主与归属",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:items:source",
+        "group:items:reference-image",
+        "group:items:function",
+        "group:items:limits",
+        "type:item:item-icon",
+        "type:item:grade",
+        "type:item:attunement",
+        "core:body"
+      ]
+    },
+    {
+      "id": "technique",
+      "label": "功法秘术",
+      "groupId": "items",
+      "fields": [
+        {
+          "id": "cultivation-limit",
+          "label": "修习门槛",
+          "type": "text"
+        },
+        {
+          "id": "counter-method",
+          "label": "克制与反制",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:items:source",
+        "group:items:reference-image",
+        "group:items:function",
+        "group:items:limits",
+        "type:technique:cultivation-limit",
+        "type:technique:counter-method",
+        "core:body"
+      ]
+    },
+    {
+      "id": "pill",
+      "label": "丹药",
+      "groupId": "items",
+      "fields": [
+        {
+          "id": "ingredients",
+          "label": "主材与辅料",
+          "type": "text"
+        },
+        {
+          "id": "side-effects",
+          "label": "药性与副作用",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:items:source",
+        "group:items:reference-image",
+        "group:items:function",
+        "group:items:limits",
+        "type:pill:ingredients",
+        "type:pill:side-effects",
+        "core:body"
+      ]
+    },
+    {
+      "id": "material",
+      "label": "灵材",
+      "groupId": "items",
+      "fields": [
+        {
+          "id": "harvest-method",
+          "label": "采集方式",
+          "type": "text"
+        },
+        {
+          "id": "refining-use",
+          "label": "炼制用途",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:items:source",
+        "group:items:reference-image",
+        "group:items:function",
+        "group:items:limits",
+        "type:material:harvest-method",
+        "type:material:refining-use",
+        "core:body"
+      ]
+    },
+    {
+      "id": "quest",
+      "label": "机缘与事件",
+      "groupId": "quests",
+      "fields": [
+        {
+          "id": "key-choice",
+          "label": "关键抉择",
+          "type": "text"
+        },
+        {
+          "id": "long-term-impact",
+          "label": "长远影响",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:quests:quest-trigger",
+        "group:quests:stakes",
+        "group:quests:outcome",
+        "type:quest:key-choice",
+        "type:quest:long-term-impact",
+        "core:body"
+      ]
+    },
+    {
+      "id": "note",
+      "label": "伏笔与资料",
+      "groupId": "notes",
+      "fields": [
+        {
+          "id": "reveal-condition",
+          "label": "揭示条件",
+          "type": "text"
+        },
+        {
+          "id": "related-clues",
+          "label": "关联线索",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:notes:source",
+        "group:notes:open-questions",
+        "group:notes:reveal-stage",
+        "type:note:reveal-condition",
+        "type:note:related-clues",
+        "core:body"
+      ]
+    },
+    {
+      "id": "other",
+      "label": "待归类",
+      "groupId": "miscellaneous",
+      "fields": [],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "core:body"
+      ]
+    }
+  ],
+  "entries": [
+    {
+      "id": "entry-lingchao-jiuzhou",
+      "name": "九州修真界",
+      "type": "world",
+      "parentId": "",
+      "status": "draft",
+      "summary": "旧天衡崩解七年，九州灵脉迁徙、秘境重现，宗门与凡俗城邦共同面对新的修真秩序。",
+      "body": "世界基底：九州的灵脉正在迁徙，地理格局与资源分布随之改变。修士依靠灵脉修行，凡俗城邦则承受秘境显现和妖潮扩张的冲击。\\n\\n核心张力：新生灵脉有限，旧宗门试图维持垄断，地方势力和凡人城邦要求共享。破境并非单纯积累灵力，每次突破都会引来与过往选择相关的因果回响。\\n\\n创作留白：灵潮为何在此时复苏、旧天衡如何崩解、因果反噬是否能被规避，均可在后续设定中逐步揭开。",
+      "customFields": {},
+      "tags": [
+        "模板示例",
+        "灵潮纪元"
+      ],
+      "aliases": []
+    }
+  ],
+  "maps": [],
+  "relationGraphs": [
+    {
+      "id": "world-relations",
+      "name": "世界关系图谱",
+      "entryIds": [
+        "entry-lingchao-jiuzhou"
+      ],
+      "visibleEntryIds": [
+        "entry-lingchao-jiuzhou"
+      ],
+      "zoom": 100,
+      "nodePositions": {}
+    }
+  ],
+  "scripts": [],
+  "relations": [],
+  "events": []
+}

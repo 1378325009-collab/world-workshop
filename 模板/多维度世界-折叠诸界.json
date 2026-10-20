@@ -1,0 +1,805 @@
+{
+  "schemaVersion": 4,
+  "project": {
+    "id": "folded-realms",
+    "name": "折叠诸界",
+    "genre": "多维度世界 · 探索冒险 · 规则悬疑",
+    "era": "跨界纪元 12 年 · 第三次边界坍缩",
+    "tone": "每个维度都有自洽规则；跨界既能解决问题，也会带来不可逆的身份、时间或空间损耗。",
+    "premise": "第三次边界坍缩把相隔万里的两座城市叠在同一坐标上，来自不同维度的居民开始共享街道，却无法共享时间。跨界议会派出调查团寻找稳定节点，同时必须决定哪些世界有权关闭通道。"
+  },
+  "typeGroups": [
+    {
+      "id": "geography",
+      "label": "维度与边界",
+      "fields": [
+        {
+          "id": "dimension-map",
+          "label": "维度关系图",
+          "type": "image"
+        },
+        {
+          "id": "dimension-profile",
+          "label": "维度特征",
+          "type": "polygon",
+          "sides": 5,
+          "axes": [
+            "空间稳定",
+            "时间一致",
+            "物理相容",
+            "通道密度",
+            "生命适应"
+          ]
+        },
+        {
+          "id": "boundary-sign",
+          "label": "边界征兆",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:geography:dimension-map",
+        "group:geography:dimension-profile",
+        "group:geography:boundary-sign",
+        "core:body"
+      ]
+    },
+    {
+      "id": "factions",
+      "label": "跨界势力",
+      "fields": [
+        {
+          "id": "jurisdiction",
+          "label": "管辖范围",
+          "type": "text"
+        },
+        {
+          "id": "crossing-policy",
+          "label": "通行政策",
+          "type": "text"
+        },
+        {
+          "id": "resource-interest",
+          "label": "资源诉求",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:factions:jurisdiction",
+        "group:factions:crossing-policy",
+        "group:factions:resource-interest",
+        "core:body"
+      ]
+    },
+    {
+      "id": "characters",
+      "label": "旅行者与原住者",
+      "fields": [
+        {
+          "id": "origin-dimension",
+          "label": "来源维度",
+          "type": "text"
+        },
+        {
+          "id": "adaptation",
+          "label": "适应能力",
+          "type": "text"
+        },
+        {
+          "id": "identity-anchor",
+          "label": "身份锚点",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:characters:origin-dimension",
+        "group:characters:adaptation",
+        "group:characters:identity-anchor",
+        "core:body"
+      ]
+    },
+    {
+      "id": "entities",
+      "label": "异界生命",
+      "fields": [
+        {
+          "id": "native-law",
+          "label": "原生规则",
+          "type": "text"
+        },
+        {
+          "id": "contact-risk",
+          "label": "接触风险",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:entities:native-law",
+        "group:entities:contact-risk",
+        "core:body"
+      ]
+    },
+    {
+      "id": "laws",
+      "label": "维度法则",
+      "fields": [
+        {
+          "id": "scope",
+          "label": "适用维度",
+          "type": "text"
+        },
+        {
+          "id": "exception",
+          "label": "规则例外",
+          "type": "text"
+        },
+        {
+          "id": "crossing-cost",
+          "label": "跨界代价",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:laws:scope",
+        "group:laws:exception",
+        "group:laws:crossing-cost",
+        "core:body"
+      ]
+    },
+    {
+      "id": "artifacts",
+      "label": "通道与锚定物",
+      "fields": [
+        {
+          "id": "artifact-image",
+          "label": "结构/外观图",
+          "type": "image"
+        },
+        {
+          "id": "activation",
+          "label": "启用方式",
+          "type": "text"
+        },
+        {
+          "id": "failure",
+          "label": "失效后果",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:artifacts:artifact-image",
+        "group:artifacts:activation",
+        "group:artifacts:failure",
+        "core:body"
+      ]
+    },
+    {
+      "id": "events",
+      "label": "交叠与坍缩",
+      "fields": [
+        {
+          "id": "affected-dimensions",
+          "label": "受影响维度",
+          "type": "text"
+        },
+        {
+          "id": "lasting-change",
+          "label": "持续影响",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:events:affected-dimensions",
+        "group:events:lasting-change",
+        "core:body"
+      ]
+    },
+    {
+      "id": "records",
+      "label": "地图与测绘",
+      "fields": [
+        {
+          "id": "observer",
+          "label": "测绘者",
+          "type": "text"
+        },
+        {
+          "id": "confidence",
+          "label": "测绘可信度",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:records:observer",
+        "group:records:confidence",
+        "core:body"
+      ]
+    }
+  ],
+  "typeDefinitions": [
+    {
+      "id": "world",
+      "label": "诸界整体",
+      "groupId": "geography",
+      "fields": [
+        {
+          "id": "shared-origin",
+          "label": "共同起源假说",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:geography:dimension-map",
+        "group:geography:dimension-profile",
+        "group:geography:boundary-sign",
+        "type:world:shared-origin",
+        "core:body"
+      ]
+    },
+    {
+      "id": "dimension",
+      "label": "独立维度",
+      "groupId": "geography",
+      "fields": [
+        {
+          "id": "dimension-rule",
+          "label": "底层规则",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:geography:dimension-map",
+        "group:geography:dimension-profile",
+        "group:geography:boundary-sign",
+        "type:dimension:dimension-rule",
+        "core:body"
+      ]
+    },
+    {
+      "id": "plane",
+      "label": "维度层",
+      "groupId": "geography",
+      "fields": [
+        {
+          "id": "vertical-relation",
+          "label": "层间关系",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:geography:dimension-map",
+        "group:geography:dimension-profile",
+        "group:geography:boundary-sign",
+        "type:plane:vertical-relation",
+        "core:body"
+      ]
+    },
+    {
+      "id": "nexus",
+      "label": "稳定节点",
+      "groupId": "geography",
+      "fields": [
+        {
+          "id": "node-capacity",
+          "label": "通行容量",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:geography:dimension-map",
+        "group:geography:dimension-profile",
+        "group:geography:boundary-sign",
+        "type:nexus:node-capacity",
+        "core:body"
+      ]
+    },
+    {
+      "id": "rift",
+      "label": "临时裂隙",
+      "groupId": "geography",
+      "fields": [
+        {
+          "id": "rift-window",
+          "label": "持续时间",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:geography:dimension-map",
+        "group:geography:dimension-profile",
+        "group:geography:boundary-sign",
+        "type:rift:rift-window",
+        "core:body"
+      ]
+    },
+    {
+      "id": "transit-gate",
+      "label": "人工通道",
+      "groupId": "geography",
+      "fields": [
+        {
+          "id": "gatekeeper",
+          "label": "维护者",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:geography:dimension-map",
+        "group:geography:dimension-profile",
+        "group:geography:boundary-sign",
+        "type:transit-gate:gatekeeper",
+        "core:body"
+      ]
+    },
+    {
+      "id": "faction",
+      "label": "跨界势力",
+      "groupId": "factions",
+      "fields": [
+        {
+          "id": "faction-mark",
+          "label": "专属图标",
+          "type": "icon"
+        },
+        {
+          "id": "recognized-dimensions",
+          "label": "承认的维度",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:factions:jurisdiction",
+        "group:factions:crossing-policy",
+        "group:factions:resource-interest",
+        "type:faction:faction-mark",
+        "type:faction:recognized-dimensions",
+        "core:body"
+      ]
+    },
+    {
+      "id": "boundary-council",
+      "label": "边界议会",
+      "groupId": "factions",
+      "fields": [
+        {
+          "id": "representation",
+          "label": "代表机制",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:factions:jurisdiction",
+        "group:factions:crossing-policy",
+        "group:factions:resource-interest",
+        "type:boundary-council:representation",
+        "core:body"
+      ]
+    },
+    {
+      "id": "interplane-guild",
+      "label": "跨界行会",
+      "groupId": "factions",
+      "fields": [
+        {
+          "id": "trade-goods",
+          "label": "跨界贸易品",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:factions:jurisdiction",
+        "group:factions:crossing-policy",
+        "group:factions:resource-interest",
+        "type:interplane-guild:trade-goods",
+        "core:body"
+      ]
+    },
+    {
+      "id": "character",
+      "label": "跨界人物",
+      "groupId": "characters",
+      "fields": [
+        {
+          "id": "portrait",
+          "label": "专属图标",
+          "type": "icon"
+        },
+        {
+          "id": "return-condition",
+          "label": "返乡条件",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:characters:origin-dimension",
+        "group:characters:adaptation",
+        "group:characters:identity-anchor",
+        "type:character:portrait",
+        "type:character:return-condition",
+        "core:body"
+      ]
+    },
+    {
+      "id": "traveler",
+      "label": "维度旅行者",
+      "groupId": "characters",
+      "fields": [
+        {
+          "id": "crossing-history",
+          "label": "穿越经历",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:characters:origin-dimension",
+        "group:characters:adaptation",
+        "group:characters:identity-anchor",
+        "type:traveler:crossing-history",
+        "core:body"
+      ]
+    },
+    {
+      "id": "native",
+      "label": "维度原住者",
+      "groupId": "characters",
+      "fields": [
+        {
+          "id": "local-identity",
+          "label": "本地身份",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:characters:origin-dimension",
+        "group:characters:adaptation",
+        "group:characters:identity-anchor",
+        "type:native:local-identity",
+        "core:body"
+      ]
+    },
+    {
+      "id": "composite-being",
+      "label": "复合生命",
+      "groupId": "characters",
+      "fields": [
+        {
+          "id": "component-origins",
+          "label": "组成来源",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:characters:origin-dimension",
+        "group:characters:adaptation",
+        "group:characters:identity-anchor",
+        "type:composite-being:component-origins",
+        "core:body"
+      ]
+    },
+    {
+      "id": "native-entity",
+      "label": "异界生命",
+      "groupId": "entities",
+      "fields": [
+        {
+          "id": "entity-icon",
+          "label": "专属图标",
+          "type": "icon"
+        },
+        {
+          "id": "communication",
+          "label": "交流方式",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:entities:native-law",
+        "group:entities:contact-risk",
+        "type:native-entity:entity-icon",
+        "type:native-entity:communication",
+        "core:body"
+      ]
+    },
+    {
+      "id": "predatory-entity",
+      "label": "跨界掠食者",
+      "groupId": "entities",
+      "fields": [
+        {
+          "id": "hunting-boundary",
+          "label": "猎食边界",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:entities:native-law",
+        "group:entities:contact-risk",
+        "type:predatory-entity:hunting-boundary",
+        "core:body"
+      ]
+    },
+    {
+      "id": "dimensional-law",
+      "label": "维度法则",
+      "groupId": "laws",
+      "fields": [
+        {
+          "id": "observable-effect",
+          "label": "可观察效应",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:laws:scope",
+        "group:laws:exception",
+        "group:laws:crossing-cost",
+        "type:dimensional-law:observable-effect",
+        "core:body"
+      ]
+    },
+    {
+      "id": "crossing-rule",
+      "label": "通行规则",
+      "groupId": "laws",
+      "fields": [
+        {
+          "id": "authorized-travelers",
+          "label": "允许通行者",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:laws:scope",
+        "group:laws:exception",
+        "group:laws:crossing-cost",
+        "type:crossing-rule:authorized-travelers",
+        "core:body"
+      ]
+    },
+    {
+      "id": "time-dilation",
+      "label": "时间差",
+      "groupId": "laws",
+      "fields": [
+        {
+          "id": "conversion-ratio",
+          "label": "时间换算",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:laws:scope",
+        "group:laws:exception",
+        "group:laws:crossing-cost",
+        "type:time-dilation:conversion-ratio",
+        "core:body"
+      ]
+    },
+    {
+      "id": "anchor",
+      "label": "身份锚",
+      "groupId": "artifacts",
+      "fields": [
+        {
+          "id": "anchor-icon",
+          "label": "专属图标",
+          "type": "icon"
+        },
+        {
+          "id": "anchor-owner",
+          "label": "绑定者",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:artifacts:artifact-image",
+        "group:artifacts:activation",
+        "group:artifacts:failure",
+        "type:anchor:anchor-icon",
+        "type:anchor:anchor-owner",
+        "core:body"
+      ]
+    },
+    {
+      "id": "dimensional-key",
+      "label": "维度钥匙",
+      "groupId": "artifacts",
+      "fields": [
+        {
+          "id": "compatible-gates",
+          "label": "适配通道",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:artifacts:artifact-image",
+        "group:artifacts:activation",
+        "group:artifacts:failure",
+        "type:dimensional-key:compatible-gates",
+        "core:body"
+      ]
+    },
+    {
+      "id": "overlap-event",
+      "label": "维度交叠",
+      "groupId": "events",
+      "fields": [
+        {
+          "id": "overlap-area",
+          "label": "交叠范围",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:events:affected-dimensions",
+        "group:events:lasting-change",
+        "type:overlap-event:overlap-area",
+        "core:body"
+      ]
+    },
+    {
+      "id": "collapse-event",
+      "label": "边界坍缩",
+      "groupId": "events",
+      "fields": [
+        {
+          "id": "recovery-condition",
+          "label": "恢复条件",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:events:affected-dimensions",
+        "group:events:lasting-change",
+        "type:collapse-event:recovery-condition",
+        "core:body"
+      ]
+    },
+    {
+      "id": "survey-map",
+      "label": "维度地图",
+      "groupId": "records",
+      "fields": [
+        {
+          "id": "map-image",
+          "label": "地图/测绘图",
+          "type": "image"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:records:observer",
+        "group:records:confidence",
+        "type:survey-map:map-image",
+        "core:body"
+      ]
+    }
+  ],
+  "entries": [
+    {
+      "id": "entry-folded-realms",
+      "name": "折叠诸界",
+      "type": "world",
+      "parentId": "",
+      "status": "draft",
+      "summary": "边界坍缩使多个维度发生局部重叠，跨界秩序与通道控制权成为争议中心。",
+      "body": "空间结构：诸界通过稳定节点、临时裂隙和人工通道相连。各维度的方向、时间和物质规律可能不同。\\n\\n跨界代价：旅行者需要锚定自身来源；长时间停留可能造成记忆、身体或身份漂移。\\n\\n创作留白：诸界是否共享同一底层空间、边界坍缩的原因以及跨界议会的合法性尚未确认。",
+      "customFields": {},
+      "tags": [
+        "模板示例",
+        "多维度世界"
+      ],
+      "aliases": []
+    }
+  ],
+  "maps": [],
+  "relationGraphs": [
+    {
+      "id": "world-relations",
+      "name": "世界关系图谱",
+      "entryIds": [
+        "entry-folded-realms"
+      ],
+      "visibleEntryIds": [
+        "entry-folded-realms"
+      ],
+      "zoom": 100,
+      "nodePositions": {}
+    }
+  ],
+  "scripts": [],
+  "relations": [],
+  "events": []
+}

@@ -1,0 +1,844 @@
+{
+  "schemaVersion": 4,
+  "project": {
+    "id": "red-earth-age",
+    "name": "赤土纪",
+    "genre": "原始世界 · 生存探索 · 部族史诗",
+    "era": "长旱纪末年 · 新火季",
+    "tone": "自然环境不是背景而是持续的力量；知识来自观察、记忆、协作和代代传递。",
+    "premise": "长旱多年后，赤土河床重新出现水迹，数个迁徙部族同时向河谷移动。旧狩猎盟约要求共享水源，但新发现的洞穴壁画显示，河谷曾在一次相似旱季后改变了生灵的迁徙路线。"
+  },
+  "typeGroups": [
+    {
+      "id": "geography",
+      "label": "栖地与水源",
+      "fields": [
+        {
+          "id": "territory-map",
+          "label": "迁徙/栖地地图",
+          "type": "image"
+        },
+        {
+          "id": "habitat-profile",
+          "label": "栖地条件",
+          "type": "polygon",
+          "sides": 5,
+          "axes": [
+            "水源",
+            "猎物",
+            "遮蔽",
+            "气候压力",
+            "迁徙安全"
+          ]
+        },
+        {
+          "id": "seasonal-change",
+          "label": "季节变化",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:geography:territory-map",
+        "group:geography:habitat-profile",
+        "group:geography:seasonal-change",
+        "core:body"
+      ]
+    },
+    {
+      "id": "factions",
+      "label": "部族与盟约",
+      "fields": [
+        {
+          "id": "kinship",
+          "label": "亲族结构",
+          "type": "text"
+        },
+        {
+          "id": "shared-resource",
+          "label": "共享资源",
+          "type": "text"
+        },
+        {
+          "id": "alliance",
+          "label": "盟约与冲突",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:factions:kinship",
+        "group:factions:shared-resource",
+        "group:factions:alliance",
+        "core:body"
+      ]
+    },
+    {
+      "id": "characters",
+      "label": "猎人、长者与疗者",
+      "fields": [
+        {
+          "id": "role",
+          "label": "部族职责",
+          "type": "text"
+        },
+        {
+          "id": "knowledge",
+          "label": "掌握的知识",
+          "type": "text"
+        },
+        {
+          "id": "personal-obligation",
+          "label": "个人责任",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:characters:role",
+        "group:characters:knowledge",
+        "group:characters:personal-obligation",
+        "core:body"
+      ]
+    },
+    {
+      "id": "creatures",
+      "label": "兽群与植物",
+      "fields": [
+        {
+          "id": "migration",
+          "label": "迁徙规律",
+          "type": "text"
+        },
+        {
+          "id": "use",
+          "label": "食用/药用/危险",
+          "type": "text"
+        },
+        {
+          "id": "ecological-role",
+          "label": "生态作用",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:creatures:migration",
+        "group:creatures:use",
+        "group:creatures:ecological-role",
+        "core:body"
+      ]
+    },
+    {
+      "id": "traditions",
+      "label": "仪式与口述传统",
+      "fields": [
+        {
+          "id": "occasion",
+          "label": "举行时机",
+          "type": "text"
+        },
+        {
+          "id": "story-variants",
+          "label": "讲述版本",
+          "type": "text"
+        },
+        {
+          "id": "taboo",
+          "label": "禁忌",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:traditions:occasion",
+        "group:traditions:story-variants",
+        "group:traditions:taboo",
+        "core:body"
+      ]
+    },
+    {
+      "id": "technology",
+      "label": "工具与技艺",
+      "fields": [
+        {
+          "id": "tool-image",
+          "label": "工具/纹样图片",
+          "type": "image"
+        },
+        {
+          "id": "materials",
+          "label": "原料来源",
+          "type": "text"
+        },
+        {
+          "id": "skill-transfer",
+          "label": "技艺传承",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:technology:tool-image",
+        "group:technology:materials",
+        "group:technology:skill-transfer",
+        "core:body"
+      ]
+    },
+    {
+      "id": "survival",
+      "label": "生存规律",
+      "fields": [
+        {
+          "id": "scarcity",
+          "label": "资源稀缺",
+          "type": "text"
+        },
+        {
+          "id": "weather-sign",
+          "label": "天气征兆",
+          "type": "text"
+        },
+        {
+          "id": "failure-cost",
+          "label": "失误代价",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:survival:scarcity",
+        "group:survival:weather-sign",
+        "group:survival:failure-cost",
+        "core:body"
+      ]
+    },
+    {
+      "id": "events",
+      "label": "迁徙与共同事件",
+      "fields": [
+        {
+          "id": "participants",
+          "label": "参与部族",
+          "type": "text"
+        },
+        {
+          "id": "consequence",
+          "label": "长期影响",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:events:participants",
+        "group:events:consequence",
+        "core:body"
+      ]
+    },
+    {
+      "id": "oral-history",
+      "label": "记忆与遗迹",
+      "fields": [
+        {
+          "id": "keeper",
+          "label": "记忆保管者",
+          "type": "text"
+        },
+        {
+          "id": "certainty",
+          "label": "可信程度",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:oral-history:keeper",
+        "group:oral-history:certainty",
+        "core:body"
+      ]
+    }
+  ],
+  "typeDefinitions": [
+    {
+      "id": "world",
+      "label": "原始大地",
+      "groupId": "geography",
+      "fields": [
+        {
+          "id": "world-cycle",
+          "label": "季节与生态循环",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:geography:territory-map",
+        "group:geography:habitat-profile",
+        "group:geography:seasonal-change",
+        "type:world:world-cycle",
+        "core:body"
+      ]
+    },
+    {
+      "id": "region",
+      "label": "迁徙区域",
+      "groupId": "geography",
+      "fields": [
+        {
+          "id": "route-markers",
+          "label": "路线标记",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:geography:territory-map",
+        "group:geography:habitat-profile",
+        "group:geography:seasonal-change",
+        "type:region:route-markers",
+        "core:body"
+      ]
+    },
+    {
+      "id": "location",
+      "label": "营地与水源地",
+      "groupId": "geography",
+      "fields": [
+        {
+          "id": "seasonal-safety",
+          "label": "季节性安全",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:geography:territory-map",
+        "group:geography:habitat-profile",
+        "group:geography:seasonal-change",
+        "type:location:seasonal-safety",
+        "core:body"
+      ]
+    },
+    {
+      "id": "cave",
+      "label": "洞穴与岩棚",
+      "groupId": "geography",
+      "fields": [
+        {
+          "id": "cave-art",
+          "label": "壁画与刻痕",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:geography:territory-map",
+        "group:geography:habitat-profile",
+        "group:geography:seasonal-change",
+        "type:cave:cave-art",
+        "core:body"
+      ]
+    },
+    {
+      "id": "river-basin",
+      "label": "河谷流域",
+      "groupId": "geography",
+      "fields": [
+        {
+          "id": "flood-memory",
+          "label": "洪水记忆",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:geography:territory-map",
+        "group:geography:habitat-profile",
+        "group:geography:seasonal-change",
+        "type:river-basin:flood-memory",
+        "core:body"
+      ]
+    },
+    {
+      "id": "faction",
+      "label": "部族",
+      "groupId": "factions",
+      "fields": [
+        {
+          "id": "tribe-mark",
+          "label": "专属图标",
+          "type": "icon"
+        },
+        {
+          "id": "migration-goal",
+          "label": "迁徙目标",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:factions:kinship",
+        "group:factions:shared-resource",
+        "group:factions:alliance",
+        "type:faction:tribe-mark",
+        "type:faction:migration-goal",
+        "core:body"
+      ]
+    },
+    {
+      "id": "clan",
+      "label": "亲族群体",
+      "groupId": "factions",
+      "fields": [
+        {
+          "id": "kinship-bond",
+          "label": "亲缘关系",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:factions:kinship",
+        "group:factions:shared-resource",
+        "group:factions:alliance",
+        "type:clan:kinship-bond",
+        "core:body"
+      ]
+    },
+    {
+      "id": "alliance",
+      "label": "狩猎盟约",
+      "groupId": "factions",
+      "fields": [
+        {
+          "id": "shared-obligation",
+          "label": "共同义务",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:factions:kinship",
+        "group:factions:shared-resource",
+        "group:factions:alliance",
+        "type:alliance:shared-obligation",
+        "core:body"
+      ]
+    },
+    {
+      "id": "character",
+      "label": "族人",
+      "groupId": "characters",
+      "fields": [
+        {
+          "id": "life-stage",
+          "label": "年龄与人生阶段",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:characters:role",
+        "group:characters:knowledge",
+        "group:characters:personal-obligation",
+        "type:character:life-stage",
+        "core:body"
+      ]
+    },
+    {
+      "id": "hunter",
+      "label": "猎人",
+      "groupId": "characters",
+      "fields": [
+        {
+          "id": "portrait",
+          "label": "专属图标",
+          "type": "icon"
+        },
+        {
+          "id": "tracking-skill",
+          "label": "追踪专长",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:characters:role",
+        "group:characters:knowledge",
+        "group:characters:personal-obligation",
+        "type:hunter:portrait",
+        "type:hunter:tracking-skill",
+        "core:body"
+      ]
+    },
+    {
+      "id": "healer",
+      "label": "疗者",
+      "groupId": "characters",
+      "fields": [
+        {
+          "id": "remedies",
+          "label": "草药与疗法",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:characters:role",
+        "group:characters:knowledge",
+        "group:characters:personal-obligation",
+        "type:healer:remedies",
+        "core:body"
+      ]
+    },
+    {
+      "id": "shaman",
+      "label": "仪式引导者",
+      "groupId": "characters",
+      "fields": [
+        {
+          "id": "ritual-duty",
+          "label": "仪式职责",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:characters:role",
+        "group:characters:knowledge",
+        "group:characters:personal-obligation",
+        "type:shaman:ritual-duty",
+        "core:body"
+      ]
+    },
+    {
+      "id": "elder",
+      "label": "长者",
+      "groupId": "characters",
+      "fields": [
+        {
+          "id": "remembered-events",
+          "label": "亲历事件",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:characters:role",
+        "group:characters:knowledge",
+        "group:characters:personal-obligation",
+        "type:elder:remembered-events",
+        "core:body"
+      ]
+    },
+    {
+      "id": "megafauna",
+      "label": "大型兽群",
+      "groupId": "creatures",
+      "fields": [
+        {
+          "id": "herd-pattern",
+          "label": "群体规律",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:creatures:migration",
+        "group:creatures:use",
+        "group:creatures:ecological-role",
+        "type:megafauna:herd-pattern",
+        "core:body"
+      ]
+    },
+    {
+      "id": "predator",
+      "label": "掠食者",
+      "groupId": "creatures",
+      "fields": [
+        {
+          "id": "creature-icon",
+          "label": "专属图标",
+          "type": "icon"
+        },
+        {
+          "id": "hunting-ground",
+          "label": "捕猎范围",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:creatures:migration",
+        "group:creatures:use",
+        "group:creatures:ecological-role",
+        "type:predator:creature-icon",
+        "type:predator:hunting-ground",
+        "core:body"
+      ]
+    },
+    {
+      "id": "medicinal-plant",
+      "label": "药用植物",
+      "groupId": "creatures",
+      "fields": [
+        {
+          "id": "gathering-season",
+          "label": "采集季节",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:creatures:migration",
+        "group:creatures:use",
+        "group:creatures:ecological-role",
+        "type:medicinal-plant:gathering-season",
+        "core:body"
+      ]
+    },
+    {
+      "id": "rite",
+      "label": "部族仪式",
+      "groupId": "traditions",
+      "fields": [
+        {
+          "id": "required-offering",
+          "label": "仪式所需",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:traditions:occasion",
+        "group:traditions:story-variants",
+        "group:traditions:taboo",
+        "type:rite:required-offering",
+        "core:body"
+      ]
+    },
+    {
+      "id": "oral-legend",
+      "label": "口述传说",
+      "groupId": "traditions",
+      "fields": [
+        {
+          "id": "storyteller",
+          "label": "讲述者",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:traditions:occasion",
+        "group:traditions:story-variants",
+        "group:traditions:taboo",
+        "type:oral-legend:storyteller",
+        "core:body"
+      ]
+    },
+    {
+      "id": "tool",
+      "label": "石器/骨器",
+      "groupId": "technology",
+      "fields": [
+        {
+          "id": "tool-icon",
+          "label": "专属图标",
+          "type": "icon"
+        },
+        {
+          "id": "making-process",
+          "label": "制作过程",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:technology:tool-image",
+        "group:technology:materials",
+        "group:technology:skill-transfer",
+        "type:tool:tool-icon",
+        "type:tool:making-process",
+        "core:body"
+      ]
+    },
+    {
+      "id": "fire-practice",
+      "label": "用火技艺",
+      "groupId": "technology",
+      "fields": [
+        {
+          "id": "fire-source",
+          "label": "火种来源",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:technology:tool-image",
+        "group:technology:materials",
+        "group:technology:skill-transfer",
+        "type:fire-practice:fire-source",
+        "core:body"
+      ]
+    },
+    {
+      "id": "seasonal-rule",
+      "label": "季节规律",
+      "groupId": "survival",
+      "fields": [
+        {
+          "id": "observation-signs",
+          "label": "观察征兆",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:survival:scarcity",
+        "group:survival:weather-sign",
+        "group:survival:failure-cost",
+        "type:seasonal-rule:observation-signs",
+        "core:body"
+      ]
+    },
+    {
+      "id": "migration",
+      "label": "迁徙事件",
+      "groupId": "events",
+      "fields": [
+        {
+          "id": "decision-makers",
+          "label": "决策者",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:events:participants",
+        "group:events:consequence",
+        "type:migration:decision-makers",
+        "core:body"
+      ]
+    },
+    {
+      "id": "cave-art",
+      "label": "洞穴图像",
+      "groupId": "oral-history",
+      "fields": [
+        {
+          "id": "art-image",
+          "label": "岩画拓片/照片",
+          "type": "image"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:oral-history:keeper",
+        "group:oral-history:certainty",
+        "type:cave-art:art-image",
+        "core:body"
+      ]
+    }
+  ],
+  "entries": [
+    {
+      "id": "entry-red-earth-age",
+      "name": "赤土河谷",
+      "type": "world",
+      "parentId": "",
+      "status": "draft",
+      "summary": "水源重现引发迁徙与盟约争端，洞穴壁画留下了无法解释的旧灾痕迹。",
+      "body": "生存框架：季节、降雨、兽群迁徙和可携带的工具决定族群活动范围。任何远行都需要水源、火种和可靠的同行者。\\n\\n知识传承：故事、歌谣、身体技艺和洞穴图像承担记录功能；不同讲述者可能保存同一事件的不同部分。\\n\\n创作留白：旧灾是否与河谷异常有关、部族之间能否继续共享水源，以及新工具会改变怎样的生活。",
+      "customFields": {},
+      "tags": [
+        "模板示例",
+        "原始世界"
+      ],
+      "aliases": []
+    }
+  ],
+  "maps": [],
+  "relationGraphs": [
+    {
+      "id": "world-relations",
+      "name": "世界关系图谱",
+      "entryIds": [
+        "entry-red-earth-age"
+      ],
+      "visibleEntryIds": [
+        "entry-red-earth-age"
+      ],
+      "zoom": 100,
+      "nodePositions": {}
+    }
+  ],
+  "scripts": [],
+  "relations": [],
+  "events": []
+}

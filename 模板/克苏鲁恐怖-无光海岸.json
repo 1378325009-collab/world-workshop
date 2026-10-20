@@ -1,0 +1,834 @@
+{
+  "schemaVersion": 4,
+  "project": {
+    "id": "lightless-coast",
+    "name": "无光海岸",
+    "genre": "克苏鲁恐怖 · 调查悬疑 · 宇宙未知",
+    "era": "1928 年冬 · 长雾季",
+    "tone": "恐惧来自认知边界被侵蚀；证据可以互相矛盾，调查者的理解与安全都有限。",
+    "premise": "沿海小镇连续出现潮汐倒流和失踪者的同声梦话。当地档案馆收到一批无法对应任何年代的航海日志，调查者逐步发现，海岸线正在回应一段被人类误读的信号。"
+  },
+  "typeGroups": [
+    {
+      "id": "geography",
+      "label": "海岸与禁地",
+      "fields": [
+        {
+          "id": "coast-map",
+          "label": "海岸/调查地图",
+          "type": "image"
+        },
+        {
+          "id": "site-profile",
+          "label": "地点异样",
+          "type": "polygon",
+          "sides": 5,
+          "axes": [
+            "雾浓程度",
+            "潮汐异常",
+            "目击频率",
+            "认知压力",
+            "逃离难度"
+          ]
+        },
+        {
+          "id": "sensory-signs",
+          "label": "感官征兆",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:geography:coast-map",
+        "group:geography:site-profile",
+        "group:geography:sensory-signs",
+        "core:body"
+      ]
+    },
+    {
+      "id": "factions",
+      "label": "秘密团体与机构",
+      "fields": [
+        {
+          "id": "public-face",
+          "label": "公开身份",
+          "type": "text"
+        },
+        {
+          "id": "private-belief",
+          "label": "内部信念",
+          "type": "text"
+        },
+        {
+          "id": "recruitment",
+          "label": "成员来源",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:factions:public-face",
+        "group:factions:private-belief",
+        "group:factions:recruitment",
+        "core:body"
+      ]
+    },
+    {
+      "id": "characters",
+      "label": "调查者与证人",
+      "fields": [
+        {
+          "id": "occupation",
+          "label": "身份与职业",
+          "type": "text"
+        },
+        {
+          "id": "exposure",
+          "label": "异常接触史",
+          "type": "text"
+        },
+        {
+          "id": "reliability",
+          "label": "证词可信度",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:characters:occupation",
+        "group:characters:exposure",
+        "group:characters:reliability",
+        "core:body"
+      ]
+    },
+    {
+      "id": "entities",
+      "label": "未知存在",
+      "fields": [
+        {
+          "id": "observed-form",
+          "label": "可观察形态",
+          "type": "text"
+        },
+        {
+          "id": "contact-pattern",
+          "label": "接触模式",
+          "type": "text"
+        },
+        {
+          "id": "human-interpretation",
+          "label": "人类解释",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:entities:observed-form",
+        "group:entities:contact-pattern",
+        "group:entities:human-interpretation",
+        "core:body"
+      ]
+    },
+    {
+      "id": "laws",
+      "label": "认知与仪式",
+      "fields": [
+        {
+          "id": "trigger",
+          "label": "触发条件",
+          "type": "text"
+        },
+        {
+          "id": "price",
+          "label": "代价",
+          "type": "text"
+        },
+        {
+          "id": "misinterpretation",
+          "label": "常见误读",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:laws:trigger",
+        "group:laws:price",
+        "group:laws:misinterpretation",
+        "core:body"
+      ]
+    },
+    {
+      "id": "relics",
+      "label": "文书与遗物",
+      "fields": [
+        {
+          "id": "artifact-image",
+          "label": "物件/符号图片",
+          "type": "image"
+        },
+        {
+          "id": "provenance",
+          "label": "来源与流传",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:relics:artifact-image",
+        "group:relics:provenance",
+        "core:body"
+      ]
+    },
+    {
+      "id": "investigations",
+      "label": "案件与远征",
+      "fields": [
+        {
+          "id": "objective",
+          "label": "调查目标",
+          "type": "text"
+        },
+        {
+          "id": "known-evidence",
+          "label": "已知证据",
+          "type": "text"
+        },
+        {
+          "id": "risk",
+          "label": "风险等级",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:investigations:objective",
+        "group:investigations:known-evidence",
+        "group:investigations:risk",
+        "core:body"
+      ]
+    },
+    {
+      "id": "evidence",
+      "label": "证词与线索",
+      "fields": [
+        {
+          "id": "collection-method",
+          "label": "采集方式",
+          "type": "text"
+        },
+        {
+          "id": "contradictions",
+          "label": "矛盾之处",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:evidence:collection-method",
+        "group:evidence:contradictions",
+        "core:body"
+      ]
+    }
+  ],
+  "typeDefinitions": [
+    {
+      "id": "world",
+      "label": "已知世界",
+      "groupId": "geography",
+      "fields": [
+        {
+          "id": "accepted-cosmology",
+          "label": "社会公认宇宙观",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:geography:coast-map",
+        "group:geography:site-profile",
+        "group:geography:sensory-signs",
+        "type:world:accepted-cosmology",
+        "core:body"
+      ]
+    },
+    {
+      "id": "region",
+      "label": "海岸区域",
+      "groupId": "geography",
+      "fields": [
+        {
+          "id": "coastal-history",
+          "label": "地方沿革",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:geography:coast-map",
+        "group:geography:site-profile",
+        "group:geography:sensory-signs",
+        "type:region:coastal-history",
+        "core:body"
+      ]
+    },
+    {
+      "id": "location",
+      "label": "港镇地点",
+      "groupId": "geography",
+      "fields": [
+        {
+          "id": "local-rumor",
+          "label": "当地传闻",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:geography:coast-map",
+        "group:geography:site-profile",
+        "group:geography:sensory-signs",
+        "type:location:local-rumor",
+        "core:body"
+      ]
+    },
+    {
+      "id": "forbidden-town",
+      "label": "禁入聚落",
+      "groupId": "geography",
+      "fields": [
+        {
+          "id": "entry-reason",
+          "label": "禁入缘由",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:geography:coast-map",
+        "group:geography:site-profile",
+        "group:geography:sensory-signs",
+        "type:forbidden-town:entry-reason",
+        "core:body"
+      ]
+    },
+    {
+      "id": "dream-space",
+      "label": "梦境地点",
+      "groupId": "geography",
+      "fields": [
+        {
+          "id": "recurring-symbol",
+          "label": "反复出现的象征",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:geography:coast-map",
+        "group:geography:site-profile",
+        "group:geography:sensory-signs",
+        "type:dream-space:recurring-symbol",
+        "core:body"
+      ]
+    },
+    {
+      "id": "faction",
+      "label": "秘密团体",
+      "groupId": "factions",
+      "fields": [
+        {
+          "id": "public-cover",
+          "label": "公开掩护",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:factions:public-face",
+        "group:factions:private-belief",
+        "group:factions:recruitment",
+        "type:faction:public-cover",
+        "core:body"
+      ]
+    },
+    {
+      "id": "cult",
+      "label": "崇拜团体",
+      "groupId": "factions",
+      "fields": [
+        {
+          "id": "cult-mark",
+          "label": "专属图标",
+          "type": "icon"
+        },
+        {
+          "id": "ritual-calendar",
+          "label": "仪式周期",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:factions:public-face",
+        "group:factions:private-belief",
+        "group:factions:recruitment",
+        "type:cult:cult-mark",
+        "type:cult:ritual-calendar",
+        "core:body"
+      ]
+    },
+    {
+      "id": "institute",
+      "label": "学术机构",
+      "groupId": "factions",
+      "fields": [
+        {
+          "id": "research-limit",
+          "label": "研究边界",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:factions:public-face",
+        "group:factions:private-belief",
+        "group:factions:recruitment",
+        "type:institute:research-limit",
+        "core:body"
+      ]
+    },
+    {
+      "id": "secret-society",
+      "label": "隐秘会社",
+      "groupId": "factions",
+      "fields": [
+        {
+          "id": "initiation",
+          "label": "入会仪式",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:factions:public-face",
+        "group:factions:private-belief",
+        "group:factions:recruitment",
+        "type:secret-society:initiation",
+        "core:body"
+      ]
+    },
+    {
+      "id": "character",
+      "label": "调查人物",
+      "groupId": "characters",
+      "fields": [
+        {
+          "id": "portrait",
+          "label": "专属图标",
+          "type": "icon"
+        },
+        {
+          "id": "sanity-strain",
+          "label": "精神负荷",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:characters:occupation",
+        "group:characters:exposure",
+        "group:characters:reliability",
+        "type:character:portrait",
+        "type:character:sanity-strain",
+        "core:body"
+      ]
+    },
+    {
+      "id": "investigator",
+      "label": "调查者",
+      "groupId": "characters",
+      "fields": [
+        {
+          "id": "method",
+          "label": "调查方法",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:characters:occupation",
+        "group:characters:exposure",
+        "group:characters:reliability",
+        "type:investigator:method",
+        "core:body"
+      ]
+    },
+    {
+      "id": "witness",
+      "label": "目击者",
+      "groupId": "characters",
+      "fields": [
+        {
+          "id": "testimony-change",
+          "label": "证词变化",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:characters:occupation",
+        "group:characters:exposure",
+        "group:characters:reliability",
+        "type:witness:testimony-change",
+        "core:body"
+      ]
+    },
+    {
+      "id": "scholar",
+      "label": "研究者",
+      "groupId": "characters",
+      "fields": [
+        {
+          "id": "specialty",
+          "label": "研究领域",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:characters:occupation",
+        "group:characters:exposure",
+        "group:characters:reliability",
+        "type:scholar:specialty",
+        "core:body"
+      ]
+    },
+    {
+      "id": "outer-being",
+      "label": "宇宙存在",
+      "groupId": "entities",
+      "fields": [
+        {
+          "id": "entity-icon",
+          "label": "专属图标",
+          "type": "icon"
+        },
+        {
+          "id": "scale-of-contact",
+          "label": "接触尺度",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:entities:observed-form",
+        "group:entities:contact-pattern",
+        "group:entities:human-interpretation",
+        "type:outer-being:entity-icon",
+        "type:outer-being:scale-of-contact",
+        "core:body"
+      ]
+    },
+    {
+      "id": "hybrid",
+      "label": "异化个体",
+      "groupId": "entities",
+      "fields": [
+        {
+          "id": "transformation",
+          "label": "变化过程",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:entities:observed-form",
+        "group:entities:contact-pattern",
+        "group:entities:human-interpretation",
+        "type:hybrid:transformation",
+        "core:body"
+      ]
+    },
+    {
+      "id": "forbidden-knowledge",
+      "label": "禁忌知识",
+      "groupId": "laws",
+      "fields": [
+        {
+          "id": "reader-effect",
+          "label": "阅读影响",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:laws:trigger",
+        "group:laws:price",
+        "group:laws:misinterpretation",
+        "type:forbidden-knowledge:reader-effect",
+        "core:body"
+      ]
+    },
+    {
+      "id": "ritual",
+      "label": "仪式",
+      "groupId": "laws",
+      "fields": [
+        {
+          "id": "participants",
+          "label": "参与者条件",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:laws:trigger",
+        "group:laws:price",
+        "group:laws:misinterpretation",
+        "type:ritual:participants",
+        "core:body"
+      ]
+    },
+    {
+      "id": "cosmology",
+      "label": "未知宇宙规则",
+      "groupId": "laws",
+      "fields": [
+        {
+          "id": "human-limit",
+          "label": "人类理解边界",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:laws:trigger",
+        "group:laws:price",
+        "group:laws:misinterpretation",
+        "type:cosmology:human-limit",
+        "core:body"
+      ]
+    },
+    {
+      "id": "grimoire",
+      "label": "禁书",
+      "groupId": "relics",
+      "fields": [
+        {
+          "id": "book-icon",
+          "label": "专属图标",
+          "type": "icon"
+        },
+        {
+          "id": "translation",
+          "label": "翻译与注释",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:relics:artifact-image",
+        "group:relics:provenance",
+        "type:grimoire:book-icon",
+        "type:grimoire:translation",
+        "core:body"
+      ]
+    },
+    {
+      "id": "relic",
+      "label": "海中遗物",
+      "groupId": "relics",
+      "fields": [
+        {
+          "id": "handling",
+          "label": "接触方式",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:relics:artifact-image",
+        "group:relics:provenance",
+        "type:relic:handling",
+        "core:body"
+      ]
+    },
+    {
+      "id": "casefile",
+      "label": "调查案卷",
+      "groupId": "investigations",
+      "fields": [
+        {
+          "id": "case-status",
+          "label": "调查进度",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:investigations:objective",
+        "group:investigations:known-evidence",
+        "group:investigations:risk",
+        "type:casefile:case-status",
+        "core:body"
+      ]
+    },
+    {
+      "id": "expedition",
+      "label": "远海远征",
+      "groupId": "investigations",
+      "fields": [
+        {
+          "id": "return-condition",
+          "label": "返航条件",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:investigations:objective",
+        "group:investigations:known-evidence",
+        "group:investigations:risk",
+        "type:expedition:return-condition",
+        "core:body"
+      ]
+    },
+    {
+      "id": "clue",
+      "label": "线索",
+      "groupId": "evidence",
+      "fields": [
+        {
+          "id": "alternative-explanation",
+          "label": "其他解释",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:evidence:collection-method",
+        "group:evidence:contradictions",
+        "type:clue:alternative-explanation",
+        "core:body"
+      ]
+    },
+    {
+      "id": "testimony",
+      "label": "证词",
+      "groupId": "evidence",
+      "fields": [
+        {
+          "id": "witness-condition",
+          "label": "证人状态",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:evidence:collection-method",
+        "group:evidence:contradictions",
+        "type:testimony:witness-condition",
+        "core:body"
+      ]
+    }
+  ],
+  "entries": [
+    {
+      "id": "entry-lightless-coast",
+      "name": "无光海岸",
+      "type": "world",
+      "parentId": "",
+      "status": "draft",
+      "summary": "雾季中的港镇出现异常潮汐、共同梦境与失踪事件，任何解释都尚未得到证实。",
+      "body": "叙事边界：异常现象可以被记录，但不保证人类能完整理解。目击者的陈述会受到恐惧、记忆和暗示影响。\\n\\n调查方式：将现场证据、文书来源和不同证词分开记录；不要把推测直接写成宇宙实体的既定动机。\\n\\n创作留白：海中信号的来源、古老仪式与近期失踪之间是否存在因果关系仍未确认。",
+      "customFields": {},
+      "tags": [
+        "模板示例",
+        "克苏鲁恐怖"
+      ],
+      "aliases": []
+    }
+  ],
+  "maps": [],
+  "relationGraphs": [
+    {
+      "id": "world-relations",
+      "name": "世界关系图谱",
+      "entryIds": [
+        "entry-lightless-coast"
+      ],
+      "visibleEntryIds": [
+        "entry-lightless-coast"
+      ],
+      "zoom": 100,
+      "nodePositions": {}
+    }
+  ],
+  "scripts": [],
+  "relations": [],
+  "events": []
+}

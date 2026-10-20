@@ -1,0 +1,779 @@
+{
+  "schemaVersion": 4,
+  "project": {
+    "id": "time-seam-chronicles",
+    "name": "时缝纪事",
+    "genre": "时间穿梭 · 因果悬疑 · 多线叙事",
+    "era": "公历 2041 年 · 时间局首次失联后六个月",
+    "tone": "线索按时间顺序可能互相冲突；每次改变过去都会产生可追踪的成本和责任。",
+    "premise": "一支负责修复时间异常的调查队收到来自未来的求救信号，署名却是已经牺牲的队员。队伍沿着多个时代追查信号，在保全现有时间线、救回队友和阻止更大分支之间作出选择。"
+  },
+  "typeGroups": [
+    {
+      "id": "geography",
+      "label": "时间线与时代",
+      "fields": [
+        {
+          "id": "timeline-map",
+          "label": "时间线图",
+          "type": "image"
+        },
+        {
+          "id": "temporal-profile",
+          "label": "时间状态",
+          "type": "polygon",
+          "sides": 5,
+          "axes": [
+            "记录完整",
+            "分支数量",
+            "穿梭稳定",
+            "悖论风险",
+            "可达程度"
+          ]
+        },
+        {
+          "id": "local-calendar",
+          "label": "当地纪年",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:geography:timeline-map",
+        "group:geography:temporal-profile",
+        "group:geography:local-calendar",
+        "core:body"
+      ]
+    },
+    {
+      "id": "factions",
+      "label": "时间组织",
+      "fields": [
+        {
+          "id": "mandate",
+          "label": "组织使命",
+          "type": "text"
+        },
+        {
+          "id": "intervention-policy",
+          "label": "干预政策",
+          "type": "text"
+        },
+        {
+          "id": "resource",
+          "label": "穿梭资源",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:factions:mandate",
+        "group:factions:intervention-policy",
+        "group:factions:resource",
+        "core:body"
+      ]
+    },
+    {
+      "id": "characters",
+      "label": "穿梭者与当事人",
+      "fields": [
+        {
+          "id": "origin-time",
+          "label": "所属时代",
+          "type": "text"
+        },
+        {
+          "id": "memory-version",
+          "label": "记忆版本",
+          "type": "text"
+        },
+        {
+          "id": "causal-responsibility",
+          "label": "因果责任",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:characters:origin-time",
+        "group:characters:memory-version",
+        "group:characters:causal-responsibility",
+        "core:body"
+      ]
+    },
+    {
+      "id": "mechanics",
+      "label": "穿梭与悖论",
+      "fields": [
+        {
+          "id": "entry-condition",
+          "label": "穿梭条件",
+          "type": "text"
+        },
+        {
+          "id": "side-effect",
+          "label": "副作用",
+          "type": "text"
+        },
+        {
+          "id": "resolution",
+          "label": "悖论处置",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:mechanics:entry-condition",
+        "group:mechanics:side-effect",
+        "group:mechanics:resolution",
+        "core:body"
+      ]
+    },
+    {
+      "id": "artifacts",
+      "label": "装置与时间锚",
+      "fields": [
+        {
+          "id": "device-image",
+          "label": "装置示意图",
+          "type": "image"
+        },
+        {
+          "id": "range",
+          "label": "作用范围",
+          "type": "text"
+        },
+        {
+          "id": "failure",
+          "label": "故障后果",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:artifacts:device-image",
+        "group:artifacts:range",
+        "group:artifacts:failure",
+        "core:body"
+      ]
+    },
+    {
+      "id": "chronology",
+      "label": "事件与分支",
+      "fields": [
+        {
+          "id": "observed-time",
+          "label": "观察时间",
+          "type": "text"
+        },
+        {
+          "id": "recorded-time",
+          "label": "记录时间",
+          "type": "text"
+        },
+        {
+          "id": "branch-impact",
+          "label": "分支影响",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:chronology:observed-time",
+        "group:chronology:recorded-time",
+        "group:chronology:branch-impact",
+        "core:body"
+      ]
+    },
+    {
+      "id": "memory",
+      "label": "记忆与档案",
+      "fields": [
+        {
+          "id": "recording-device",
+          "label": "记录媒介",
+          "type": "text"
+        },
+        {
+          "id": "discrepancy",
+          "label": "记忆偏差",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:memory:recording-device",
+        "group:memory:discrepancy",
+        "core:body"
+      ]
+    }
+  ],
+  "typeDefinitions": [
+    {
+      "id": "world",
+      "label": "主时间流",
+      "groupId": "geography",
+      "fields": [
+        {
+          "id": "origin-theory",
+          "label": "起源假说",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:geography:timeline-map",
+        "group:geography:temporal-profile",
+        "group:geography:local-calendar",
+        "type:world:origin-theory",
+        "core:body"
+      ]
+    },
+    {
+      "id": "timeline",
+      "label": "时间分支",
+      "groupId": "geography",
+      "fields": [
+        {
+          "id": "branch-cause",
+          "label": "分支原因",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:geography:timeline-map",
+        "group:geography:temporal-profile",
+        "group:geography:local-calendar",
+        "type:timeline:branch-cause",
+        "core:body"
+      ]
+    },
+    {
+      "id": "region",
+      "label": "时代区域",
+      "groupId": "geography",
+      "fields": [
+        {
+          "id": "era-conditions",
+          "label": "时代环境",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:geography:timeline-map",
+        "group:geography:temporal-profile",
+        "group:geography:local-calendar",
+        "type:region:era-conditions",
+        "core:body"
+      ]
+    },
+    {
+      "id": "location",
+      "label": "关键地点",
+      "groupId": "geography",
+      "fields": [
+        {
+          "id": "historical-layer",
+          "label": "历史层叠",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:geography:timeline-map",
+        "group:geography:temporal-profile",
+        "group:geography:local-calendar",
+        "type:location:historical-layer",
+        "core:body"
+      ]
+    },
+    {
+      "id": "fixed-point",
+      "label": "固定时点",
+      "groupId": "geography",
+      "fields": [
+        {
+          "id": "why-fixed",
+          "label": "固定原因",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:geography:timeline-map",
+        "group:geography:temporal-profile",
+        "group:geography:local-calendar",
+        "type:fixed-point:why-fixed",
+        "core:body"
+      ]
+    },
+    {
+      "id": "time-rift",
+      "label": "时间裂隙",
+      "groupId": "geography",
+      "fields": [
+        {
+          "id": "temporal-window",
+          "label": "可用窗口",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:geography:timeline-map",
+        "group:geography:temporal-profile",
+        "group:geography:local-calendar",
+        "type:time-rift:temporal-window",
+        "core:body"
+      ]
+    },
+    {
+      "id": "faction",
+      "label": "时间势力",
+      "groupId": "factions",
+      "fields": [
+        {
+          "id": "timeline-interest",
+          "label": "时间线利益",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:factions:mandate",
+        "group:factions:intervention-policy",
+        "group:factions:resource",
+        "type:faction:timeline-interest",
+        "core:body"
+      ]
+    },
+    {
+      "id": "chronology-bureau",
+      "label": "时间局",
+      "groupId": "factions",
+      "fields": [
+        {
+          "id": "oversight",
+          "label": "监督制度",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:factions:mandate",
+        "group:factions:intervention-policy",
+        "group:factions:resource",
+        "type:chronology-bureau:oversight",
+        "core:body"
+      ]
+    },
+    {
+      "id": "time-smugglers",
+      "label": "时间走私者",
+      "groupId": "factions",
+      "fields": [
+        {
+          "id": "contraband",
+          "label": "走私物品",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:factions:mandate",
+        "group:factions:intervention-policy",
+        "group:factions:resource",
+        "type:time-smugglers:contraband",
+        "core:body"
+      ]
+    },
+    {
+      "id": "future-regime",
+      "label": "未来政权",
+      "groupId": "factions",
+      "fields": [
+        {
+          "id": "historical-claim",
+          "label": "历史主张",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:factions:mandate",
+        "group:factions:intervention-policy",
+        "group:factions:resource",
+        "type:future-regime:historical-claim",
+        "core:body"
+      ]
+    },
+    {
+      "id": "character",
+      "label": "人物",
+      "groupId": "characters",
+      "fields": [
+        {
+          "id": "portrait",
+          "label": "专属图标",
+          "type": "icon"
+        },
+        {
+          "id": "timeline-origin",
+          "label": "原始时间线",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:characters:origin-time",
+        "group:characters:memory-version",
+        "group:characters:causal-responsibility",
+        "type:character:portrait",
+        "type:character:timeline-origin",
+        "core:body"
+      ]
+    },
+    {
+      "id": "traveler",
+      "label": "时间穿梭者",
+      "groupId": "characters",
+      "fields": [
+        {
+          "id": "travel-limit",
+          "label": "穿梭限制",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:characters:origin-time",
+        "group:characters:memory-version",
+        "group:characters:causal-responsibility",
+        "type:traveler:travel-limit",
+        "core:body"
+      ]
+    },
+    {
+      "id": "local",
+      "label": "时代当事人",
+      "groupId": "characters",
+      "fields": [
+        {
+          "id": "knowledge-boundary",
+          "label": "所知边界",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:characters:origin-time",
+        "group:characters:memory-version",
+        "group:characters:causal-responsibility",
+        "type:local:knowledge-boundary",
+        "core:body"
+      ]
+    },
+    {
+      "id": "branch-self",
+      "label": "分支自我",
+      "groupId": "characters",
+      "fields": [
+        {
+          "id": "identity-difference",
+          "label": "身份差异",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:characters:origin-time",
+        "group:characters:memory-version",
+        "group:characters:causal-responsibility",
+        "type:branch-self:identity-difference",
+        "core:body"
+      ]
+    },
+    {
+      "id": "travel-method",
+      "label": "穿梭方式",
+      "groupId": "mechanics",
+      "fields": [
+        {
+          "id": "activation-cost",
+          "label": "启动代价",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:mechanics:entry-condition",
+        "group:mechanics:side-effect",
+        "group:mechanics:resolution",
+        "type:travel-method:activation-cost",
+        "core:body"
+      ]
+    },
+    {
+      "id": "paradox",
+      "label": "因果悖论",
+      "groupId": "mechanics",
+      "fields": [
+        {
+          "id": "contradicting-facts",
+          "label": "冲突事实",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:mechanics:entry-condition",
+        "group:mechanics:side-effect",
+        "group:mechanics:resolution",
+        "type:paradox:contradicting-facts",
+        "core:body"
+      ]
+    },
+    {
+      "id": "fixed-event",
+      "label": "不可逆事件",
+      "groupId": "mechanics",
+      "fields": [
+        {
+          "id": "attempted-changes",
+          "label": "历次干预",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:mechanics:entry-condition",
+        "group:mechanics:side-effect",
+        "group:mechanics:resolution",
+        "type:fixed-event:attempted-changes",
+        "core:body"
+      ]
+    },
+    {
+      "id": "time-machine",
+      "label": "时间装置",
+      "groupId": "artifacts",
+      "fields": [
+        {
+          "id": "device-icon",
+          "label": "专属图标",
+          "type": "icon"
+        },
+        {
+          "id": "operator-risk",
+          "label": "操作风险",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:artifacts:device-image",
+        "group:artifacts:range",
+        "group:artifacts:failure",
+        "type:time-machine:device-icon",
+        "type:time-machine:operator-risk",
+        "core:body"
+      ]
+    },
+    {
+      "id": "anchor",
+      "label": "时间锚",
+      "groupId": "artifacts",
+      "fields": [
+        {
+          "id": "anchor-memory",
+          "label": "关联记忆",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:artifacts:device-image",
+        "group:artifacts:range",
+        "group:artifacts:failure",
+        "type:anchor:anchor-memory",
+        "core:body"
+      ]
+    },
+    {
+      "id": "divergence",
+      "label": "历史分歧",
+      "groupId": "chronology",
+      "fields": [
+        {
+          "id": "before-and-after",
+          "label": "前后变化",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:chronology:observed-time",
+        "group:chronology:recorded-time",
+        "group:chronology:branch-impact",
+        "type:divergence:before-and-after",
+        "core:body"
+      ]
+    },
+    {
+      "id": "time-loop",
+      "label": "时间循环",
+      "groupId": "chronology",
+      "fields": [
+        {
+          "id": "loop-breaker",
+          "label": "循环出口",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:chronology:observed-time",
+        "group:chronology:recorded-time",
+        "group:chronology:branch-impact",
+        "type:time-loop:loop-breaker",
+        "core:body"
+      ]
+    },
+    {
+      "id": "mission",
+      "label": "修复任务",
+      "groupId": "chronology",
+      "fields": [
+        {
+          "id": "acceptable-outcome",
+          "label": "可接受结果",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:chronology:observed-time",
+        "group:chronology:recorded-time",
+        "group:chronology:branch-impact",
+        "type:mission:acceptable-outcome",
+        "core:body"
+      ]
+    },
+    {
+      "id": "memory-record",
+      "label": "记忆记录",
+      "groupId": "memory",
+      "fields": [
+        {
+          "id": "observer",
+          "label": "观察者",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:memory:recording-device",
+        "group:memory:discrepancy",
+        "type:memory-record:observer",
+        "core:body"
+      ]
+    }
+  ],
+  "entries": [
+    {
+      "id": "entry-time-seam-chronicles",
+      "name": "主时间流",
+      "type": "world",
+      "parentId": "",
+      "status": "draft",
+      "summary": "时间局失联后，未来求救信号与已记录的牺牲事件出现矛盾。",
+      "body": "时间框架：事件按发生时间、观察时间和记录时间分别标注。来自未来的文件可能被改写，也可能来自另一条分支。\\n\\n改动成本：穿梭会留下锚点、记忆偏差或因果回响；修改并不自动覆盖所有观察者的历史。\\n\\n创作留白：主时间流是否唯一、失联队员是否仍处于同一分支，以及谁有权决定修复哪条时间线。",
+      "customFields": {},
+      "tags": [
+        "模板示例",
+        "时间穿梭"
+      ],
+      "aliases": []
+    }
+  ],
+  "maps": [],
+  "relationGraphs": [
+    {
+      "id": "world-relations",
+      "name": "世界关系图谱",
+      "entryIds": [
+        "entry-time-seam-chronicles"
+      ],
+      "visibleEntryIds": [
+        "entry-time-seam-chronicles"
+      ],
+      "zoom": 100,
+      "nodePositions": {}
+    }
+  ],
+  "scripts": [],
+  "relations": [],
+  "events": []
+}

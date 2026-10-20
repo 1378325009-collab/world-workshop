@@ -1,0 +1,815 @@
+{
+  "schemaVersion": 4,
+  "project": {
+    "id": "linchuan-anomalies",
+    "name": "临川异闻",
+    "genre": "都市超能 · 当代悬疑 · 群像",
+    "era": "当代 · 异能公开第四年",
+    "tone": "日常城市与异常事件并存；能力不是万能解法，身份暴露、公共安全与个人选择同样重要。",
+    "premise": "四年前，一场覆盖临川全城的停电让少数人觉醒异常能力。政府建立登记与应急体系后，新的能力者开始在同一街区出现相互矛盾的记忆；调查小组必须找出规律，同时保护普通居民不被卷入。"
+  },
+  "typeGroups": [
+    {
+      "id": "geography",
+      "label": "城市与异常区域",
+      "fields": [
+        {
+          "id": "city-map",
+          "label": "城区/异常区地图",
+          "type": "image"
+        },
+        {
+          "id": "district-profile",
+          "label": "城区态势",
+          "type": "polygon",
+          "sides": 5,
+          "axes": [
+            "人口密度",
+            "监控覆盖",
+            "应急响应",
+            "异常频率",
+            "公众压力"
+          ]
+        },
+        {
+          "id": "evacuation-route",
+          "label": "疏散与封控路线",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:geography:city-map",
+        "group:geography:district-profile",
+        "group:geography:evacuation-route",
+        "core:body"
+      ]
+    },
+    {
+      "id": "factions",
+      "label": "机构与团体",
+      "fields": [
+        {
+          "id": "authority",
+          "label": "权限范围",
+          "type": "text"
+        },
+        {
+          "id": "public-image",
+          "label": "公众形象",
+          "type": "text"
+        },
+        {
+          "id": "hidden-agenda",
+          "label": "未公开目标",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:factions:authority",
+        "group:factions:public-image",
+        "group:factions:hidden-agenda",
+        "core:body"
+      ]
+    },
+    {
+      "id": "characters",
+      "label": "人物与身份",
+      "fields": [
+        {
+          "id": "identity",
+          "label": "公开身份",
+          "type": "text"
+        },
+        {
+          "id": "relationship",
+          "label": "关键关系",
+          "type": "text"
+        },
+        {
+          "id": "personal-risk",
+          "label": "暴露风险",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:characters:identity",
+        "group:characters:relationship",
+        "group:characters:personal-risk",
+        "core:body"
+      ]
+    },
+    {
+      "id": "powers",
+      "label": "异能与代价",
+      "fields": [
+        {
+          "id": "activation",
+          "label": "发动条件",
+          "type": "text"
+        },
+        {
+          "id": "range",
+          "label": "作用范围",
+          "type": "text"
+        },
+        {
+          "id": "cost",
+          "label": "身体/社会代价",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:powers:activation",
+        "group:powers:range",
+        "group:powers:cost",
+        "core:body"
+      ]
+    },
+    {
+      "id": "laws",
+      "label": "管理与应急规则",
+      "fields": [
+        {
+          "id": "registration",
+          "label": "登记要求",
+          "type": "text"
+        },
+        {
+          "id": "containment",
+          "label": "处置流程",
+          "type": "text"
+        },
+        {
+          "id": "appeal",
+          "label": "申诉与监督",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:laws:registration",
+        "group:laws:containment",
+        "group:laws:appeal",
+        "core:body"
+      ]
+    },
+    {
+      "id": "artifacts",
+      "label": "异常物与装备",
+      "fields": [
+        {
+          "id": "object-image",
+          "label": "物件/装备图片",
+          "type": "image"
+        },
+        {
+          "id": "handling",
+          "label": "接触与保管方式",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:artifacts:object-image",
+        "group:artifacts:handling",
+        "core:body"
+      ]
+    },
+    {
+      "id": "cases",
+      "label": "事件与调查",
+      "fields": [
+        {
+          "id": "incident-site",
+          "label": "事发地点",
+          "type": "text"
+        },
+        {
+          "id": "evidence",
+          "label": "证据情况",
+          "type": "text"
+        },
+        {
+          "id": "public-impact",
+          "label": "公众影响",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:cases:incident-site",
+        "group:cases:evidence",
+        "group:cases:public-impact",
+        "core:body"
+      ]
+    },
+    {
+      "id": "secrets",
+      "label": "隐情与线索",
+      "fields": [
+        {
+          "id": "source",
+          "label": "线索来源",
+          "type": "text"
+        },
+        {
+          "id": "reveal-condition",
+          "label": "揭示条件",
+          "type": "text"
+        }
+      ],
+      "commonFieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:secrets:source",
+        "group:secrets:reveal-condition",
+        "core:body"
+      ]
+    }
+  ],
+  "typeDefinitions": [
+    {
+      "id": "world",
+      "label": "异能社会",
+      "groupId": "geography",
+      "fields": [
+        {
+          "id": "disclosure-history",
+          "label": "公开沿革",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:geography:city-map",
+        "group:geography:district-profile",
+        "group:geography:evacuation-route",
+        "type:world:disclosure-history",
+        "core:body"
+      ]
+    },
+    {
+      "id": "region",
+      "label": "城市辖区",
+      "groupId": "geography",
+      "fields": [
+        {
+          "id": "response-team",
+          "label": "辖区应急力量",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:geography:city-map",
+        "group:geography:district-profile",
+        "group:geography:evacuation-route",
+        "type:region:response-team",
+        "core:body"
+      ]
+    },
+    {
+      "id": "location",
+      "label": "城市地点",
+      "groupId": "geography",
+      "fields": [
+        {
+          "id": "daily-function",
+          "label": "日常用途",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:geography:city-map",
+        "group:geography:district-profile",
+        "group:geography:evacuation-route",
+        "type:location:daily-function",
+        "core:body"
+      ]
+    },
+    {
+      "id": "anomaly-zone",
+      "label": "异常区域",
+      "groupId": "geography",
+      "fields": [
+        {
+          "id": "boundary",
+          "label": "影响边界",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:geography:city-map",
+        "group:geography:district-profile",
+        "group:geography:evacuation-route",
+        "type:anomaly-zone:boundary",
+        "core:body"
+      ]
+    },
+    {
+      "id": "underground-site",
+      "label": "地下设施",
+      "groupId": "geography",
+      "fields": [
+        {
+          "id": "access-control",
+          "label": "出入权限",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:geography:city-map",
+        "group:geography:district-profile",
+        "group:geography:evacuation-route",
+        "type:underground-site:access-control",
+        "core:body"
+      ]
+    },
+    {
+      "id": "faction",
+      "label": "社会团体",
+      "groupId": "factions",
+      "fields": [
+        {
+          "id": "membership",
+          "label": "成员构成",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:factions:authority",
+        "group:factions:public-image",
+        "group:factions:hidden-agenda",
+        "type:faction:membership",
+        "core:body"
+      ]
+    },
+    {
+      "id": "agency",
+      "label": "异能事务机构",
+      "groupId": "factions",
+      "fields": [
+        {
+          "id": "oversight",
+          "label": "监督机制",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:factions:authority",
+        "group:factions:public-image",
+        "group:factions:hidden-agenda",
+        "type:agency:oversight",
+        "core:body"
+      ]
+    },
+    {
+      "id": "corporation",
+      "label": "技术企业",
+      "groupId": "factions",
+      "fields": [
+        {
+          "id": "commercial-use",
+          "label": "能力商业化",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:factions:authority",
+        "group:factions:public-image",
+        "group:factions:hidden-agenda",
+        "type:corporation:commercial-use",
+        "core:body"
+      ]
+    },
+    {
+      "id": "vigilante-group",
+      "label": "民间互助组织",
+      "groupId": "factions",
+      "fields": [
+        {
+          "id": "operating-rule",
+          "label": "行动边界",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:factions:authority",
+        "group:factions:public-image",
+        "group:factions:hidden-agenda",
+        "type:vigilante-group:operating-rule",
+        "core:body"
+      ]
+    },
+    {
+      "id": "character",
+      "label": "人物",
+      "groupId": "characters",
+      "fields": [
+        {
+          "id": "portrait",
+          "label": "专属图标",
+          "type": "icon"
+        },
+        {
+          "id": "cover-identity",
+          "label": "掩护身份",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:characters:identity",
+        "group:characters:relationship",
+        "group:characters:personal-risk",
+        "type:character:portrait",
+        "type:character:cover-identity",
+        "core:body"
+      ]
+    },
+    {
+      "id": "superhuman",
+      "label": "异能者",
+      "groupId": "characters",
+      "fields": [
+        {
+          "id": "ability-icon",
+          "label": "专属图标",
+          "type": "icon"
+        },
+        {
+          "id": "ability-profile",
+          "label": "能力特征",
+          "type": "polygon",
+          "sides": 5,
+          "axes": [
+            "控制精度",
+            "作用范围",
+            "持续时间",
+            "失控风险",
+            "恢复速度"
+          ]
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:characters:identity",
+        "group:characters:relationship",
+        "group:characters:personal-risk",
+        "type:superhuman:ability-icon",
+        "type:superhuman:ability-profile",
+        "core:body"
+      ]
+    },
+    {
+      "id": "civilian",
+      "label": "普通居民",
+      "groupId": "characters",
+      "fields": [
+        {
+          "id": "exposure",
+          "label": "接触异常经历",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:characters:identity",
+        "group:characters:relationship",
+        "group:characters:personal-risk",
+        "type:civilian:exposure",
+        "core:body"
+      ]
+    },
+    {
+      "id": "antagonist",
+      "label": "对立者",
+      "groupId": "characters",
+      "fields": [
+        {
+          "id": "motivation",
+          "label": "行动动机",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:characters:identity",
+        "group:characters:relationship",
+        "group:characters:personal-risk",
+        "type:antagonist:motivation",
+        "core:body"
+      ]
+    },
+    {
+      "id": "ability",
+      "label": "异能",
+      "groupId": "powers",
+      "fields": [
+        {
+          "id": "counter",
+          "label": "克制方式",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:powers:activation",
+        "group:powers:range",
+        "group:powers:cost",
+        "type:ability:counter",
+        "core:body"
+      ]
+    },
+    {
+      "id": "awakening-event",
+      "label": "觉醒事件",
+      "groupId": "powers",
+      "fields": [
+        {
+          "id": "aftereffect",
+          "label": "觉醒后影响",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:powers:activation",
+        "group:powers:range",
+        "group:powers:cost",
+        "type:awakening-event:aftereffect",
+        "core:body"
+      ]
+    },
+    {
+      "id": "power-limit",
+      "label": "能力限制",
+      "groupId": "powers",
+      "fields": [
+        {
+          "id": "failure-condition",
+          "label": "失效条件",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:powers:activation",
+        "group:powers:range",
+        "group:powers:cost",
+        "type:power-limit:failure-condition",
+        "core:body"
+      ]
+    },
+    {
+      "id": "registration-law",
+      "label": "登记条例",
+      "groupId": "laws",
+      "fields": [
+        {
+          "id": "privacy-protection",
+          "label": "隐私保护",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:laws:registration",
+        "group:laws:containment",
+        "group:laws:appeal",
+        "type:registration-law:privacy-protection",
+        "core:body"
+      ]
+    },
+    {
+      "id": "containment-protocol",
+      "label": "应急预案",
+      "groupId": "laws",
+      "fields": [
+        {
+          "id": "escalation",
+          "label": "升级条件",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:laws:registration",
+        "group:laws:containment",
+        "group:laws:appeal",
+        "type:containment-protocol:escalation",
+        "core:body"
+      ]
+    },
+    {
+      "id": "anomalous-object",
+      "label": "异常物",
+      "groupId": "artifacts",
+      "fields": [
+        {
+          "id": "object-icon",
+          "label": "专属图标",
+          "type": "icon"
+        },
+        {
+          "id": "activation-risk",
+          "label": "启动风险",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:artifacts:object-image",
+        "group:artifacts:handling",
+        "type:anomalous-object:object-icon",
+        "type:anomalous-object:activation-risk",
+        "core:body"
+      ]
+    },
+    {
+      "id": "device",
+      "label": "辅助装置",
+      "groupId": "artifacts",
+      "fields": [
+        {
+          "id": "compatibility",
+          "label": "兼容性",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:artifacts:object-image",
+        "group:artifacts:handling",
+        "type:device:compatibility",
+        "core:body"
+      ]
+    },
+    {
+      "id": "incident",
+      "label": "异常事件",
+      "groupId": "cases",
+      "fields": [
+        {
+          "id": "incident-timeline",
+          "label": "事件经过",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:cases:incident-site",
+        "group:cases:evidence",
+        "group:cases:public-impact",
+        "type:incident:incident-timeline",
+        "core:body"
+      ]
+    },
+    {
+      "id": "investigation",
+      "label": "调查案件",
+      "groupId": "cases",
+      "fields": [
+        {
+          "id": "working-theory",
+          "label": "当前假设",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:cases:incident-site",
+        "group:cases:evidence",
+        "group:cases:public-impact",
+        "type:investigation:working-theory",
+        "core:body"
+      ]
+    },
+    {
+      "id": "secret",
+      "label": "隐秘事实",
+      "groupId": "secrets",
+      "fields": [
+        {
+          "id": "who-knows",
+          "label": "知情者",
+          "type": "text"
+        }
+      ],
+      "fieldOrder": [
+        "core:type",
+        "core:status",
+        "core:summary",
+        "group:secrets:source",
+        "group:secrets:reveal-condition",
+        "type:secret:who-knows",
+        "core:body"
+      ]
+    }
+  ],
+  "entries": [
+    {
+      "id": "entry-linchuan-anomalies",
+      "name": "临川市",
+      "type": "world",
+      "parentId": "",
+      "status": "draft",
+      "summary": "异能公开四年后，城市逐步建立管理制度，却出现无法用登记档案解释的集体记忆异常。",
+      "body": "社会框架：异能者需要面对登记、就业、医疗和隐私问题；普通居民既可能受益于能力，也可能承受失控事件。\\n\\n能力规则：能力有触发条件、适用边界和可观察代价。使用能力不能自动解决法律、信任和舆论问题。\\n\\n创作留白：觉醒原因、记忆异常源头和登记制度是否公平可逐步揭示。",
+      "customFields": {},
+      "tags": [
+        "模板示例",
+        "都市超能"
+      ],
+      "aliases": []
+    }
+  ],
+  "maps": [],
+  "relationGraphs": [
+    {
+      "id": "world-relations",
+      "name": "世界关系图谱",
+      "entryIds": [
+        "entry-linchuan-anomalies"
+      ],
+      "visibleEntryIds": [
+        "entry-linchuan-anomalies"
+      ],
+      "zoom": 100,
+      "nodePositions": {}
+    }
+  ],
+  "scripts": [],
+  "relations": [],
+  "events": []
+}
