@@ -12,8 +12,8 @@
 
 | 使用方式 | 下载 | 打开方式 |
 | --- | --- | --- |
-| 网页版（Windows 本机启动包，含可部署网页资源） | [下载网页 ZIP](https://github.com/1378325009-collab/world-workshop/releases/download/v1.3.0/世界工坊-1.3.0-网页端-Windows-x64.zip) | 完整解压后，双击“启动世界工坊.bat” |
-| Android 手机 App | [下载 APK](https://github.com/1378325009-collab/world-workshop/releases/download/v1.3.0/世界工坊-1.3.0-Android.apk) | 传到手机后安装；已有同签名版本可覆盖更新 |
+| 网页版（Windows 本机启动包，含可部署网页资源） | [下载网页 ZIP](https://github.com/1378325009-collab/world-workshop/releases/download/v1.3.0/world-workshop-1.3.0-web-windows-x64.zip) | 完整解压后，双击“启动世界工坊.bat” |
+| Android 手机 App | [下载 APK](https://github.com/1378325009-collab/world-workshop/releases/download/v1.3.0/world-workshop-1.3.0-android.apk) | 传到手机后安装；已有同签名版本可覆盖更新 |
 
 [发布页与文件校验值](https://github.com/1378325009-collab/world-workshop/releases/tag/v1.3.0)。网页包内的 `web/` 可单独部署到 HTTPS 静态站点，供电脑和手机浏览器使用；Windows 启动脚本仅供本机访问。Android APK 使用既有调试签名，适合直接安装；当前不提供 iOS 安装包。
 
