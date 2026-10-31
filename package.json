@@ -1,0 +1,77 @@
+{
+  "name": "world-workshop-android",
+  "version": "1.3.0",
+  "private": true,
+  "author": "听风语低",
+  "description": "Android and Windows desktop builds for World Workshop",
+  "main": "desktop/main.cjs",
+  "scripts": {
+    "android:web": "node scripts/build-android-web.mjs && esbuild scripts/capacitor-bridge.js --bundle --format=iife --platform=browser --target=es2022 --outfile=dist/native-adapter.js",
+    "android:sync": "npm run android:web && cap sync android",
+    "android:debug": "npm run android:sync && node scripts/check-android-sdk.mjs && cd android && gradlew.bat assembleDebug",
+    "android:open": "cap open android",
+    "desktop:web": "node scripts/build-desktop-web.mjs",
+    "desktop:package": "npm run desktop:web && electron-builder --win zip --x64",
+    "web:package": "node scripts/build-web-package.mjs && powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/zip-web-package.ps1",
+    "android:package": "npm run android:debug && node scripts/package-android.mjs"
+  },
+  "devDependencies": {
+    "@capacitor/android": "^8.5.3",
+    "@capacitor/app": "^8.1.2",
+    "@capacitor/cli": "^8.5.3",
+    "@capacitor/core": "^8.5.3",
+    "@capacitor/filesystem": "^8.1.5",
+    "@capacitor/share": "^8.0.3",
+    "@capacitor/status-bar": "^8.0.4",
+    "electron": "^45.0.0",
+    "electron-builder": "^26.15.3",
+    "esbuild": "^0.28.2",
+    "fflate": "^0.8.3"
+  },
+  "build": {
+    "appId": "com.berkisland.worldworkshop",
+    "productName": "世界工坊",
+    "asar": true,
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "desktop/main.cjs",
+      "desktop/icon.ico",
+      "desktop/web/**/*",
+      "package.json"
+    ],
+    "extraFiles": [
+      {
+        "from": "desktop/使用说明.txt",
+        "to": "使用说明.txt"
+      },
+      {
+        "from": "模板",
+        "to": "模板",
+        "filter": [
+          "**/*"
+        ]
+      },
+      {
+        "from": "docs",
+        "to": "docs",
+        "filter": [
+          "**/*"
+        ]
+      }
+    ],
+    "win": {
+      "icon": "desktop/icon.ico",
+      "target": [
+        {
+          "target": "zip",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "artifactName": "世界工坊-${version}-Windows-x64.${ext}"
+    }
+  }
+}

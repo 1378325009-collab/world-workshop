@@ -1,0 +1,8 @@
+{
+  "appId": "com.berkisland.worldworkshop",
+  "appName": "世界工坊",
+  "webDir": "dist",
+  "android": {
+    "backgroundColor": "#17211c"
+  }
+}

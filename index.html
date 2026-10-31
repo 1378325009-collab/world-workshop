@@ -2,19 +2,29 @@
 <html lang="zh-CN">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#17211c">
   <meta name="author" content="听风语低">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="世界工坊">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <title>世界工坊 · 伯克岛</title>
-  <link rel="stylesheet" href="style.css?v=ai-lomira-avatar-20261020-23">
+  <link rel="icon" href="assets/pwa/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/pwa/apple-touch-icon.png">
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="style.css?v=world-workshop-release-20261031-01">
+  <link rel="stylesheet" href="mobile-pwa.css?v=world-workshop-release-20261031-01">
+  <link rel="stylesheet" href="design-polish.css?v=world-workshop-release-20261031-01">
   <script src="vendor/mammoth.browser.min.js" defer></script>
-  <script src="app.js?v=ai-lomira-avatar-20261020-23" defer></script>
+  <script src="vendor/fflate.min.js" defer></script>
+  <script src="archive.js?v=world-workshop-release-20261031-01" defer></script>
+  <script src="app.js?v=world-workshop-release-20261031-01" defer></script>
 </head>
 <body>
   <div class="app-shell">
     <aside class="sidebar" id="sidebar" aria-label="主导航">
       <div class="brand-lockup">
-        <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+        <img class="brand-mark" src="assets/pwa/icon.svg" alt="">
         <span class="brand-copy"><strong>世界工坊</strong><small>BERK ISLAND</small></span>
       </div>
 
@@ -26,6 +36,7 @@
 
       <div class="sidebar-scroll">
         <div class="nav-caption">创作空间</div>
+        <div class="nav-caption mobile-more-caption">更多工具</div>
         <nav class="primary-nav">
           <button class="nav-item is-active" type="button" data-view="overview" aria-current="page">
             <span class="nav-icon" data-icon="grid"></span><span>概览</span><span class="nav-arrow">›</span>
@@ -60,12 +71,16 @@
       </div>
 
       <div class="sidebar-bottom">
+        <button class="sidebar-install" id="pwa-install-button" type="button" hidden>
+          <span class="sidebar-install-icon" data-icon="download" aria-hidden="true"></span>
+          <span class="sidebar-install-copy"><strong>安装世界工坊</strong><small>添加到主屏幕</small></span>
+        </button>
         <div class="local-status">
           <span class="status-light" aria-hidden="true"></span>
           <span class="local-status-copy"><strong>保存在此设备</strong><small id="save-time">所有更改自动保存</small></span>
           <button class="icon-button sidebar-backup" type="button" data-action="export" title="导出世界档案" aria-label="导出世界档案"><span data-icon="download"></span></button>
         </div>
-        <div class="sidebar-footnote">WORLD ARCHIVE <span>·</span> v1.0.1</div>
+        <div class="sidebar-footnote">WORLD ARCHIVE <span>·</span> v1.3.0</div>
         <div class="sidebar-author">作者：听风语低 <span>·</span> QQ：1378325009</div>
       </div>
     </aside>
@@ -91,13 +106,31 @@
         <aside class="entry-detail-dock" id="entry-detail-panel" aria-label="设定详情" hidden></aside>
         <aside class="ai-dock" id="ai-panel" aria-label="AI 助手" hidden></aside>
       </div>
+
+      <nav class="mobile-bottom-nav" aria-label="手机主导航">
+        <button class="nav-item mobile-tab" type="button" data-view="overview" aria-current="page">
+          <span class="mobile-tab-icon" data-icon="grid" aria-hidden="true"></span><span>概览</span>
+        </button>
+        <button class="nav-item mobile-tab" type="button" data-view="library">
+          <span class="mobile-tab-icon" data-icon="book" aria-hidden="true"></span><span>设定库</span>
+        </button>
+        <button class="nav-item mobile-tab" type="button" data-view="maps">
+          <span class="mobile-tab-icon" data-icon="map" aria-hidden="true"></span><span>地图</span>
+        </button>
+        <button class="nav-item mobile-tab" type="button" data-view="graph" aria-label="关系图谱">
+          <span class="mobile-tab-icon" data-icon="network" aria-hidden="true"></span><span>图谱</span>
+        </button>
+        <button class="mobile-tab mobile-more" type="button" data-action="toggle-sidebar" aria-controls="sidebar" aria-expanded="false">
+          <span class="mobile-tab-icon" data-icon="menu" aria-hidden="true"></span><span>更多</span>
+        </button>
+      </nav>
     </div>
   </div>
 
   <div class="sidebar-scrim" data-action="close-sidebar" aria-hidden="true"></div>
   <div id="modal-root"></div>
   <div class="toast-stack" id="toast-stack" aria-live="polite" aria-atomic="true"></div>
-  <input id="import-input" type="file" accept=".json,application/json" hidden>
+  <input id="import-input" type="file" accept=".zip,.json,application/zip,application/x-zip-compressed,application/json" hidden>
   <input id="ai-attachment-input" type="file" accept=".pdf,.docx,.txt,.md,.markdown,.csv,.json,.html,.htm,.xml,.yaml,.yml,.toml,.ini,.tsv,.log,.png,.jpg,.jpeg,.webp,.gif,.svg,.bmp,.dib,.avif,.tif,.tiff,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document,text/plain,text/markdown,text/csv,text/html,text/tab-separated-values,application/json,application/xml,text/xml,image/png,image/jpeg,image/webp,image/gif,image/svg+xml,image/bmp,image/avif,image/tiff" multiple hidden>
 </body>
 </html>

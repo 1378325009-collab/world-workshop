@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-labelledby="icon-title icon-desc">
+  <title id="icon-title">世界工坊</title>
+  <desc id="icon-desc">地图地球从展开的书页中浮现，代表构建世界与创作故事。</desc>
+  <defs>
+    <clipPath id="globe-clip">
+      <circle cx="256" cy="222" r="122"/>
+    </clipPath>
+  </defs>
+
+  <rect width="512" height="512" fill="#17211c"/>
+
+  <circle cx="256" cy="222" r="134" fill="#20372b"/>
+  <circle cx="256" cy="222" r="122" fill="#284236" stroke="#d6e6b7" stroke-width="10"/>
+
+  <g clip-path="url(#globe-clip)" fill="none" stroke="#7f9a7f" stroke-linecap="round" opacity=".8">
+    <path d="M130 205c60-27 192-27 252 0M130 239c60 27 192 27 252 0" stroke-width="5"/>
+    <path d="M256 98c-50 55-50 193 0 248M256 98c50 55 50 193 0 248" stroke-width="5"/>
+  </g>
+
+  <g clip-path="url(#globe-clip)" fill="#d6e6b7">
+    <path d="m166 178 14-17 20 2 13-10 20 8 12 18-14 9-2 15-17 7-10 17-17-5-8-17-17-5-7-16z"/>
+    <path d="m231 132 13-12 14 5-2 16-14 6z"/>
+    <path d="m259 165 20-11 18 8 17-7 23 12 14 14-11 13-21-3-9 14-15-4-9 16-16-6-5-17-15-5-5-15z"/>
+    <path d="m292 207 18 4 11 18-7 22-11 20-11-5-8-18 3-20z"/>
+    <path d="m338 263 14 4 7 12-10 10-16-5-3-11z"/>
+  </g>
+
+  <path d="M205 285c28-18 63 16 100-12" fill="none" stroke="#e8c57a" stroke-width="6" stroke-linecap="round" stroke-dasharray="2 12"/>
+  <circle cx="204" cy="285" r="5" fill="#e8c57a"/>
+  <circle cx="306" cy="273" r="5" fill="#e8c57a"/>
+
+  <path d="M372 77c4 23 11 30 35 34-24 4-31 11-35 34-4-23-11-30-35-34 24-4 31-11 35-34Z" fill="#e8c57a"/>
+  <circle cx="143" cy="137" r="5" fill="#d6e6b7"/>
+  <circle cx="397" cy="173" r="4" fill="#d6e6b7" opacity=".8"/>
+
+  <path d="M94 321c54-25 113-24 162 9v84c-47-32-105-35-162-11z" fill="#f0f3e9"/>
+  <path d="M256 330c49-33 108-34 162-9v82c-57-24-115-21-162 11z" fill="#f0f3e9"/>
+  <path d="M123 347c41-14 80-8 111 11M122 369c41-13 79-8 112 11M389 347c-41-14-80-8-111 11M390 369c-41-13-79-8-112 11" fill="none" stroke="#a8bba2" stroke-width="5" stroke-linecap="round" opacity=".75"/>
+  <path d="M94 321c54-25 113-24 162 9 49-33 108-34 162-9v82c-57-24-115-21-162 11-47-32-105-35-162-11z" fill="none" stroke="#d6e6b7" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M256 331v82" fill="none" stroke="#a8bba2" stroke-width="8" stroke-linecap="round"/>
+</svg>
