@@ -12,7 +12,7 @@
   ];
   const AI_SETTINGS_KEY = 'berk-island-world-workshop-ai-v1';
   const AI_MEMORY_KEY = 'berk-island-world-workshop-ai-memory-v1';
-  const AI_ASSISTANT_AVATAR_URL = 'assets/lomira-chibi-avatar.png?v=20261020-04';
+  const AI_ASSISTANT_AVATAR_URL = 'assets/pwa/icon.svg';
   const AI_DOCK_WIDTH_KEY = 'berk-island-world-workshop-ai-width-v1';
   const ENTRY_DETAIL_DOCK_WIDTH_KEY = 'berk-island-world-workshop-entry-detail-width-v1';
   const AI_DOCK_DEFAULT_WIDTH = 430;
@@ -1681,47 +1681,19 @@
   }
 
   function seedWorld() {
+    const example = globalThis.WorldWorkshopDefaultWorld;
+    if (example) {
+      const world = normalizeWorld(JSON.parse(JSON.stringify(example)));
+      if (world) return world;
+    }
     const now = new Date().toISOString();
     return {
       schemaVersion: 6,
       typeGroups: DEFAULT_TYPE_GROUP_DEFINITIONS.map((group) => ({ ...group, iconId: '', iconSvg: '', iconImage: '', fields: normalizeTypeFields([]) })),
       typeDefinitions: DEFAULT_TYPE_DEFINITIONS.map((type) => ({ ...type, iconId: '', iconSvg: '', iconImage: '', fields: normalizeTypeFields([]) })),
-      project: {
-        id: 'berk-island',
-        name: '伯克岛',
-        genre: '类中世纪',
-        era: '',
-        tone: '',
-        premise: '从 5v5 MOBA 城堡战争出发，逐步拓展 PVE、肉鸽与 RPG 多种玩法的世界。',
-        createdAt: now,
-        updatedAt: now
-      },
-      entries: [{
-        id: 'entry-berk-island',
-        name: '伯克岛',
-        type: 'world',
-        parentId: '',
-        status: 'draft',
-        summary: '以城堡战争为起点，逐步展开的类中世纪世界。',
-        body: '项目起点：从网易早期同名服务器延续而来；当前方向是以 5v5 MOBA 城堡战争为基础，构建新的类中世纪世界观，并探索 PVE、肉鸽与 RPG 多种玩法。',
-        tags: ['项目基底', '待扩展'],
-        aliases: [],
-        createdAt: now,
-        updatedAt: now
-      }],
-      maps: [],
-      relationGraphs: [{
-        id: 'world-relations',
-        name: '世界关系图谱',
-        entryIds: ['entry-berk-island'],
-        visibleEntryIds: ['entry-berk-island'],
-        zoom: 100,
-        nodePositions: {}
-      }],
-      scripts: [],
-      relationTypes: defaultRelationTypes(DEFAULT_TYPE_DEFINITIONS),
-      relations: [],
-      events: []
+      project: { id: 'new-world', name: '新世界', genre: '', era: '', tone: '', premise: '', createdAt: now, updatedAt: now },
+      entries: [], maps: [], relationGraphs: [], scripts: [],
+      relationTypes: defaultRelationTypes(DEFAULT_TYPE_DEFINITIONS), relations: [], events: []
     };
   }
 
@@ -3982,7 +3954,7 @@
       ? { id: current.id, name: current.name, imageData: current.imageData, width: current.width, height: current.height, boundTypeIds: current.boundTypeIds.slice(), fileName: '', error: '' }
       : { id: '', name: '', imageData: '', width: 0, height: 0, boundTypeIds: defaultBoundTypeIds, fileName: '', error: '' };
     const imagePreview = current ? `<img src="${escapeHtml(current.imageData)}" alt="${escapeHtml(current.name)}底图">` : '<span>尚未选择底图</span>';
-    const body = `<form id="active-form" data-form="map-editor"><div class="form-grid"><div class="form-field span-2"><label for="map-name">地图名称</label><input id="map-name" name="name" maxlength="60" required value="${escapeHtml(current ? current.name : '')}" placeholder="例如：伯克岛全图"></div><div class="form-field span-2"><span class="form-help">全部设定会自动按类型收录到地图图层中，默认不放置标记。选择图层条目后再到地图上指定位置。</span></div><div class="form-field span-2"><span class="field-label">底图</span><div class="map-image-preview" data-map-image-preview data-file-drop="map-image">${imagePreview}</div><div class="map-image-actions"><button class="button button-small" type="button" data-action="map-image-upload">${icon('upload', 13)}<span>选择图片</span></button><input id="map-image-input" type="file" accept="image/png,image/jpeg,image/webp" hidden><span class="form-help">PNG、JPG 或 WebP；图片会压缩后保存在世界档案中，也可拖到预览区域。</span></div><span class="entry-custom-image-error" data-map-image-error role="alert" hidden></span></div></div></form>`;
+    const body = `<form id="active-form" data-form="map-editor"><div class="form-grid"><div class="form-field span-2"><label for="map-name">地图名称</label><input id="map-name" name="name" maxlength="60" required value="${escapeHtml(current ? current.name : '')}" placeholder="例如：世界全图"></div><div class="form-field span-2"><span class="form-help">全部设定会自动按类型收录到地图图层中，默认不放置标记。选择图层条目后再到地图上指定位置。</span></div><div class="form-field span-2"><span class="field-label">底图</span><div class="map-image-preview" data-map-image-preview data-file-drop="map-image">${imagePreview}</div><div class="map-image-actions"><button class="button button-small" type="button" data-action="map-image-upload">${icon('upload', 13)}<span>选择图片</span></button><input id="map-image-input" type="file" accept="image/png,image/jpeg,image/webp" hidden><span class="form-help">PNG、JPG 或 WebP；图片会压缩后保存在世界档案中，也可拖到预览区域。</span></div><span class="entry-custom-image-error" data-map-image-error role="alert" hidden></span></div></div></form>`;
     const footer = `<span></span><div class="modal-footer-right"><button class="button" type="button" data-action="modal-close">取消</button><button class="button button-primary" type="submit" form="active-form">${current ? '保存地图' : '创建地图'}</button></div>`;
     openModal(current ? '编辑地图' : '新建地图', current ? '调整名称或底图；设定图层自动与设定库同步。' : '上传底图并填写名称；创建后会自动打开地图。', body, footer, true);
   }

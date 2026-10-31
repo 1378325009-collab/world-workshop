@@ -2,7 +2,10 @@ import { cpSync, existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } fr
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
+import { prepareReleaseExample } from './prepare-release-example.mjs';
+
 const projectRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+await prepareReleaseExample();
 const desktopRoot = path.join(projectRoot, 'desktop');
 const webOutput = path.join(desktopRoot, 'web');
 const relativeOutput = path.relative(projectRoot, webOutput);
@@ -14,6 +17,7 @@ if (!relativeOutput || relativeOutput === '..' || relativeOutput.startsWith(`..$
 const bundledPaths = [
   'index.html',
   'app.js',
+  'default-world.js',
   'archive.js',
   'docs',
   'style.css',

@@ -2,7 +2,10 @@ import { cpSync, existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } fr
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
+import { prepareReleaseExample } from './prepare-release-example.mjs';
+
 const projectRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+await prepareReleaseExample();
 const webOutput = path.resolve(projectRoot, 'dist');
 if (!webOutput.startsWith(`${projectRoot}${path.sep}`)) {
   throw new Error('Android web output must stay inside the World Workshop project.');
@@ -11,6 +14,7 @@ if (!webOutput.startsWith(`${projectRoot}${path.sep}`)) {
 const bundledPaths = [
   'index.html',
   'app.js',
+  'default-world.js',
   'archive.js',
   'docs',
   'style.css',
@@ -23,6 +27,7 @@ const bundledPaths = [
   '模板'
 ];
 
+if (existsSync(webOutput)) rmSync(webOutput, { recursive: true, force: true });
 mkdirSync(webOutput, { recursive: true });
 for (const relativePath of bundledPaths) {
   const source = path.join(projectRoot, relativePath);

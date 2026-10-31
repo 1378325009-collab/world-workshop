@@ -2,7 +2,10 @@ import { cpSync, existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } fr
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
+import { prepareReleaseExample } from './prepare-release-example.mjs';
+
 const projectRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+await prepareReleaseExample();
 const outputRoot = path.join(projectRoot, 'release', 'web-windows-x64');
 const webRoot = path.join(outputRoot, 'web');
 const relativeOutput = path.relative(projectRoot, outputRoot);
@@ -14,6 +17,7 @@ if (!relativeOutput.startsWith(`release${path.sep}`) || path.isAbsolute(relative
 const bundledPaths = [
   'index.html',
   'app.js',
+  'default-world.js',
   'archive.js',
   'docs',
   'style.css',
